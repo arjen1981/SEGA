@@ -16,6 +16,7 @@
       <div id="detail-content"></div>
     </aside>
     <div id="filter-toolbar"></div>
+    <button id="expand-all-btn" hidden>Expand All</button>
     <input id="search-input" type="text" placeholder="Search...">
     <ul id="search-suggestions"></ul>
   </div>
@@ -36,8 +37,10 @@
   <script type="module" src="./unit/detail-panel.test.js"></script>
   <script type="module" src="./unit/filters.test.js"></script>
   <script type="module" src="./unit/search.test.js"></script>
+  <script type="module" src="./unit/ego-graph.test.js"></script>
 
   <!-- Integration tests -->
   <script type="module" src="./integration/graph-render.test.js"></script>
+  <script type="module" src="./integration/ego-graph-integration.test.js"></script>
 </body>
 </html>

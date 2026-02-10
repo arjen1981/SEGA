@@ -11,6 +11,7 @@
  * Constitution Principle III: These tests are written FIRST and MUST FAIL.
  */
 
+import { initEgoGraph } from "../../src/js/ego-graph.js";
 import { createGraph, destroyGraph } from "../../src/js/graph.js";
 import { initSearch, searchNodes, selectSuggestion } from "../../src/js/search.js";
 
@@ -93,6 +94,7 @@ module("search – selectSuggestion()", (hooks) => {
 		const container = document.getElementById("graph-container");
 		container.innerHTML = "";
 		network = createGraph(container, NODES, EDGES);
+		initEgoGraph(network);
 		initSearch(NODES);
 	});
 
@@ -100,10 +102,19 @@ module("search – selectSuggestion()", (hooks) => {
 		destroyGraph();
 	});
 
-	test("selectSuggestion selects the node in the network", (assert) => {
+	test("selectSuggestion applies ego-graph on the node", (assert) => {
 		selectSuggestion("virtua-fighter");
-		const selected = network.getSelectedNodes();
-		assert.deepEqual(selected, ["virtua-fighter"], "node should be selected in network");
+		// selectSuggestion now triggers applyEgoGraph (FR-012)
+		// which hides non-neighbors and focuses on the selected node
+		const nodes = network.body.data.nodes;
+		const visibleIds = nodes
+			.get()
+			.filter((n) => !n.hidden)
+			.map((n) => n.id);
+		assert.ok(
+			visibleIds.includes("virtua-fighter"),
+			"selected node should be visible in ego-graph",
+		);
 	});
 
 	test("selectSuggestion with unknown ID does not throw", (assert) => {

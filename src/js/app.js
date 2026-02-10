@@ -11,6 +11,13 @@
  */
 
 import { closeDetailPanel, initDetailPanel, openDetailPanel } from "./detail-panel.js";
+import {
+	applyEgoGraph,
+	expandAll,
+	getViewMode,
+	initEgoGraph,
+	pickRandomSpotlight,
+} from "./ego-graph.js";
 import { initFilters, toggleGroup } from "./filters.js";
 import { createGraph } from "./graph.js";
 import { initSearch, searchNodes, selectSuggestion } from "./search.js";
@@ -86,10 +93,28 @@ async function init() {
 		}
 		initDetailPanel(nodeMap);
 
-		// Wire node click → detail panel
+		// Initialize ego-graph module
+		initEgoGraph(network);
+
+		// DOM references for ego-graph UI
+		const expandAllBtn = document.getElementById("expand-all-btn");
+		const filterToolbar = document.getElementById("filter-toolbar");
+
+		// Wire node click → ego-graph or detail panel based on mode
 		network.on("selectNode", (params) => {
 			if (params.nodes.length > 0) {
-				openDetailPanel(params.nodes[0]);
+				const clickedId = params.nodes[0];
+				if (getViewMode() === "full") {
+					// FR-008: Click node in full mode → ego mode
+					applyEgoGraph(clickedId);
+					openDetailPanel(clickedId);
+					if (filterToolbar) filterToolbar.classList.add("hidden");
+					if (expandAllBtn) expandAllBtn.hidden = false;
+				} else {
+					// FR-005: Click neighbor in ego mode → new spotlight
+					applyEgoGraph(clickedId);
+					openDetailPanel(clickedId);
+				}
 			}
 		});
 
@@ -102,7 +127,6 @@ async function init() {
 		initFilters(network);
 
 		// Wire filter toolbar checkboxes
-		const filterToolbar = document.getElementById("filter-toolbar");
 		if (filterToolbar) {
 			filterToolbar.addEventListener("change", (event) => {
 				const checkbox = event.target;
@@ -142,9 +166,37 @@ async function init() {
 			});
 		}
 
-		// Hide spinner once physics stabilization completes
+		// Wire "Expand All" button (FR-007)
+		if (expandAllBtn) {
+			expandAllBtn.addEventListener("click", () => {
+				expandAll();
+				closeDetailPanel();
+				if (filterToolbar) filterToolbar.classList.remove("hidden");
+				expandAllBtn.hidden = true;
+			});
+
+			// T026: Keyboard support for Expand All button
+			expandAllBtn.addEventListener("keydown", (event) => {
+				if (event.key === "Enter" || event.key === " ") {
+					event.preventDefault();
+					expandAllBtn.click();
+				}
+			});
+		}
+
+		// Hide spinner once physics stabilization completes, then apply ego-graph
 		network.once("stabilizationIterationsDone", () => {
 			hideSpinner();
+
+			// Apply ego-graph spotlight on initial load (FR-001)
+			const spotlightNodeId = pickRandomSpotlight(nodesData);
+			applyEgoGraph(spotlightNodeId);
+			openDetailPanel(spotlightNodeId);
+
+			// FR-011: Hide filter toolbar in ego mode
+			if (filterToolbar) filterToolbar.classList.add("hidden");
+			// FR-015: Show Expand All button in ego mode
+			if (expandAllBtn) expandAllBtn.hidden = false;
 		});
 
 		// Safety fallback: hide spinner after stabilization finishes completely
@@ -200,6 +252,11 @@ function renderSuggestions(list, results) {
 		li.addEventListener("click", () => {
 			selectSuggestion(node.id);
 			openDetailPanel(node.id);
+			// Ensure ego-mode UI state when search triggers ego-graph (FR-012)
+			const filterToolbar = document.getElementById("filter-toolbar");
+			const expandAllBtn = document.getElementById("expand-all-btn");
+			if (filterToolbar) filterToolbar.classList.add("hidden");
+			if (expandAllBtn) expandAllBtn.hidden = false;
 			list.hidden = true;
 			document.getElementById("search-input").value = node.label;
 		});

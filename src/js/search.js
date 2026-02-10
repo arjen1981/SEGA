@@ -9,6 +9,7 @@
  * @module search
  */
 
+import { applyEgoGraph } from "./ego-graph.js";
 import { getNetwork } from "./graph.js";
 
 /** @type {Array<{id: string, label: string, group: string}>} */
@@ -44,7 +45,8 @@ export function searchNodes(query) {
 
 /**
  * Select and focus the graph on a specific node.
- * Uses vis.Network.focus() for smooth pan/zoom and selectNodes() for highlight.
+ * In ego mode or full mode, triggers applyEgoGraph to show the
+ * ego-graph centered on the selected node (FR-012).
  *
  * @param {string} nodeId — ID of the node to focus on
  */
@@ -56,15 +58,6 @@ export function selectSuggestion(nodeId) {
 	const nodeData = network.body.data.nodes.get(nodeId);
 	if (!nodeData) return;
 
-	// Select the node (visual highlight)
-	network.selectNodes([nodeId]);
-
-	// Focus with animation
-	network.focus(nodeId, {
-		scale: 1.5,
-		animation: {
-			duration: 500,
-			easingFunction: "easeInOutQuad",
-		},
-	});
+	// FR-012: Search result → ego-graph mode on selected node
+	applyEgoGraph(nodeId);
 }

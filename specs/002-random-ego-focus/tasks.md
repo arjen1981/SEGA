@@ -19,9 +19,9 @@
 
 **Purpose**: Extend existing project structure for the ego-graph feature
 
-- [ ] T001 Add "Expand All" button to header in src/index.html (next to search input, FR-015)
-- [ ] T002 [P] Add ego-graph CSS styles in src/css/styles.css (Expand All button, filter toolbar hidden state)
-- [ ] T003 [P] Register new test files in tests/index.html (ego-graph.test.js, ego-graph-integration.test.js)
+- [x] T001 Add "Expand All" button to header in src/index.html (next to search input, FR-015)
+- [x] T002 [P] Add ego-graph CSS styles in src/css/styles.css (Expand All button, filter toolbar hidden state)
+- [x] T003 [P] Register new test files in tests/index.html (ego-graph.test.js, ego-graph-integration.test.js)
 
 ---
 
@@ -31,12 +31,12 @@
 
 **⚠️ CRITICAL**: US1, US2, and US3 all depend on this module existing
 
-- [ ] T004 [P] Write unit tests for pickRandomSpotlight in tests/unit/ego-graph.test.js (FR-001, FR-009: excludes company, returns valid node ID)
-- [ ] T005 [P] Write unit tests for neighborhood computation in tests/unit/ego-graph.test.js (FR-003: correct neighbor set, edge filtering, hidden+physics properties)
-- [ ] T006 [P] Write unit tests for getViewMode and getSpotlightId in tests/unit/ego-graph.test.js (mode transitions ego↔full, spotlightId null in full mode)
-- [ ] T007 Create ego-graph.js module skeleton with exports in src/js/ego-graph.js (initEgoGraph, applyEgoGraph, expandAll, getViewMode, getSpotlightId, pickRandomSpotlight per contracts/ego-graph-module-api.schema.json)
-- [ ] T008 Implement pickRandomSpotlight in src/js/ego-graph.js (filter non-company nodes, Math.random selection, FR-001 + FR-009)
-- [ ] T009 Implement initEgoGraph in src/js/ego-graph.js (store network reference, per research R7)
+- [x] T004 [P] Write unit tests for pickRandomSpotlight in tests/unit/ego-graph.test.js (FR-001, FR-009: excludes company, returns valid node ID)
+- [x] T005 [P] Write unit tests for neighborhood computation in tests/unit/ego-graph.test.js (FR-003: correct neighbor set, edge filtering, hidden+physics properties)
+- [x] T006 [P] Write unit tests for getViewMode and getSpotlightId in tests/unit/ego-graph.test.js (mode transitions ego↔full, spotlightId null in full mode)
+- [x] T007 Create ego-graph.js module skeleton with exports in src/js/ego-graph.js (initEgoGraph, applyEgoGraph, expandAll, getViewMode, getSpotlightId, pickRandomSpotlight per contracts/ego-graph-module-api.schema.json)
+- [x] T008 Implement pickRandomSpotlight in src/js/ego-graph.js (filter non-company nodes, Math.random selection, FR-001 + FR-009)
+- [x] T009 Implement initEgoGraph in src/js/ego-graph.js (store network reference, per research R7)
 
 **Checkpoint**: ego-graph.js exists with random selection and initialization. Unit tests for pickRandomSpotlight pass.
 
@@ -50,14 +50,14 @@
 
 ### Tests for User Story 1
 
-- [ ] T010 [P] [US1] Write unit test for applyEgoGraph in tests/unit/ego-graph.test.js (hides non-neighbors, shows neighborhood, sets hidden+physics on nodes, hides edges with non-visible endpoints)
-- [ ] T011 [P] [US1] Write integration test for page-load ego-graph in tests/integration/ego-graph-integration.test.js (verifies full flow: random select → filter → focus → detail panel)
+- [x] T010 [P] [US1] Write unit test for applyEgoGraph in tests/unit/ego-graph.test.js (hides non-neighbors, shows neighborhood, sets hidden+physics on nodes, hides edges with non-visible endpoints)
+- [x] T011 [P] [US1] Write integration test for page-load ego-graph in tests/integration/ego-graph-integration.test.js (verifies full flow: random select → filter → focus → detail panel)
 
 ### Implementation for User Story 1
 
-- [ ] T012 [US1] Implement applyEgoGraph(nodeId) in src/js/ego-graph.js (getConnectedNodes for neighbors, set hidden+physics on nodes, hide edges, focus camera, per research R1-R3-R6)
-- [ ] T013 [US1] Wire ego-graph into app.js init flow in src/js/app.js (import ego-graph, call initEgoGraph after createGraph, pickRandomSpotlight, applyEgoGraph, openDetailPanel on stabilization, per research R4)
-- [ ] T014 [US1] Hide filter toolbar on initial load in src/js/app.js (add CSS class to filter-toolbar element, FR-011)
+- [x] T012 [US1] Implement applyEgoGraph(nodeId) in src/js/ego-graph.js (getConnectedNodes for neighbors, set hidden+physics on nodes, hide edges, focus camera, per research R1-R3-R6)
+- [x] T013 [US1] Wire ego-graph into app.js init flow in src/js/app.js (import ego-graph, call initEgoGraph after createGraph, pickRandomSpotlight, applyEgoGraph, openDetailPanel on stabilization, per research R4)
+- [x] T014 [US1] Hide filter toolbar on initial load in src/js/app.js (add CSS class to filter-toolbar element, FR-011)
 
 **Checkpoint**: Page loads with random ego-graph spotlight. Unit + integration tests pass for US1.
 
@@ -71,13 +71,13 @@
 
 ### Tests for User Story 2
 
-- [ ] T015 [P] [US2] Write unit test for ego-graph navigation in tests/unit/ego-graph.test.js (applyEgoGraph called twice in sequence produces correct neighborhoods)
-- [ ] T016 [P] [US2] Write integration test for ego-graph navigation in tests/integration/ego-graph-integration.test.js (click neighbor → verify new ego-graph centered on clicked node)
+- [x] T015 [P] [US2] Write unit test for ego-graph navigation in tests/unit/ego-graph.test.js (applyEgoGraph called twice in sequence produces correct neighborhoods)
+- [x] T016 [P] [US2] Write integration test for ego-graph navigation in tests/integration/ego-graph-integration.test.js (click neighbor → verify new ego-graph centered on clicked node)
 
 ### Implementation for User Story 2
 
-- [ ] T017 [US2] Update selectNode handler in src/js/app.js to call applyEgoGraph in ego mode (FR-005: click neighbor → new spotlight, animated transition FR-006, detail panel update)
-- [ ] T018 [US2] Update selectSuggestion in src/js/search.js to trigger applyEgoGraph instead of just focus (FR-012: search result → ego-graph mode on selected node)
+- [x] T017 [US2] Update selectNode handler in src/js/app.js to call applyEgoGraph in ego mode (FR-005: click neighbor → new spotlight, animated transition FR-006, detail panel update)
+- [x] T018 [US2] Update selectSuggestion in src/js/search.js to trigger applyEgoGraph instead of just focus (FR-012: search result → ego-graph mode on selected node)
 
 **Checkpoint**: Ego-graph navigation works via click and search. US1 + US2 both functional.
 
@@ -91,15 +91,15 @@
 
 ### Tests for User Story 3
 
-- [ ] T019 [P] [US3] Write unit test for expandAll in tests/unit/ego-graph.test.js (all nodes unhidden, physics restored, mode = "full", spotlightId = null)
-- [ ] T020 [P] [US3] Write integration test for expand/collapse cycle in tests/integration/ego-graph-integration.test.js (ego → expand → click node → ego)
+- [x] T019 [P] [US3] Write unit test for expandAll in tests/unit/ego-graph.test.js (all nodes unhidden, physics restored, mode = "full", spotlightId = null)
+- [x] T020 [P] [US3] Write integration test for expand/collapse cycle in tests/integration/ego-graph-integration.test.js (ego → expand → click node → ego)
 
 ### Implementation for User Story 3
 
-- [ ] T021 [US3] Implement expandAll() in src/js/ego-graph.js (unhide all nodes+edges, restore physics, fit viewport with animation, per research R5)
-- [ ] T022 [US3] Wire "Expand All" button click handler in src/js/app.js (call expandAll, show filter toolbar, hide Expand All button, FR-007)
-- [ ] T023 [US3] Update selectNode handler to handle full-mode clicks in src/js/app.js (FR-008: click node in full mode → applyEgoGraph, hide filter toolbar, show Expand All button)
-- [ ] T024 [US3] Toggle "Expand All" button visibility based on view mode in src/js/app.js (visible in ego mode, hidden in full mode)
+- [x] T021 [US3] Implement expandAll() in src/js/ego-graph.js (unhide all nodes+edges, restore physics, fit viewport with animation, per research R5)
+- [x] T022 [US3] Wire "Expand All" button click handler in src/js/app.js (call expandAll, show filter toolbar, hide Expand All button, FR-007)
+- [x] T023 [US3] Update selectNode handler to handle full-mode clicks in src/js/app.js (FR-008: click node in full mode → applyEgoGraph, hide filter toolbar, show Expand All button)
+- [x] T024 [US3] Toggle "Expand All" button visibility based on view mode in src/js/app.js (visible in ego mode, hidden in full mode)
 
 **Checkpoint**: Full ego↔full cycle works. All three user stories functional independently.
 
@@ -109,11 +109,11 @@
 
 **Purpose**: Quality, accessibility, and validation across all user stories
 
-- [ ] T025 [P] Add ARIA attributes to "Expand All" button in src/index.html (aria-label, role)
-- [ ] T026 [P] Add keyboard support for "Expand All" button in src/js/app.js (Enter/Space triggers expand)
-- [ ] T027 Run Biome lint and format on all modified/new files (src/js/ego-graph.js, src/js/app.js, src/js/search.js, tests/)
-- [ ] T028 Run full QUnit test suite via tests/index.html (all unit + integration tests pass, no regressions from feature 001 tests)
-- [ ] T029 Run quickstart.md validation per specs/002-random-ego-focus/quickstart.md (manual: load page, verify random spotlight, navigate, expand, search-to-ego)
+- [x] T025 [P] Add ARIA attributes to "Expand All" button in src/index.html (aria-label, role)
+- [x] T026 [P] Add keyboard support for "Expand All" button in src/js/app.js (Enter/Space triggers expand)
+- [x] T027 Run Biome lint and format on all modified/new files (src/js/ego-graph.js, src/js/app.js, src/js/search.js, tests/)
+- [x] T028 Run full QUnit test suite via tests/index.html (all unit + integration tests pass, no regressions from feature 001 tests)
+- [x] T029 Run quickstart.md validation per specs/002-random-ego-focus/quickstart.md (manual: load page, verify random spotlight, navigate, expand, search-to-ego)
 
 ---
 

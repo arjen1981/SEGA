@@ -339,10 +339,45 @@ body {
 	flex-shrink: 0;
 }
 
+/* --- Expand All Button --- */
+.expand-all-btn {
+	margin-left: auto;
+	padding: 0.375rem 0.875rem;
+	font-size: 0.875rem;
+	font-family: var(--font-family);
+	font-weight: 600;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	border: 1px solid var(--color-border);
+	border-radius: 6px;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.expand-all-btn:hover {
+	border-color: var(--color-text-muted);
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+.expand-all-btn:focus-visible {
+	outline: 2px solid #58a6ff;
+	outline-offset: 2px;
+}
+
+.expand-all-btn[hidden] {
+	display: none;
+}
+
+/* --- Filter Toolbar Hidden State (ego mode) --- */
+.filter-toolbar.hidden {
+	display: none;
+}
+
 /* --- Search --- */
 .search-container {
 	position: relative;
-	margin-left: auto;
+	margin-left: 0.75rem;
 }
 
 .search-input {
