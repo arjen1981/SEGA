@@ -19,10 +19,10 @@
 
 **Purpose**: Project initialization and directory structure
 
-- [ ] T001 Create project directory structure: src/, src/css/, src/js/, src/data/, tests/, tests/unit/, tests/integration/
-- [ ] T002 [P] Create dev-only package.json with @biomejs/biome devDependency in package.json
-- [ ] T003 [P] Configure Biome linter/formatter with project defaults in biome.json
-- [ ] T004 [P] Create QUnit test runner HTML with CDN imports (qunit-2.25.0.js + qunit-2.25.0.css) in tests/index.html. Load test modules as <script type="module"> tags that import from src/js/ using relative paths. Add an import map if needed to alias src/ paths for test imports.
+- [x] T001 Create project directory structure: src/, src/css/, src/js/, src/data/, tests/, tests/unit/, tests/integration/
+- [x] T002 [P] Create dev-only package.json with @biomejs/biome devDependency in package.json
+- [x] T003 [P] Configure Biome linter/formatter with project defaults in biome.json
+- [x] T004 [P] Create QUnit test runner HTML with CDN imports (qunit-2.25.0.js + qunit-2.25.0.css) in tests/index.html. Load test modules as <script type="module"> tags that import from src/js/ using relative paths. Add an import map if needed to alias src/ paths for test imports.
 
 ---
 
@@ -32,11 +32,11 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete — the graph cannot render without data files and a host page.
 
-- [ ] T005 [P] Create index.html scaffold with vis-network CDN script tag, charset/viewport meta, semantic layout containers (header, main, aside) in src/index.html
-- [ ] T006 [P] Create base CSS with document reset, CSS custom properties for node-group colors, layout grid (graph area + side panel), and box-sizing in src/css/styles.css
-- [ ] T007 Compile nodes.json with all SEGA arcade entities (~100–200 nodes) from Wikipedia REST API (/page/summary/) and Wikidata SPARQL, per schema in contracts/nodes.schema.json, output to src/data/nodes.json
-- [ ] T008 Compile edges.json with all entity relationships from Wikidata properties (P749, P178, P400, P108, P800), per schema in contracts/edges.schema.json, output to src/data/edges.json
-- [ ] T009 Validate nodes.json and edges.json against JSON Schemas in specs/001-sega-graph-visualization/contracts/ — verify all IDs unique, all edge references valid, exactly one company node, every node has at least one edge, and per-group required fields present (founded+headquarters for company, status for studio, etc. per data-model.md)
+- [x] T005 [P] Create index.html scaffold with vis-network CDN script tag, charset/viewport meta, semantic layout containers (header, main, aside) in src/index.html
+- [x] T006 [P] Create base CSS with document reset, CSS custom properties for node-group colors, layout grid (graph area + side panel), and box-sizing in src/css/styles.css
+- [x] T007 Compile nodes.json with all SEGA arcade entities (~100–200 nodes) from Wikipedia REST API (/page/summary/) and Wikidata SPARQL, per schema in contracts/nodes.schema.json, output to src/data/nodes.json
+- [x] T008 Compile edges.json with all entity relationships from Wikidata properties (P749, P178, P400, P108, P800), per schema in contracts/edges.schema.json, output to src/data/edges.json
+- [x] T009 Validate nodes.json and edges.json against JSON Schemas in specs/001-sega-graph-visualization/contracts/ — verify all IDs unique, all edge references valid, exactly one company node, every node has at least one edge, and per-group required fields present (founded+headquarters for company, status for studio, etc. per data-model.md)
 
 **Checkpoint**: Foundation ready — data files compiled and validated, HTML scaffold in place. User story implementation can now begin.
 
@@ -52,15 +52,15 @@
 
 > **Write these tests FIRST — they MUST fail before implementation**
 
-- [ ] T010 [P] [US1] Write unit tests for graph module: Network initialization, node group configuration (5 groups with distinct colors/shapes), physics solver config, and edge label rendering in tests/unit/graph.test.js
-- [ ] T011 [P] [US1] Write integration test: fetch nodes.json and edges.json, initialize graph, assert node count matches data, assert SEGA node exists at center, assert all edge labels visible in tests/integration/graph-render.test.js
+- [x] T010 [P] [US1] Write unit tests for graph module: Network initialization, node group configuration (5 groups with distinct colors/shapes), physics solver config, and edge label rendering in tests/unit/graph.test.js
+- [x] T011 [P] [US1] Write integration test: fetch nodes.json and edges.json, initialize graph, assert node count matches data, assert SEGA node exists at center, assert all edge labels visible in tests/integration/graph-render.test.js
 
 ### Implementation for User Story 1
 
-- [ ] T012 [US1] Implement graph module: create vis.Network instance, configure node groups (company=star/red, studio=dot/blue, platform=diamond/green, game=square/orange, creator=triangle/purple), set barnesHut physics solver, enable pan/zoom/drag interactions, render edge labels from data in src/js/graph.js
-- [ ] T013 [US1] Implement app bootstrap: fetch src/data/nodes.json and src/data/edges.json via fetch(), parse JSON, pass DataSet to graph.init(), handle fetch errors with user-visible message in src/js/app.js
-- [ ] T014 [US1] Wire graph container div (#graph-container), link src/js/graph.js and src/js/app.js as ES6 modules, verify vis-network CDN loads before app init in src/index.html
-- [ ] T015 [US1] Add graph container full-viewport sizing, loading spinner state, node-group color legend bar, and vis-network canvas styles in src/css/styles.css
+- [x] T012 [US1] Implement graph module: create vis.Network instance, configure node groups (company=star/red, studio=dot/blue, platform=diamond/green, game=square/orange, creator=triangle/purple), set barnesHut physics solver, enable pan/zoom/drag interactions, render edge labels from data in src/js/graph.js
+- [x] T013 [US1] Implement app bootstrap: fetch src/data/nodes.json and src/data/edges.json via fetch(), parse JSON, pass DataSet to graph.init(), handle fetch errors with user-visible message in src/js/app.js
+- [x] T014 [US1] Wire graph container div (#graph-container), link src/js/graph.js and src/js/app.js as ES6 modules, verify vis-network CDN loads before app init in src/index.html
+- [x] T015 [US1] Add graph container full-viewport sizing, loading spinner state, node-group color legend bar, and vis-network canvas styles in src/css/styles.css
 
 **Checkpoint**: User Story 1 complete — interactive graph renders with all node types, edges, and navigation. MVP is deployable.
 
@@ -76,14 +76,14 @@
 
 > **Write these tests FIRST — they MUST fail before implementation**
 
-- [ ] T016 [P] [US2] Write unit tests for detail panel: render with full data (all 5 entity types), render with missing optional fields, close on button click, close on outside click, "no data available" fallback for empty summary in tests/unit/detail-panel.test.js
+- [x] T016 [P] [US2] Write unit tests for detail panel: render with full data (all 5 entity types), render with missing optional fields, close on button click, close on outside click, "no data available" fallback for empty summary in tests/unit/detail-panel.test.js
 
 ### Implementation for User Story 2
 
-- [ ] T017 [US2] Implement detail-panel module: listen for vis-network selectNode event, look up node data by ID, render entity name/summary/facts/thumbnail/Wikipedia link, dispatch per group type (company shows founded+HQ, studio shows founded+status+focus, platform shows releaseYear+generation+features, game shows releaseYear+genre, creator shows birthYear+roles) in src/js/detail-panel.js
-- [ ] T018 [US2] Add detail panel aside element with close button, content container, and Wikipedia link placeholder markup in src/index.html
-- [ ] T019 [US2] Add detail panel styles: slide-in from right, max-width 400px, responsive full-width on mobile, thumbnail image, close button, scrollable content, backdrop overlay in src/css/styles.css
-- [ ] T020 [US2] Handle missing Wikipedia data: when summary is empty or node not found, display "No Wikipedia data available for this entity" message with a Wikipedia search link (FR-009) in src/js/detail-panel.js
+- [x] T017 [US2] Implement detail-panel module: listen for vis-network selectNode event, look up node data by ID, render entity name/summary/facts/thumbnail/Wikipedia link, dispatch per group type (company shows founded+HQ, studio shows founded+status+focus, platform shows releaseYear+generation+features, game shows releaseYear+genre, creator shows birthYear+roles) in src/js/detail-panel.js
+- [x] T018 [US2] Add detail panel aside element with close button, content container, and Wikipedia link placeholder markup in src/index.html
+- [x] T019 [US2] Add detail panel styles: slide-in from right, max-width 400px, responsive full-width on mobile, thumbnail image, close button, scrollable content, backdrop overlay in src/css/styles.css
+- [x] T020 [US2] Handle missing Wikipedia data: when summary is empty or node not found, display "No Wikipedia data available for this entity" message with a Wikipedia search link (FR-009) in src/js/detail-panel.js
 
 **Checkpoint**: User Stories 1 AND 2 complete — graph is interactive with informative detail panels.
 
@@ -99,13 +99,13 @@
 
 > **Write these tests FIRST — they MUST fail before implementation**
 
-- [ ] T021 [P] [US3] Write unit tests for filters module: toggle single category hides/shows nodes, toggle hides connected edges, multiple toggles combine correctly, SEGA company node always visible, filter state restored on re-enable in tests/unit/filters.test.js
+- [x] T021 [P] [US3] Write unit tests for filters module: toggle single category hides/shows nodes, toggle hides connected edges, multiple toggles combine correctly, SEGA company node always visible, filter state restored on re-enable in tests/unit/filters.test.js
 
 ### Implementation for User Story 3
 
-- [ ] T022 [US3] Implement filters module: read checkbox state, update vis.DataSet to hide/show nodes by group, hide edges where either endpoint is hidden, keep SEGA root always visible, emit filter-change event for other modules in src/js/filters.js
-- [ ] T023 [US3] Add filter toolbar with labeled checkboxes for Studios, Platforms, Games, and Creators (all checked by default), placed above or beside the graph area in src/index.html
-- [ ] T024 [US3] Add filter toolbar layout (horizontal bar or sidebar), checkbox label styling, active/inactive state indicators in src/css/styles.css
+- [x] T022 [US3] Implement filters module: read checkbox state, update vis.DataSet to hide/show nodes by group, hide edges where either endpoint is hidden, keep SEGA root always visible, emit filter-change event for other modules in src/js/filters.js
+- [x] T023 [US3] Add filter toolbar with labeled checkboxes for Studios, Platforms, Games, and Creators (all checked by default), placed above or beside the graph area in src/index.html
+- [x] T024 [US3] Add filter toolbar layout (horizontal bar or sidebar), checkbox label styling, active/inactive state indicators in src/css/styles.css
 
 **Checkpoint**: User Stories 1, 2, AND 3 complete — graph is explorable, informative, and filterable.
 
@@ -121,13 +121,13 @@
 
 > **Write these tests FIRST — they MUST fail before implementation**
 
-- [ ] T025 [P] [US4] Write unit tests for search module: partial match returns suggestions, case-insensitive matching, select suggestion calls graph focus, no-match shows empty message, suggestion list closes on selection in tests/unit/search.test.js
+- [x] T025 [P] [US4] Write unit tests for search module: partial match returns suggestions, case-insensitive matching, select suggestion calls graph focus, no-match shows empty message, suggestion list closes on selection in tests/unit/search.test.js
 
 ### Implementation for User Story 4
 
-- [ ] T026 [US4] Implement search module: listen for input events on search field, filter node labels by case-insensitive substring match, render suggestion dropdown, on selection call vis.Network.focus() and selectNodes() for pan/zoom/highlight animation, show "No results found" for zero matches in src/js/search.js
-- [ ] T027 [US4] Add search input field with placeholder text and autocomplete dropdown container, placed in the header area in src/index.html
-- [ ] T028 [US4] Add search input field width, dropdown suggestion list positioning and hover styles, highlighted-node outline ring in src/css/styles.css
+- [x] T026 [US4] Implement search module: listen for input events on search field, filter node labels by case-insensitive substring match, render suggestion dropdown, on selection call vis.Network.focus() and selectNodes() for pan/zoom/highlight animation, show "No results found" for zero matches in src/js/search.js
+- [x] T027 [US4] Add search input field with placeholder text and autocomplete dropdown container, placed in the header area in src/index.html
+- [x] T028 [US4] Add search input field width, dropdown suggestion list positioning and hover styles, highlighted-node outline ring in src/css/styles.css
 
 **Checkpoint**: All four user stories complete — full-featured SEGA graph visualization.
 
@@ -137,13 +137,13 @@
 
 **Purpose**: Responsive design, accessibility, performance validation, and final quality gates
 
-- [ ] T029 [P] Add responsive CSS breakpoints for mobile (<768px) and tablet (768px–1024px): stack layout vertically, full-width detail panel, collapsible filter bar in src/css/styles.css
-- [ ] T030 [P] Add WCAG 2.1 AA accessibility: aria-labels on interactive elements, keyboard navigation for graph nodes (Tab/Enter), focus ring management, sufficient color contrast (4.5:1 minimum) across all files in src/
-- [ ] T031 [P] Add Wikipedia CC-BY-SA 3.0 attribution notice, Wikidata CC0 credit, and vis-network library attribution in page footer in src/index.html
-- [ ] T032 Add duplicate display-name disambiguation: append node type in parentheses when two nodes share the same label (e.g., "Sonic Team (Studio)") in src/js/app.js
-- [ ] T033 Validate performance targets in browser DevTools: initial load interactive within 3 seconds, pan/zoom/drag at 60fps, filter toggle completes within 0.5 seconds, up to 200 nodes rendered
-- [ ] T034 Run Biome lint and format check on all source files with npx biome check --write
-- [ ] T035 Run full QUnit test suite in tests/index.html, verify all tests pass, and walk through quickstart.md instructions end-to-end
+- [x] T029 [P] Add responsive CSS breakpoints for mobile (<768px) and tablet (768px–1024px): stack layout vertically, full-width detail panel, collapsible filter bar in src/css/styles.css
+- [x] T030 [P] Add WCAG 2.1 AA accessibility: aria-labels on interactive elements, keyboard navigation for graph nodes (Tab/Enter), focus ring management, sufficient color contrast (4.5:1 minimum) across all files in src/
+- [x] T031 [P] Add Wikipedia CC-BY-SA 3.0 attribution notice, Wikidata CC0 credit, and vis-network library attribution in page footer in src/index.html
+- [x] T032 Add duplicate display-name disambiguation: append node type in parentheses when two nodes share the same label (e.g., "Sonic Team (Studio)") in src/js/app.js
+- [x] T033 Validate performance targets in browser DevTools: initial load interactive within 3 seconds, pan/zoom/drag at 60fps, filter toggle completes within 0.5 seconds, up to 200 nodes rendered
+- [x] T034 Run Biome lint and format check on all source files with npx biome check --write
+- [x] T035 Run full QUnit test suite in tests/index.html, verify all tests pass, and walk through quickstart.md instructions end-to-end
 
 ---
 

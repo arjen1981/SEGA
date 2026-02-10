@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEGA Graph — Test Suite</title>
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.25.0.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture">
+    <!-- QUnit resets this div after every test -->
+    <div id="graph-container" style="width:800px;height:600px;"></div>
+    <aside id="detail-panel" class="detail-panel" hidden>
+      <button id="detail-close" aria-label="Close detail panel">&times;</button>
+      <div id="detail-content"></div>
+    </aside>
+    <div id="filter-toolbar"></div>
+    <input id="search-input" type="text" placeholder="Search...">
+    <ul id="search-suggestions"></ul>
+  </div>
+
+  <!-- QUnit framework -->
+  <script src="https://code.jquery.com/qunit/qunit-2.25.0.js"></script>
+
+  <!-- vis-network (needed by graph module tests) -->
+  <script src="https://unpkg.com/vis-network@10/standalone/umd/vis-network.min.js"></script>
+
+  <!--
+    Import map: allow test modules to import from src/js/ using
+    bare paths like "../src/js/graph.js" relative to tests/.
+  -->
+
+  <!-- Unit tests -->
+  <script type="module" src="./unit/graph.test.js"></script>
+  <script type="module" src="./unit/detail-panel.test.js"></script>
+  <script type="module" src="./unit/filters.test.js"></script>
+  <script type="module" src="./unit/search.test.js"></script>
+
+  <!-- Integration tests -->
+  <script type="module" src="./integration/graph-render.test.js"></script>
+</body>
+</html>
