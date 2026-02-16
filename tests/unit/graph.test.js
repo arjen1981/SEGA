@@ -93,45 +93,61 @@ module("graph – GROUP_CONFIG", () => {
 		}
 	});
 
-	test("company group uses star shape and red color", (assert) => {
+	test("all groups use image shape for SVG icons", (assert) => {
+		for (const [name, config] of Object.entries(GROUP_CONFIG)) {
+			assert.strictEqual(config.shape, "image", `group "${name}" should use shape "image"`);
+		}
+	});
+
+	test("each group has a truthy image property", (assert) => {
+		for (const [name, config] of Object.entries(GROUP_CONFIG)) {
+			assert.ok(config.image, `group "${name}" should have an image data URI`);
+			assert.ok(
+				config.image.startsWith("data:image/svg+xml,"),
+				`group "${name}" image should be a data URI`,
+			);
+		}
+	});
+
+	test("company group uses image shape and red color", (assert) => {
 		const company = GROUP_CONFIG.company;
-		assert.strictEqual(company.shape, "star", "company shape should be star");
+		assert.strictEqual(company.shape, "image", "company shape should be image");
 		assert.ok(
 			company.color?.background?.includes("#e63946") || company.color === "#e63946",
 			"company color should be red (#e63946)",
 		);
 	});
 
-	test("studio group uses dot shape and blue color", (assert) => {
+	test("studio group uses image shape and blue color", (assert) => {
 		const studio = GROUP_CONFIG.studio;
-		assert.strictEqual(studio.shape, "dot", "studio shape should be dot");
+		assert.strictEqual(studio.shape, "image", "studio shape should be image");
 		assert.ok(
 			studio.color?.background?.includes("#457b9d") || studio.color === "#457b9d",
 			"studio color should be blue (#457b9d)",
 		);
 	});
 
-	test("platform group uses diamond shape and green color", (assert) => {
+	test("platform group uses image shape and green color", (assert) => {
 		const platform = GROUP_CONFIG.platform;
-		assert.strictEqual(platform.shape, "diamond", "platform shape should be diamond");
+		assert.strictEqual(platform.shape, "image", "platform shape should be image");
 		assert.ok(
 			platform.color?.background?.includes("#2a9d8f") || platform.color === "#2a9d8f",
 			"platform color should be green (#2a9d8f)",
 		);
 	});
 
-	test("game group uses square shape and orange color", (assert) => {
+	test("game group uses image shape and orange color", (assert) => {
 		const game = GROUP_CONFIG.game;
-		assert.strictEqual(game.shape, "square", "game shape should be square");
+		assert.strictEqual(game.shape, "image", "game shape should be image");
 		assert.ok(
 			game.color?.background?.includes("#e9a820") || game.color === "#e9a820",
 			"game color should be orange (#e9a820)",
 		);
 	});
 
-	test("creator group uses triangle shape and purple color", (assert) => {
+	test("creator group uses image shape and purple color", (assert) => {
 		const creator = GROUP_CONFIG.creator;
-		assert.strictEqual(creator.shape, "triangle", "creator shape should be triangle");
+		assert.strictEqual(creator.shape, "image", "creator shape should be image");
 		assert.ok(
 			creator.color?.background?.includes("#7b2d8e") || creator.color === "#7b2d8e",
 			"creator color should be purple (#7b2d8e)",
@@ -216,6 +232,19 @@ module("graph – edge configuration", (hooks) => {
 			edgeOptions.arrows?.to === true || edgeOptions.arrows?.to?.enabled === true,
 			"edges should have arrows pointing to target",
 		);
+	});
+
+	test("edges use SEGA blue color (#0044FF)", (assert) => {
+		const nodes = [
+			{ id: "sega", label: "SEGA", group: "company" },
+			{ id: "am2", label: "AM2", group: "studio" },
+		];
+		const edges = [{ from: "am2", to: "sega", label: "division of" }];
+		const network = createGraph(container, nodes, edges);
+
+		const edgeOptions = network.edgesHandler.options;
+		const edgeColor = edgeOptions.color?.color;
+		assert.strictEqual(edgeColor, "#0044FF", "edge base color should be SEGA blue (#0044FF)");
 	});
 });
 

@@ -1001,6 +1001,7 @@
 		"summary": "Yu Suzuki is a Japanese game designer, producer, programmer, and engineer, who headed Sega's AM2 team for 18 years. Considered one of the first auteurs of video games, he created pioneering arcade hits including Hang-On, Space Harrier, Out Run, After Burner, Virtua Racing, and Virtua Fighter, as well as the critically acclaimed Shenmue series.",
 		"birthYear": 1958,
 		"notableRoles": "Game director, Producer, Hardware engineer",
+		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Yu_Suzuki",
 		"wikidataId": "Q282263",
 		"thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Yu_Suzuki_-_Game_Developers_Conference_2011_-_Day_3.jpg/330px-Yu_Suzuki_-_Game_Developers_Conference_2011_-_Day_3.jpg"
@@ -1012,6 +1013,7 @@
 		"summary": "Toshihiro Nagoshi is a Japanese video game producer, director, and designer. He was the chief creative officer for Sega until 2021 and the general director of Ryu Ga Gotoku Studio. He joined Sega in 1989 and worked on Daytona USA at AM2 before leading Amusement Vision on Monkey Ball.",
 		"birthYear": 1965,
 		"notableRoles": "Producer, Director, Chief Creative Officer",
+		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Toshihiro_Nagoshi",
 		"wikidataId": "Q2572612",
 		"thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Toshihiro_Nagoshi_20140125.jpg/330px-Toshihiro_Nagoshi_20140125.jpg"
@@ -1023,6 +1025,7 @@
 		"summary": "Yuji Naka is a Japanese former video game designer and programmer. He is the co-creator of the Sonic the Hedgehog series and was the president of Sonic Team at Sega until his departure in 2006. His programming work on early arcade and console titles helped establish Sega's technical reputation.",
 		"birthYear": 1965,
 		"notableRoles": "Lead programmer, Director, Sonic Team president",
+		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Yuji_Naka",
 		"wikidataId": "Q726119",
 		"thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Yuji_Naka%27_-_Magic_-_Monaco_-_2015-03-21-_P1030036_%28cropped%29.jpg/330px-Yuji_Naka%27_-_Magic_-_Monaco_-_2015-03-21-_P1030036_%28cropped%29.jpg"
@@ -1034,6 +1037,7 @@
 		"summary": "Rieko Kodama, also known as Phoenix Rie, was a Japanese video game artist, director, and producer employed by Sega from 1984 until her death in 2022. She is primarily known for her work on the Phantasy Star series and Skies of Arcadia, and is recognized as one of the first successful women in the video game industry.",
 		"birthYear": 1963,
 		"notableRoles": "Artist, Director, Producer",
+		"gender": "female",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Rieko_Kodama",
 		"wikidataId": "Q7333106",
 		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/9/9f/Rieko_Kodama.jpg"
@@ -1045,6 +1049,7 @@
 		"summary": "Tetsuya Mizuguchi is a Japanese video game designer and producer. He worked at Sega's AM3 division on Sega Rally Championship and other arcade titles before heading United Game Artists, where he directed Space Channel 5 and Rez. He later founded Q Entertainment and Enhance.",
 		"birthYear": 1965,
 		"notableRoles": "Game director, Producer",
+		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Tetsuya_Mizuguchi",
 		"wikidataId": "Q536801",
 		"thumbnail": null

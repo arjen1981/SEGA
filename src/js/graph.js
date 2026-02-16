@@ -10,17 +10,19 @@
  * @module graph
  */
 
+import { getIconDataUri } from "./icons.js";
+
 /**
  * Node-group visual configuration.
- * Each group defines a distinct shape and color matching the CSS custom properties.
+ * Each group uses shape:"image" with SVG data URI icons from the icons module.
  *
- * Spec: FR-002 — five visual groups (company, studio, platform, game, creator)
- * Plan: company=star/red, studio=dot/blue, platform=diamond/green,
- *       game=square/orange, creator=triangle/purple
+ * Spec 003: FR-001 — unique representative vector icons per category
+ * Edge color: SEGA blue #0044FF with #4488FF hover glow (FR-016)
  */
 export const GROUP_CONFIG = {
 	company: {
-		shape: "star",
+		shape: "image",
+		image: getIconDataUri("company"),
 		size: 30,
 		color: {
 			background: "#e63946",
@@ -31,7 +33,8 @@ export const GROUP_CONFIG = {
 		font: { color: "#e6edf3", size: 16, face: "system-ui, sans-serif", bold: true },
 	},
 	studio: {
-		shape: "dot",
+		shape: "image",
+		image: getIconDataUri("studio"),
 		size: 20,
 		color: {
 			background: "#457b9d",
@@ -42,7 +45,8 @@ export const GROUP_CONFIG = {
 		font: { color: "#e6edf3", size: 14, face: "system-ui, sans-serif" },
 	},
 	platform: {
-		shape: "diamond",
+		shape: "image",
+		image: getIconDataUri("platform"),
 		size: 18,
 		color: {
 			background: "#2a9d8f",
@@ -53,7 +57,8 @@ export const GROUP_CONFIG = {
 		font: { color: "#e6edf3", size: 13, face: "system-ui, sans-serif" },
 	},
 	game: {
-		shape: "square",
+		shape: "image",
+		image: getIconDataUri("game"),
 		size: 14,
 		color: {
 			background: "#e9a820",
@@ -64,7 +69,8 @@ export const GROUP_CONFIG = {
 		font: { color: "#e6edf3", size: 12, face: "system-ui, sans-serif" },
 	},
 	creator: {
-		shape: "triangle",
+		shape: "image",
+		image: getIconDataUri("creator"),
 		size: 18,
 		color: {
 			background: "#7b2d8e",
@@ -117,22 +123,28 @@ export function createGraph(container, nodesArray, edgesArray) {
 			},
 		},
 		edges: {
-			arrows: { to: { enabled: true, scaleFactor: 0.6 } },
-			color: { color: "#484f58", highlight: "#8b949e", hover: "#8b949e" },
+			arrows: { to: { enabled: true, scaleFactor: 0.4 } },
+			color: { color: "#0044FF", highlight: "#0044FF", hover: "#0044FF" },
 			font: {
 				color: "#8b949e",
 				size: 11,
 				face: "system-ui, sans-serif",
 				strokeWidth: 3,
-				strokeColor: "#0d1117",
+				strokeColor: "#000000",
 				align: "middle",
 			},
 			smooth: {
 				enabled: true,
 				type: "continuous",
 			},
-			width: 1.2,
-			hoverWidth: 2,
+			width: 0.5,
+			hoverWidth: 0,
+			selectionWidth: 0,
+			scaling: {
+				min: 0.5,
+				max: 0.5,
+			},
+			chosen: false,
 		},
 		interaction: {
 			hover: true,
@@ -142,6 +154,8 @@ export function createGraph(container, nodesArray, edgesArray) {
 			dragNodes: true,
 			multiselect: false,
 			navigationButtons: false,
+			selectConnectedEdges: false,
+			hoverConnectedEdges: false,
 		},
 		layout: {
 			improvedLayout: true,

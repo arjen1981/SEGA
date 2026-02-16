@@ -25,6 +25,22 @@ let viewMode = "ego";
 let spotlightId = null;
 
 /**
+ * Get the pixel width of the detail panel when it is open, so that
+ * graph centering can offset to the visible area left of the panel.
+ * @returns {number} panel width in pixels (0 if panel is not open/visible)
+ */
+function getPanelOffset() {
+	const panel = document.querySelector(".detail-panel");
+	if (panel && panel.classList.contains("open")) {
+		return panel.offsetWidth;
+	}
+	// Even if the panel isn't open yet, the app always opens it after focus,
+	// so anticipate the default panel width from CSS custom property.
+	const raw = getComputedStyle(document.documentElement).getPropertyValue("--detail-panel-width");
+	return Number.parseInt(raw, 10) || 400;
+}
+
+/**
  * Initialize the ego-graph module with the vis.Network instance.
  * Must be called after createGraph().
  *
@@ -109,9 +125,12 @@ export function applyEgoGraph(nodeId) {
 	// Select the spotlight node (visual highlight)
 	network.selectNodes([nodeId]);
 
-	// Focus camera on the spotlight node with animation
+	// Focus camera on the spotlight node with animation.
+	// Offset X so the node centers in the area left of the detail panel.
+	const panelWidth = getPanelOffset();
 	network.focus(nodeId, {
 		scale: 1.5,
+		offset: { x: -panelWidth / 2, y: 0 },
 		animation: {
 			duration: 500,
 			easingFunction: "easeInOutQuad",
@@ -161,13 +180,27 @@ export function expandAll() {
 	// Deselect any selected nodes
 	network.unselectAll();
 
-	// Fit viewport to show all nodes with animation
+	// Fit viewport to show all nodes with animation,
+	// shifting left to account for the detail panel
 	network.fit({
 		animation: {
 			duration: 500,
 			easingFunction: "easeInOutQuad",
 		},
 	});
+	// After fit, shift viewport left to account for the detail panel
+	setTimeout(() => {
+		const pos = network.getViewPosition();
+		const panelWidth = getPanelOffset();
+		network.moveTo({
+			position: { x: pos.x, y: pos.y },
+			offset: { x: -panelWidth / 2, y: 0 },
+			animation: {
+				duration: 300,
+				easingFunction: "easeInOutQuad",
+			},
+		});
+	}, 550);
 }
 
 /**

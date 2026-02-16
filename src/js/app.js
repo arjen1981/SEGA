@@ -20,6 +20,7 @@ import {
 } from "./ego-graph.js";
 import { initFilters, toggleGroup } from "./filters.js";
 import { createGraph } from "./graph.js";
+import { assignNodeIcons, getIconDataUri } from "./icons.js";
 import { initSearch, searchNodes, selectSuggestion } from "./search.js";
 
 /** Base path for data files (relative to index.html) */
@@ -83,6 +84,9 @@ async function init() {
 		// T032: Disambiguate duplicate display names
 		disambiguateLabels(nodesData);
 
+		// 003: Assign retro SVG icons to each node based on group/gender
+		assignNodeIcons(nodesData);
+
 		// Initialize the graph
 		const network = createGraph(container, nodesData, edgesData);
 
@@ -125,6 +129,9 @@ async function init() {
 
 		// Initialize filters module
 		initFilters(network);
+
+		// 003: Assign retro SVG icons to legend and filter swatches
+		initSwatchIcons();
 
 		// Wire filter toolbar checkboxes
 		if (filterToolbar) {
@@ -275,6 +282,27 @@ function escapeHtml(str) {
 	const div = document.createElement("div");
 	div.textContent = str;
 	return div.innerHTML;
+}
+
+/**
+ * 003: Initialize legend and filter swatch elements with SVG icon backgrounds.
+ * Queries all elements with [data-group] attribute and sets their
+ * background-image to the corresponding icon data URI.
+ */
+function initSwatchIcons() {
+	const swatches = document.querySelectorAll("[data-group]");
+	for (const swatch of swatches) {
+		// Skip checkboxes — only style swatch spans
+		if (swatch.tagName === "INPUT") continue;
+		const group = swatch.dataset.group;
+		if (!group) continue;
+		const uri = getIconDataUri(group);
+		swatch.style.backgroundImage = `url('${uri}')`;
+		swatch.style.backgroundSize = "contain";
+		swatch.style.backgroundRepeat = "no-repeat";
+		swatch.style.backgroundPosition = "center";
+		swatch.style.backgroundColor = "transparent";
+	}
 }
 
 /**
