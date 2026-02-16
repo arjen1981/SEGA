@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SEGA Graph Edges (004 Extension)",
+  "description": "Extended edge schema for 004-expand-sega-arcade. Adds new credit-specific edge labels (designed, programmed, composed for, artwork for) and removes deprecated 'created' label. All other properties unchanged from 001 schema.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["from", "to", "label"],
+    "properties": {
+      "from": {
+        "type": "string",
+        "description": "Source node ID (must reference an existing node in nodes.json)",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      },
+      "to": {
+        "type": "string",
+        "description": "Target node ID (must reference an existing node in nodes.json)",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      },
+      "label": {
+        "type": "string",
+        "description": "Relationship type displayed on the edge",
+        "enum": [
+          "division of",
+          "developed by",
+          "runs on",
+          "worked at",
+          "directed",
+          "produced",
+          "designed",
+          "programmed",
+          "composed for",
+          "artwork for"
+        ]
+      },
+      "title": {
+        "type": "string",
+        "description": "Optional tooltip text (defaults to label if omitted)"
+      }
+    },
+    "additionalProperties": false
+  },
+  "minItems": 1
+}
