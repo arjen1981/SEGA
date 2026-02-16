@@ -76,6 +76,7 @@ const CREATOR_NODE = {
 	summary: "Yu Suzuki is a Japanese game designer who headed Sega AM2.",
 	birthYear: 1958,
 	notableRoles: "Game director, Producer, Hardware engineer",
+	roles: ["director", "producer", "designer", "programmer"],
 	wikipediaUrl: "https://en.wikipedia.org/wiki/Yu_Suzuki",
 	wikidataId: "Q282263",
 	thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/yusuzuki.jpg",
@@ -290,6 +291,36 @@ module("detail-panel – creator rendering", (hooks) => {
 		const factsText = content.querySelector(".detail-facts")?.textContent || "";
 		assert.ok(factsText.includes("1958"), "should show birth year");
 		assert.ok(factsText.includes("Game director"), "should show notable roles");
+	});
+
+	test("renders role badges when roles array is present", (assert) => {
+		openDetailPanel("yu-suzuki");
+		const content = document.getElementById("detail-content");
+		const rolesContainer = content.querySelector(".detail-roles");
+		assert.ok(rolesContainer, "should have a roles container");
+		const badges = rolesContainer.querySelectorAll(".role-badge");
+		assert.strictEqual(badges.length, 4, "should render 4 role badges");
+		assert.strictEqual(badges[0].textContent, "director", "first badge should be director");
+		assert.strictEqual(badges[1].textContent, "producer", "second badge should be producer");
+		assert.strictEqual(badges[2].textContent, "designer", "third badge should be designer");
+		assert.strictEqual(badges[3].textContent, "programmer", "fourth badge should be programmer");
+	});
+});
+
+module("detail-panel – role badges absent", (hooks) => {
+	hooks.beforeEach(() => {
+		initDetailPanel(buildNodeMap([GAME_NODE]));
+	});
+
+	hooks.afterEach(() => {
+		closeDetailPanel();
+	});
+
+	test("does not render role badges for non-creator nodes", (assert) => {
+		openDetailPanel("virtua-fighter");
+		const content = document.getElementById("detail-content");
+		const rolesContainer = content.querySelector(".detail-roles");
+		assert.notOk(rolesContainer, "should not have roles container on game node");
 	});
 });
 

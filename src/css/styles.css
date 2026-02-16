@@ -300,6 +300,26 @@ body::after {
 	margin-top: 1rem;
 }
 
+/* --- Role Badges (FR-015) --- */
+.detail-roles {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+	margin: 0.5rem 0;
+}
+
+.role-badge {
+	display: inline-block;
+	padding: 0.15rem 0.4rem;
+	font-family: var(--font-retro);
+	font-size: 0.5rem;
+	color: #e9a820;
+	border: 1px solid #e9a820;
+	border-radius: 2px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
 /* --- Group badge colors --- */
 .badge-company {
 	background-color: var(--color-company);

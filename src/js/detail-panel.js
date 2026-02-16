@@ -91,6 +91,14 @@ function renderNode(node) {
 		`<span class="detail-group-badge badge-${node.group}">${escapeHtml(node.group)}</span>`,
 	);
 
+	// Role badges (FR-015)
+	if (node.roles && node.roles.length > 0) {
+		const badges = node.roles
+			.map((r) => `<span class="role-badge">${escapeHtml(r)}</span>`)
+			.join("");
+		parts.push(`<div class="detail-roles">${badges}</div>`);
+	}
+
 	// Thumbnail (if available)
 	if (node.thumbnail) {
 		parts.push(
