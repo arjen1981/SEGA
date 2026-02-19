@@ -74,11 +74,13 @@
 - [X] T022 [US1] Add creator node hideki-naganuma (composer, Smilebit) with roles, summary, Wikipedia URL in src/data/nodes.json
 - [X] T023 [US1] Add creator node masayoshi-yokoyama (designer/director/producer, RGG Studio) with roles, summary, Wikipedia URL in src/data/nodes.json
 - [X] T024 [US1] Add creator node richard-jacques (composer, Sega Europe) with roles, summary, Wikipedia URL in src/data/nodes.json
-- [X] T092 [US1] Add creator node ryuichi-nishizawa (director/designer/composer, Escape/Westone) with roles `["director", "designer", "composer"]`, summary, Wikipedia URL in src/data/nodes.json
+- [ ] T092 [US1] ~~Add creator node ryuichi-nishizawa~~ — **BLOCKED**: English Wikipedia article https://en.wikipedia.org/wiki/Ryuichi_Nishizawa does not exist (verified Page ID: 0). Constitution VI prohibits adding nodes without a valid Wikipedia source.
+- [X] T096 [US1] Add creator node mie-kumagai (producer/director, AM3/Hitmaker) with roles `["director", "producer"]`, summary, Wikipedia URL in src/data/nodes.json
+- [X] T097 [US1] Add credit edges for mie-kumagai: virtua-tennis (produced), gunblade-ny (produced), derby-owners-club (produced), confidential-mission (directed), decathlete (produced), virtua-tennis-2 (produced) in src/data/edges.json
 
 #### Creator "worked at" Edges (14 new edges in src/data/edges.json)
 
-- [X] T025 [US1] Add "worked at" edges for all 14 new creators to their respective studio nodes in src/data/edges.json
+- [X] T025 [US1] Add "worked at" edges for all 15 new creators to their respective studio nodes in src/data/edges.json
 
 #### Existing Creator Edge Expansion (src/data/edges.json)
 
@@ -92,10 +94,10 @@
 - [X] T030 [US1] Add "composed for" edges for takenobu-mitsuyoshi to existing games (g-loc-air-battle, virtua-racing, daytona-usa, virtua-fighter-2, virtua-striker, sega-rally-championship, manx-tt-superbike, sonic-the-fighters, virtua-fighter-3, daytona-usa-2) in src/data/edges.json
 - [X] T031 [US1] Add "composed for" edges for takayuki-nakamura to existing games (virtua-fighter, virtua-fighter-2, virtua-fighter-3) in src/data/edges.json
 - [X] T032 [US1] Add credit edges for hisao-oguchi (rad-mobile directed), naoto-ohshima (segasonic-the-hedgehog designed), jun-senoue (sega-rally-2 composed for), shun-nakamura (samba-de-amigo directed), tomoya-ohtani (samba-de-amigo composed for), richard-jacques (outrun-2 composed for) in src/data/edges.json
-- [X] T093 [US1] Add credit edges for ryuichi-nishizawa: wonder-boy (directed + designed + composed for), wonder-boy-monster-land (directed) in src/data/edges.json
+- [ ] T093 [US1] ~~Add credit edges for ryuichi-nishizawa~~ — **BLOCKED**: Depends on T092 (creator node). Wonder Boy games remain in graph but without creator credit edges.
 - [X] T033 [US1] Run `validate-data.ps1` and verify all new creators + edges pass validation
 
-**Checkpoint**: 20 creator nodes visible (SC-001 met). All edges use specific credit labels. Role badges display on click. Wonder Boy games added for Nishizawa connectivity.
+**Checkpoint**: 20 creator nodes visible (SC-001 met via Mie Kumagai as 15th new creator instead of Nishizawa). All edges use specific credit labels. Role badges display on click. Wonder Boy games present but lack creator credit edges (Nishizawa blocked — no Wikipedia article).
 
 ---
 
@@ -179,6 +181,9 @@
 - [X] T076 [P] [US3] Add "runs on" edges for zaxxon, pengo, congo-bongo, star-trek-sos, and astron-belt to their respective platform nodes in src/data/edges.json
 - [X] T077 [P] [US3] Add "division of" edge for any new platform to sega company node if applicable in src/data/edges.json
 - [X] T078 [US3] Run `validate-data.ps1` and verify all platform nodes + "runs on" edges pass validation
+- [X] T098 [US3] Add platform nodes super-scaler (1985, Sega Super Scaler) and outrun-board (1986, Sega OutRun Hardware) in src/data/nodes.json — remediation for missing "runs on" edges on hang-on, space-harrier, out-run
+- [X] T099 [US3] Add "runs on" edges: hang-on → super-scaler, space-harrier → super-scaler, out-run → outrun-board in src/data/edges.json
+- [X] T100 [US1] Add "artwork for" edge: rieko-kodama → quartet in src/data/edges.json — Wikipedia confirms Kodama's character design work on Quartet
 
 **Checkpoint**: Every game has exactly one "runs on" edge. All new platforms have complete metadata (releaseYear, generation, notableFeatures, wikipediaUrl, wikidataId).
 
@@ -272,7 +277,7 @@ Developer B: T008–T010 (role badge CSS + JS + test)
 
 ### SC-001 Note
 
-15 new creators (including Ryuichi Nishizawa, added in Phase 3 T092) + 5 existing = 20, meeting the SC-001 minimum target exactly. Wonder Boy games are also added in Phase 3 (T094–T095) to provide Nishizawa's credit edges.
+15 new creators (Nishizawa blocked — replaced by Mie Kumagai, added in Phase 3 T096) + 5 existing = 20, meeting the SC-001 minimum target exactly. Wonder Boy games added in Phase 3 (T094–T095) currently lack creator credit edges.
 
 ---
 
@@ -284,6 +289,6 @@ Developer B: T008–T010 (role badge CSS + JS + test)
 - `validate-data.ps1` is the primary automated validation tool — run after every JSON batch
 - Edge labels work with vis-network automatically — no graph.js changes needed (FR-014)
 - `additionalProperties: false` in schemas — every new field must be in the contract
-- Uncertain edges from research.md (Oguchi → crazy-taxi, Kodama → quartet, Mizuguchi → samba-de-amigo) should be excluded unless Wikipedia confirms them explicitly
+- Uncertain edges from research.md: Oguchi → crazy-taxi and Mizuguchi → samba-de-amigo excluded (Wikipedia ambiguous). Kodama → quartet confirmed and added (T100).
 - wikidataId and thumbnail fields need Wikidata lookups during implementation — not researched yet
 - All summaries sourced from Wikipedia article opening paragraphs (Constitution VI)

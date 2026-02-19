@@ -366,6 +366,30 @@
 		"thumbnail": null
 	},
 	{
+		"id": "super-scaler",
+		"label": "Sega Super Scaler",
+		"group": "platform",
+		"summary": "Sega's first Super Scaler arcade system board (1985), initially known as 'Sega Hang-On hardware'. Featured dual Motorola 68000 processors and hardware sprite scaling for pseudo-3D effects. A refinement of the earlier VCO Object hardware, it powered Hang-On and Space Harrier.",
+		"releaseYear": 1985,
+		"generation": "Super Scaler",
+		"notableFeatures": "Dual Motorola 68000, hardware sprite scaling, pseudo-3D",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/List_of_Sega_arcade_system_boards",
+		"wikidataId": "Q16111625",
+		"thumbnail": null
+	},
+	{
+		"id": "outrun-board",
+		"label": "Sega OutRun Hardware",
+		"group": "platform",
+		"summary": "Second-generation Super Scaler arcade board (1986), based on the System 16 architecture. Designed because Yu Suzuki needed more powerful hardware for Out Run's advanced road rendering and sprite scaling effects. Featured enhanced graphical capabilities over the original Super Scaler hardware.",
+		"releaseYear": 1986,
+		"generation": "Super Scaler",
+		"notableFeatures": "System 16-based, enhanced sprite scaling, road rendering",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/List_of_Sega_arcade_system_boards",
+		"wikidataId": "Q25402274",
+		"thumbnail": null
+	},
+	{
 		"id": "hang-on",
 		"label": "Hang-On",
 		"group": "game",

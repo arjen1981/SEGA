@@ -8,7 +8,7 @@
 
 ## Summary
 
-- **14 new creators confirmed** with standalone Wikipedia articles (target was 15–20; 14 is 1 short of FR-001's "at least 15 additional" minimum. Ryuichi Nishizawa is a confirmed candidate 15th creator.)
+- **15 new creators confirmed** with standalone Wikipedia articles (14 original + Mie Kumagai added as 15th to replace Ryuichi Nishizawa, whose Wikipedia article was found to not exist.)
 - **4 candidates excluded** — no standalone Wikipedia articles
 - **5 existing creators researched** — significant additional game credit edges identified
 - **Role distribution**: 5 composers, 4 designers/directors, 2 character designers/artists, 2 producer/directors, 1 composer/vocalist
@@ -506,6 +506,38 @@
 
 ---
 
+### 15. Mie Kumagai (producer/director)
+
+| Field | Value | Confidence |
+|-------|-------|------------|
+| id | `mie-kumagai` | — |
+| label | Mie Kumagai | confirmed |
+| group | creator | — |
+| birthYear | 1968 | confirmed |
+| gender | female | confirmed |
+| roles | `["director", "producer"]` | confirmed |
+| notableRoles | Producer, Director, Hitmaker President | confirmed |
+| wikipediaUrl | `https://en.wikipedia.org/wiki/Mie_Kumagai` | confirmed |
+| wikidataId | `Q6843511` | confirmed |
+| thumbnail | — | none available |
+| summary | Japanese video game producer and director at Sega AM3/Hitmaker. She became the first female president of a Japanese video game company when she took over as head of Hitmaker. Produced Virtua Tennis, Derby Owners Club, and Gunblade NY, and directed Confidential Mission. | confirmed |
+
+**Studio**: AM3/Hitmaker (worked at — linked to `sega-am3` studio node)
+
+**Edges to existing game nodes**:
+| Game ID | Edge Label | Wikipedia Source |
+|---------|-----------|------------------|
+| `virtua-tennis` | produced | Wikipedia article credits |
+| `gunblade-ny` | produced | Wikipedia article credits |
+| `derby-owners-club` | produced | Wikipedia article credits |
+| `confidential-mission` | directed | Wikipedia article credits |
+| `decathlete` | produced | Wikipedia article credits |
+| `virtua-tennis-2` | produced | Wikipedia article credits |
+
+**Notes**: Added to nodes.json during implementation (node `mie-kumagai`). 6 credit edges to existing game nodes + 1 worked-at edge. Replaces Ryuichi Nishizawa as the 15th new creator (Nishizawa's Wikipedia article confirmed non-existent, Page ID: 0 — Constitution VI blocks inclusion).
+
+---
+
 ## Part 2: Excluded Candidates (4)
 
 | Name | Reason | Details |
@@ -989,7 +1021,7 @@ Games were selected to maximize:
 
 **Platform note**: Sega System 1. Shares platform with Flicky, Choplifter.
 **Studio edge**: Escape (external developer, published by Sega).
-**Creator edges**: Director/Designer/Composer: Ryuichi Nishizawa (has Wikipedia article — https://en.wikipedia.org/wiki/Ryuichi_Nishizawa — **potential new creator node**).
+**Creator edges**: Director/Designer/Composer: Ryuichi Nishizawa (Wikipedia article https://en.wikipedia.org/wiki/Ryuichi_Nishizawa **does not exist** — verified Page ID: 0. Constitution VI blocks inclusion as creator node).
 
 ---
 
@@ -1027,7 +1059,7 @@ Games were selected to maximize:
 
 **Platform note**: Sega System 2 — NEW platform needed. Confirmed in both infobox and article text.
 **Studio edge**: Westone (external developer, published by Sega).
-**Creator edges**: Director: Ryuichi Nishizawa; Composer: Shinichi Sakamoto (no standalone Wikipedia articles for Sakamoto).
+**Creator edges**: Director: Ryuichi Nishizawa (Wikipedia article does not exist — blocked by Constitution VI); Composer: Shinichi Sakamoto (no standalone Wikipedia article for Sakamoto).
 
 ---
 
