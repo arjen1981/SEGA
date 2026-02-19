@@ -120,8 +120,14 @@ export function pickRandomSpotlight(nodesArray) {
 export function applyEgoGraph(nodeId) {
 	if (!network) return;
 
+	// Cancel any pending re-center from a panel-close that precedes this selection
+	clearTimeout(reCenterTimer);
+
 	spotlightId = nodeId;
 	viewMode = "ego";
+
+	// Re-enable physics so the neighborhood can settle into position
+	network.setOptions({ physics: { enabled: true } });
 
 	const nodes = network.body.data.nodes;
 	const edges = network.body.data.edges;
@@ -169,6 +175,14 @@ export function applyEgoGraph(nodeId) {
 			easingFunction: "easeInOutQuad",
 		},
 	});
+
+	// Disable physics once the neighborhood has settled to prevent
+	// hover-induced drift and floating nodes after mouse movement.
+	network.once("stabilized", () => {
+		if (viewMode === "ego") {
+			network.setOptions({ physics: { enabled: false } });
+		}
+	});
 }
 
 /**
@@ -181,8 +195,14 @@ export function applyEgoGraph(nodeId) {
 export function expandAll() {
 	if (!network) return;
 
+	// Cancel any pending re-center from a panel-close
+	clearTimeout(reCenterTimer);
+
 	spotlightId = null;
 	viewMode = "full";
+
+	// Re-enable physics so the full graph can settle
+	network.setOptions({ physics: { enabled: true } });
 
 	const nodes = network.body.data.nodes;
 	const edges = network.body.data.edges;
@@ -236,6 +256,13 @@ export function expandAll() {
 			});
 		}, 550);
 	}
+
+	// Disable physics after the full graph settles to prevent ongoing drift
+	network.once("stabilized", () => {
+		if (viewMode === "full") {
+			network.setOptions({ physics: { enabled: false } });
+		}
+	});
 }
 
 /**
@@ -286,9 +313,19 @@ function reCenterGraph() {
 	}
 }
 
+/**
+ * 005: Delayed re-center timer — allows cancellation when a new
+ * applyEgoGraph call immediately follows a panel close (avoids
+ * competing focus animations that cause stuttering).
+ */
+let reCenterTimer = null;
+
 // Listen for detail-panel-closed custom event (dispatched by detail-panel.js)
 document.addEventListener("detail-panel-closed", () => {
-	reCenterGraph();
+	clearTimeout(reCenterTimer);
+	reCenterTimer = setTimeout(() => {
+		reCenterGraph();
+	}, 100);
 });
 
 /**
