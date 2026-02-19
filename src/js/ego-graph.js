@@ -47,19 +47,28 @@ function isMobile() {
  * - Mobile + sheet open: vertical offset to center above bottom sheet
  * - Mobile + sheet closed: no offset (full viewport)
  *
+ * @param {object}  [opts]
+ * @param {boolean} [opts.anticipateOpen=false] — when true, assume the panel
+ *   is about to open even if it isn't yet (mirrors the desktop fallback).
+ *   Pass true from applyEgoGraph where openDetailPanel always follows.
  * @returns {{ x: number, y: number }} pixel offset for network.focus()
  */
-function getPanelOffset() {
+function getPanelOffset({ anticipateOpen = false } = {}) {
 	const panel = document.querySelector(".detail-panel");
 	const isOpen = panel?.classList.contains("open");
 
 	if (isMobile()) {
 		if (isOpen && panel) {
-			// Sheet is open — offset upward so spotlight centers above the sheet
+			// Sheet is open — use actual rendered height
 			const sheetHeight = panel.offsetHeight;
 			return { x: 0, y: -sheetHeight / 2 };
 		}
-		// Sheet closed or not present — center in full viewport
+		if (anticipateOpen) {
+			// Sheet about to open — anticipate 60vh height (matches CSS rule)
+			const sheetHeight = Math.round(window.innerHeight * 0.6);
+			return { x: 0, y: -sheetHeight / 2 };
+		}
+		// Sheet truly closed — center in full viewport
 		return { x: 0, y: 0 };
 	}
 
@@ -166,7 +175,8 @@ export function applyEgoGraph(nodeId) {
 
 	// Focus camera on the spotlight node with animation.
 	// 005: Use { x, y } offset — vertical on mobile, horizontal on desktop.
-	const offset = getPanelOffset();
+	// anticipateOpen: the detail panel always opens right after this call.
+	const offset = getPanelOffset({ anticipateOpen: true });
 	network.focus(nodeId, {
 		scale: 1.5,
 		offset: offset,
