@@ -77,8 +77,9 @@ A visitor finds platform nodes for any SEGA arcade system boards not yet in the 
 - What happens when a person held multiple roles on the same game (e.g., designer and programmer)? Multiple edges are created, one per role, each with its own credit label. This is confirmed by Wikipedia research: Yu Suzuki is credited as both Designer and Programmer on Hang-On, Space Harrier, Out Run, and After Burner.
 - What happens when a Wikipedia article doesn't specify individual credits? The game is still added with studio and platform edges, but no creator edges. Credits are not fabricated.
 - What happens when the same person worked at multiple studios? Multiple "worked at" edges connect them to each studio, matching existing patterns (e.g., Toshihiro Nagoshi → AM2 and → RGG Studio).
-- What happens when a game's platform is uncertain or not on a standard SEGA board? The game is excluded from scope — only games on identifiable SEGA arcade hardware (including documented custom boards) are included.
+- What happens when a game's platform is uncertain or not on a standard SEGA board? The game is excluded from scope — only games on identifiable SEGA arcade hardware (including documented custom boards listed on the Wikipedia "List of Sega arcade system boards" article) are included.
 - What happens when the graph becomes too dense with the new nodes? The existing ego-graph spotlight mechanic allows focused exploration; full-graph view may be busier but the physics engine handles layout. Node count should stay under 200 to maintain performance.
+- What happens for pre-divisional games (released before SEGA restructured into numbered AM divisions)? These games are linked to the parent "sega" company node via "developed by" edges rather than a specific studio node, since the AM studio structure did not exist at the time of development.
 
 ## Requirements *(mandatory)*
 
@@ -86,7 +87,7 @@ A visitor finds platform nodes for any SEGA arcade system boards not yet in the 
 
 - **FR-001**: The dataset MUST contain at least 15 additional creator nodes beyond the current 5, each sourced from a Wikipedia article.
 - **FR-002**: Each creator node MUST have a `roles` array field containing one or more standardized values from the set: `director`, `producer`, `designer`, `programmer`, `composer`, `artist`.
-- **FR-003**: The existing `notableRoles` free-text field MUST be retained for display purposes alongside the new structured `roles` array.
+- **FR-003**: The existing `notableRoles` free-text field MUST be retained for display purposes alongside the new structured `roles` array. New creator nodes SHOULD include both fields.
 - **FR-004**: Edge labels between creators and games MUST use Wikipedia credit terminology: "directed", "produced", "designed", "programmed", "composed for", "artwork for".
 - **FR-005**: The existing "created" edge labels on current creator-game relationships MUST be migrated to specific credit terms as sourced from Wikipedia. Where a person held multiple roles (e.g., designer + programmer), each role MUST yield a separate edge.
 - **FR-006**: The dataset MUST contain at least 20 additional game nodes beyond the current set, each sourced from a Wikipedia article.

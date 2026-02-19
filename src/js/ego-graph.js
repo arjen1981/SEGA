@@ -31,7 +31,7 @@ let spotlightId = null;
  */
 function getPanelOffset() {
 	const panel = document.querySelector(".detail-panel");
-	if (panel && panel.classList.contains("open")) {
+	if (panel?.classList.contains("open")) {
 		return panel.offsetWidth;
 	}
 	// Even if the panel isn't open yet, the app always opens it after focus,
