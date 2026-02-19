@@ -9,6 +9,9 @@ Auto-generated from all feature plans. Last updated: 2026-02-09
 - N/A — all new state is runtime-only (in-memory); existing JSON data unchanged (002-random-ego-focus)
 - HTML5, CSS3, JavaScript ES2020+ (ES modules) + vis-network v10 (CDN), Press Start 2P font (Google Fonts CDN) (003-retro-sega-theme)
 - Static JSON files (`nodes.json`, `edges.json`) (003-retro-sega-theme)
+- Vanilla JavaScript (ES modules, no transpilation) + vis-network v10 (CDN), QUnit 2.25 (CDN), Google Fonts (Press Start 2P) (004-expand-sega-arcade)
+- Static JSON files (`src/data/nodes.json`, `src/data/edges.json`) (004-expand-sega-arcade)
+- Static JSON files (`nodes.json`, `edges.json`) — unchanged by this feature (005-fix-mobile-layout)
 
 - HTML5, CSS3, JavaScript (ES6+) — no build step required + vis-network v10 (CDN: single `<script>` tag from unpkg, ~95 KB gzipped) (001-sega-graph-visualization)
 
@@ -29,9 +32,9 @@ npm test; npm run lint
 HTML5, CSS3, JavaScript (ES6+) — no build step required: Follow standard conventions
 
 ## Recent Changes
+- 005-fix-mobile-layout: Added HTML5, CSS3, JavaScript ES2020+ (ES modules) + vis-network v10 (CDN), Press Start 2P font (Google Fonts CDN)
+- 004-expand-sega-arcade: Added Vanilla JavaScript (ES modules, no transpilation) + vis-network v10 (CDN), QUnit 2.25 (CDN), Google Fonts (Press Start 2P)
 - 003-retro-sega-theme: Added HTML5, CSS3, JavaScript ES2020+ (ES modules) + vis-network v10 (CDN), Press Start 2P font (Google Fonts CDN)
-- 002-random-ego-focus: Added HTML5, CSS3, JavaScript (ES6+) — no build step required + vis-network v10 (CDN: unpkg, already loaded)
-- 002-random-ego-focus: Added [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION] + [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]
 
 
 <!-- MANUAL ADDITIONS START -->

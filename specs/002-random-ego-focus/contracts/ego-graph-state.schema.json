@@ -1,30 +1,30 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "ego-graph-state.schema.json",
-  "title": "Ego-Graph Runtime State",
-  "description": "Schema for the in-memory ego-graph state managed by the ego-graph.js module. This state is never persisted — it exists only during a browser session.",
-  "type": "object",
-  "required": ["mode", "spotlightId"],
-  "properties": {
-    "mode": {
-      "type": "string",
-      "enum": ["ego", "full"],
-      "description": "Current view mode. 'ego' = spotlight active with neighborhood filtering. 'full' = all nodes visible."
-    },
-    "spotlightId": {
-      "type": ["string", "null"],
-      "description": "Node ID of the current ego-graph center. Null when in full mode."
-    }
-  },
-  "additionalProperties": false,
-  "examples": [
-    {
-      "mode": "ego",
-      "spotlightId": "sonic_the_hedgehog"
-    },
-    {
-      "mode": "full",
-      "spotlightId": null
-    }
-  ]
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "ego-graph-state.schema.json",
+	"title": "Ego-Graph Runtime State",
+	"description": "Schema for the in-memory ego-graph state managed by the ego-graph.js module. This state is never persisted — it exists only during a browser session.",
+	"type": "object",
+	"required": ["mode", "spotlightId"],
+	"properties": {
+		"mode": {
+			"type": "string",
+			"enum": ["ego", "full"],
+			"description": "Current view mode. 'ego' = spotlight active with neighborhood filtering. 'full' = all nodes visible."
+		},
+		"spotlightId": {
+			"type": ["string", "null"],
+			"description": "Node ID of the current ego-graph center. Null when in full mode."
+		}
+	},
+	"additionalProperties": false,
+	"examples": [
+		{
+			"mode": "ego",
+			"spotlightId": "sonic_the_hedgehog"
+		},
+		{
+			"mode": "full",
+			"spotlightId": null
+		}
+	]
 }

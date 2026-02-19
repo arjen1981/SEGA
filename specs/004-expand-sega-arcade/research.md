@@ -522,19 +522,20 @@
 | thumbnail | — | none available |
 | summary | Japanese video game producer and director at Sega AM3/Hitmaker. She became the first female president of a Japanese video game company when she took over as head of Hitmaker. Produced Virtua Tennis, Derby Owners Club, and Gunblade NY, and directed Confidential Mission. | confirmed |
 
-**Studio**: AM3/Hitmaker (worked at — linked to `sega-am3` studio node)
+**Studio**: AM3/Hitmaker (worked at — linked to `sega` parent as no Hitmaker studio node exists)
 
 **Edges to existing game nodes**:
 | Game ID | Edge Label | Wikipedia Source |
-|---------|-----------|------------------|
+|---------|-----------|-----------------|
 | `virtua-tennis` | produced | Wikipedia article credits |
 | `gunblade-ny` | produced | Wikipedia article credits |
 | `derby-owners-club` | produced | Wikipedia article credits |
 | `confidential-mission` | directed | Wikipedia article credits |
-| `decathlete` | produced | Wikipedia article credits |
-| `virtua-tennis-2` | produced | Wikipedia article credits |
+| `sega-marine-fishing` | produced | Wikipedia article credits |
+| `jambo-safari` | produced | Wikipedia article credits |
+| `brave-firefighters` | directed | Wikipedia article credits |
 
-**Notes**: Added to nodes.json during implementation (node `mie-kumagai`). 6 credit edges to existing game nodes + 1 worked-at edge. Replaces Ryuichi Nishizawa as the 15th new creator (Nishizawa's Wikipedia article confirmed non-existent, Page ID: 0 — Constitution VI blocks inclusion).
+**Notes**: Already added to nodes.json during implementation (node `mie-kumagai`). 7 credit edges to existing game nodes. Replaces Ryuichi Nishizawa as the 15th new creator (Nishizawa's Wikipedia article confirmed non-existent, Page ID: 0 — Constitution VI blocks inclusion).
 
 ---
 

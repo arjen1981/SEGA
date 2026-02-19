@@ -25,19 +25,52 @@ let viewMode = "ego";
 let spotlightId = null;
 
 /**
- * Get the pixel width of the detail panel when it is open, so that
- * graph centering can offset to the visible area left of the panel.
- * @returns {number} panel width in pixels (0 if panel is not open/visible)
+ * 005: Media query for mobile detection — mirrors CSS breakpoint.
+ * @type {MediaQueryList}
+ */
+const mobileQuery = window.matchMedia("(max-width: 767px)");
+
+/**
+ * 005: Check whether the current viewport is mobile (≤767px).
+ * @returns {boolean}
+ */
+function isMobile() {
+	return mobileQuery.matches;
+}
+
+/**
+ * Get the offset for graph centering so that the spotlight node
+ * appears in the visible area (left of desktop panel, above mobile sheet).
+ *
+ * 005: Returns { x, y } object instead of a single width number.
+ * - Desktop: horizontal offset to center left of side panel
+ * - Mobile + sheet open: vertical offset to center above bottom sheet
+ * - Mobile + sheet closed: no offset (full viewport)
+ *
+ * @returns {{ x: number, y: number }} pixel offset for network.focus()
  */
 function getPanelOffset() {
 	const panel = document.querySelector(".detail-panel");
-	if (panel?.classList.contains("open")) {
-		return panel.offsetWidth;
+	const isOpen = panel?.classList.contains("open");
+
+	if (isMobile()) {
+		if (isOpen && panel) {
+			// Sheet is open — offset upward so spotlight centers above the sheet
+			const sheetHeight = panel.offsetHeight;
+			return { x: 0, y: -sheetHeight / 2 };
+		}
+		// Sheet closed or not present — center in full viewport
+		return { x: 0, y: 0 };
 	}
-	// Even if the panel isn't open yet, the app always opens it after focus,
-	// so anticipate the default panel width from CSS custom property.
+
+	// Desktop: offset left to center in area beside the panel
+	if (isOpen && panel) {
+		return { x: -panel.offsetWidth / 2, y: 0 };
+	}
+	// Panel not open yet — anticipate default panel width from CSS custom property
 	const raw = getComputedStyle(document.documentElement).getPropertyValue("--detail-panel-width");
-	return Number.parseInt(raw, 10) || 400;
+	const panelWidth = Number.parseInt(raw, 10) || 400;
+	return { x: -panelWidth / 2, y: 0 };
 }
 
 /**
@@ -126,11 +159,11 @@ export function applyEgoGraph(nodeId) {
 	network.selectNodes([nodeId]);
 
 	// Focus camera on the spotlight node with animation.
-	// Offset X so the node centers in the area left of the detail panel.
-	const panelWidth = getPanelOffset();
+	// 005: Use { x, y } offset — vertical on mobile, horizontal on desktop.
+	const offset = getPanelOffset();
 	network.focus(nodeId, {
 		scale: 1.5,
-		offset: { x: -panelWidth / 2, y: 0 },
+		offset: offset,
 		animation: {
 			duration: 500,
 			easingFunction: "easeInOutQuad",
@@ -181,26 +214,28 @@ export function expandAll() {
 	network.unselectAll();
 
 	// Fit viewport to show all nodes with animation,
-	// shifting left to account for the detail panel
+	// then shift to account for the detail panel (desktop only)
 	network.fit({
 		animation: {
 			duration: 500,
 			easingFunction: "easeInOutQuad",
 		},
 	});
-	// After fit, shift viewport left to account for the detail panel
-	setTimeout(() => {
-		const pos = network.getViewPosition();
-		const panelWidth = getPanelOffset();
-		network.moveTo({
-			position: { x: pos.x, y: pos.y },
-			offset: { x: -panelWidth / 2, y: 0 },
-			animation: {
-				duration: 300,
-				easingFunction: "easeInOutQuad",
-			},
-		});
-	}, 550);
+	// 005: On mobile, no horizontal offset shift needed (sheet is closed during expand all)
+	if (!isMobile()) {
+		setTimeout(() => {
+			const pos = network.getViewPosition();
+			const offset = getPanelOffset();
+			network.moveTo({
+				position: { x: pos.x, y: pos.y },
+				offset: offset,
+				animation: {
+					duration: 300,
+					easingFunction: "easeInOutQuad",
+				},
+			});
+		}, 550);
+	}
 }
 
 /**
@@ -218,3 +253,59 @@ export function getViewMode() {
 export function getSpotlightId() {
 	return spotlightId;
 }
+
+/* ============================================================
+   005: Re-center on panel close, resize, and orientation change
+   ============================================================ */
+
+/**
+ * 005: Re-center the graph when the detail panel closes on mobile.
+ * In ego mode, re-focus on the spotlight node with zero offset.
+ * In full mode, fit the full graph to the viewport.
+ */
+function reCenterGraph() {
+	if (!network) return;
+
+	if (viewMode === "ego" && spotlightId) {
+		const offset = getPanelOffset();
+		network.focus(spotlightId, {
+			scale: 1.5,
+			offset: offset,
+			animation: {
+				duration: 500,
+				easingFunction: "easeInOutQuad",
+			},
+		});
+	} else if (viewMode === "full") {
+		network.fit({
+			animation: {
+				duration: 500,
+				easingFunction: "easeInOutQuad",
+			},
+		});
+	}
+}
+
+// Listen for detail-panel-closed custom event (dispatched by detail-panel.js)
+document.addEventListener("detail-panel-closed", () => {
+	reCenterGraph();
+});
+
+/**
+ * 005: Debounced resize handler for re-centering after viewport changes.
+ * Uses 250ms debounce to avoid excessive calls during window resize drag.
+ */
+let resizeTimer = null;
+function handleResize() {
+	clearTimeout(resizeTimer);
+	resizeTimer = setTimeout(() => {
+		reCenterGraph();
+	}, 250);
+}
+
+window.addEventListener("resize", handleResize);
+
+// 005: Re-center when crossing the mobile breakpoint (e.g., orientation change)
+mobileQuery.addEventListener("change", () => {
+	reCenterGraph();
+});

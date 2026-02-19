@@ -74,9 +74,9 @@
 - [X] T022 [US1] Add creator node hideki-naganuma (composer, Smilebit) with roles, summary, Wikipedia URL in src/data/nodes.json
 - [X] T023 [US1] Add creator node masayoshi-yokoyama (designer/director/producer, RGG Studio) with roles, summary, Wikipedia URL in src/data/nodes.json
 - [X] T024 [US1] Add creator node richard-jacques (composer, Sega Europe) with roles, summary, Wikipedia URL in src/data/nodes.json
-- [ ] T092 [US1] ~~Add creator node ryuichi-nishizawa~~ — **BLOCKED**: English Wikipedia article https://en.wikipedia.org/wiki/Ryuichi_Nishizawa does not exist (verified Page ID: 0). Constitution VI prohibits adding nodes without a valid Wikipedia source.
 - [X] T096 [US1] Add creator node mie-kumagai (producer/director, AM3/Hitmaker) with roles `["director", "producer"]`, summary, Wikipedia URL in src/data/nodes.json
-- [X] T097 [US1] Add credit edges for mie-kumagai: virtua-tennis (produced), gunblade-ny (produced), derby-owners-club (produced), confidential-mission (directed), decathlete (produced), virtua-tennis-2 (produced) in src/data/edges.json
+- [X] T097 [US1] Add credit edges for mie-kumagai: virtua-tennis (produced), gunblade-ny (produced), derby-owners-club (produced), confidential-mission (directed), sega-marine-fishing (produced), jambo-safari (produced), brave-firefighters (directed) in src/data/edges.json
+- [ ] T092 [US1] ~~Add creator node ryuichi-nishizawa~~ — **BLOCKED**: English Wikipedia article https://en.wikipedia.org/wiki/Ryuichi_Nishizawa does not exist (verified Page ID: 0). Constitution VI prohibits adding nodes without a valid Wikipedia source.
 
 #### Creator "worked at" Edges (14 new edges in src/data/edges.json)
 

@@ -1,104 +1,104 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "ego-graph-module-api.schema.json",
-  "title": "Ego-Graph Module Public API",
-  "description": "Contract for the ego-graph.js module exports. Describes the function signatures and their expected behavior.",
-  "type": "object",
-  "required": ["exports"],
-  "properties": {
-    "exports": {
-      "type": "object",
-      "required": [
-        "initEgoGraph",
-        "applyEgoGraph",
-        "expandAll",
-        "getViewMode",
-        "getSpotlightId",
-        "pickRandomSpotlight"
-      ],
-      "properties": {
-        "initEgoGraph": {
-          "description": "Initialize the ego-graph module with the vis.Network instance. Must be called after createGraph().",
-          "type": "object",
-          "properties": {
-            "parameters": {
-              "type": "array",
-              "items": [
-                {
-                  "name": "network",
-                  "type": "vis.Network",
-                  "description": "The active vis.Network instance"
-                }
-              ]
-            },
-            "returns": { "type": "string", "const": "void" }
-          }
-        },
-        "applyEgoGraph": {
-          "description": "Set a new spotlight node: hide non-neighbors, show neighborhood, focus camera, open detail panel. Transitions to ego mode.",
-          "type": "object",
-          "properties": {
-            "parameters": {
-              "type": "array",
-              "items": [
-                {
-                  "name": "nodeId",
-                  "type": "string",
-                  "description": "ID of the node to spotlight"
-                }
-              ]
-            },
-            "returns": { "type": "string", "const": "void" }
-          }
-        },
-        "expandAll": {
-          "description": "Transition to full-graph mode: unhide all nodes/edges, restore physics, fit viewport. Transitions to full mode.",
-          "type": "object",
-          "properties": {
-            "parameters": { "type": "array", "items": [] },
-            "returns": { "type": "string", "const": "void" }
-          }
-        },
-        "getViewMode": {
-          "description": "Return the current view mode.",
-          "type": "object",
-          "properties": {
-            "parameters": { "type": "array", "items": [] },
-            "returns": {
-              "type": "string",
-              "enum": ["ego", "full"]
-            }
-          }
-        },
-        "getSpotlightId": {
-          "description": "Return the current spotlight node ID, or null if in full mode.",
-          "type": "object",
-          "properties": {
-            "parameters": { "type": "array", "items": [] },
-            "returns": { "type": ["string", "null"] }
-          }
-        },
-        "pickRandomSpotlight": {
-          "description": "Select a random non-company node ID from the dataset. Does not apply the ego-graph — call applyEgoGraph() with the result.",
-          "type": "object",
-          "properties": {
-            "parameters": {
-              "type": "array",
-              "items": [
-                {
-                  "name": "nodesArray",
-                  "type": "Array<{id: string, group: string}>",
-                  "description": "The full nodes data array"
-                }
-              ]
-            },
-            "returns": {
-              "type": "string",
-              "description": "Node ID of the randomly selected non-company node"
-            }
-          }
-        }
-      }
-    }
-  }
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "ego-graph-module-api.schema.json",
+	"title": "Ego-Graph Module Public API",
+	"description": "Contract for the ego-graph.js module exports. Describes the function signatures and their expected behavior.",
+	"type": "object",
+	"required": ["exports"],
+	"properties": {
+		"exports": {
+			"type": "object",
+			"required": [
+				"initEgoGraph",
+				"applyEgoGraph",
+				"expandAll",
+				"getViewMode",
+				"getSpotlightId",
+				"pickRandomSpotlight"
+			],
+			"properties": {
+				"initEgoGraph": {
+					"description": "Initialize the ego-graph module with the vis.Network instance. Must be called after createGraph().",
+					"type": "object",
+					"properties": {
+						"parameters": {
+							"type": "array",
+							"items": [
+								{
+									"name": "network",
+									"type": "vis.Network",
+									"description": "The active vis.Network instance"
+								}
+							]
+						},
+						"returns": { "type": "string", "const": "void" }
+					}
+				},
+				"applyEgoGraph": {
+					"description": "Set a new spotlight node: hide non-neighbors, show neighborhood, focus camera, open detail panel. Transitions to ego mode.",
+					"type": "object",
+					"properties": {
+						"parameters": {
+							"type": "array",
+							"items": [
+								{
+									"name": "nodeId",
+									"type": "string",
+									"description": "ID of the node to spotlight"
+								}
+							]
+						},
+						"returns": { "type": "string", "const": "void" }
+					}
+				},
+				"expandAll": {
+					"description": "Transition to full-graph mode: unhide all nodes/edges, restore physics, fit viewport. Transitions to full mode.",
+					"type": "object",
+					"properties": {
+						"parameters": { "type": "array", "items": [] },
+						"returns": { "type": "string", "const": "void" }
+					}
+				},
+				"getViewMode": {
+					"description": "Return the current view mode.",
+					"type": "object",
+					"properties": {
+						"parameters": { "type": "array", "items": [] },
+						"returns": {
+							"type": "string",
+							"enum": ["ego", "full"]
+						}
+					}
+				},
+				"getSpotlightId": {
+					"description": "Return the current spotlight node ID, or null if in full mode.",
+					"type": "object",
+					"properties": {
+						"parameters": { "type": "array", "items": [] },
+						"returns": { "type": ["string", "null"] }
+					}
+				},
+				"pickRandomSpotlight": {
+					"description": "Select a random non-company node ID from the dataset. Does not apply the ego-graph — call applyEgoGraph() with the result.",
+					"type": "object",
+					"properties": {
+						"parameters": {
+							"type": "array",
+							"items": [
+								{
+									"name": "nodesArray",
+									"type": "Array<{id: string, group: string}>",
+									"description": "The full nodes data array"
+								}
+							]
+						},
+						"returns": {
+							"type": "string",
+							"description": "Node ID of the randomly selected non-company node"
+						}
+					}
+				}
+			}
+		}
+	}
 }
