@@ -54,20 +54,25 @@ export function openDetailPanel(nodeId) {
 		contentEl.innerHTML = renderNoData("Unknown entity");
 		panelEl.classList.add("open");
 		panelEl.removeAttribute("hidden");
+		panelEl.setAttribute("aria-expanded", "true"); // 005 FR-015
 		return;
 	}
 
 	contentEl.innerHTML = renderNode(node);
 	panelEl.classList.add("open");
 	panelEl.removeAttribute("hidden");
+	panelEl.setAttribute("aria-expanded", "true"); // 005 FR-015
 }
 
 /**
  * Close the detail panel.
+ * 005: Dispatches a "detail-panel-closed" CustomEvent for re-centering.
  */
 export function closeDetailPanel() {
 	if (panelEl) {
 		panelEl.classList.remove("open");
+		panelEl.setAttribute("aria-expanded", "false"); // 005 FR-015
+		document.dispatchEvent(new CustomEvent("detail-panel-closed")); // 005: notify ego-graph
 	}
 }
 

@@ -321,5 +321,10 @@
 	{ "from": "takenobu-mitsuyoshi", "to": "outrunners", "label": "composed for" },
 	{ "from": "takayuki-nakamura", "to": "outrunners", "label": "composed for" },
 	{ "from": "hideki-naganuma", "to": "ollie-king", "label": "composed for" },
-	{ "from": "masayoshi-yokoyama", "to": "ollie-king", "label": "directed" }
+	{ "from": "masayoshi-yokoyama", "to": "ollie-king", "label": "directed" },
+
+	{ "from": "hang-on", "to": "super-scaler", "label": "runs on" },
+	{ "from": "space-harrier", "to": "super-scaler", "label": "runs on" },
+	{ "from": "out-run", "to": "outrun-board", "label": "runs on" },
+	{ "from": "rieko-kodama", "to": "quartet", "label": "artwork for" }
 ]

@@ -1,14 +1,14 @@
 {
-  "private": true,
-  "name": "sega-graph-visualization",
-  "version": "1.0.0",
-  "description": "Interactive graph visualization of SEGA's arcade ecosystem",
-  "devDependencies": {
-    "@biomejs/biome": "^1.9.0"
-  },
-  "scripts": {
-    "lint": "biome check",
-    "lint:fix": "biome check --write",
-    "format": "biome format --write"
-  }
+	"private": true,
+	"name": "sega-graph-visualization",
+	"version": "1.0.0",
+	"description": "Interactive graph visualization of SEGA's arcade ecosystem",
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.0"
+	},
+	"scripts": {
+		"lint": "biome check",
+		"lint:fix": "biome check --write",
+		"format": "biome format --write"
+	}
 }

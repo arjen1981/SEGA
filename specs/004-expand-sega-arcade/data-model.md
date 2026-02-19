@@ -165,12 +165,13 @@ Each edge is a separate object in `edges.json`. vis-network renders multi-edges 
 
 | Metric | Before | After | FR Limit |
 |--------|--------|-------|----------|
-| Total nodes | 93 | ~130–132 | <200 (FR-012) ✅ |
-| Total edges | 156 | ~290–336 | No limit |
-| Creator nodes | 5 | 19 | ≥20 (SC-001) ⚠️ |
+| Total nodes | 93 | ~132–134 | <200 (FR-012) ✅ |
+| Total edges | 156 | ~296–340 | No limit |
+| Creator nodes | 5 | 20 | ≥20 (SC-001) ✅ |
+| Platform nodes | 13 | 24 | 15–17 (plan) ✅ |
 | Game nodes | 67 | 84–87 | ≥87 (SC-002: ≥80) ✅ |
 
-**Note on SC-001**: 14 new creators + 5 existing = 19, one short of the 20 minimum in SC-001. The research identified Ryuichi Nishizawa (Wonder Boy director) as a potential 15th new creator with a Wikipedia article. Adding him would meet the target exactly at 20. Alternatively, re-evaluating the 4 excluded candidates or finding additional creators with Wikipedia pages may be needed during implementation.
+**Note on SC-001**: 15 new creators (Mie Kumagai confirmed as 15th; Ryuichi Nishizawa blocked — English Wikipedia article does not exist, Constitution VI) + 5 existing = 20, meeting the SC-001 minimum target exactly. 2 additional platform nodes (super-scaler, outrun-board) added for missing "runs on" edge coverage.
 
 ---
 

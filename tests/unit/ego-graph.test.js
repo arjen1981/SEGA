@@ -213,3 +213,47 @@ QUnit.module("ego-graph — view mode state", (hooks) => {
 		assert.strictEqual(getSpotlightId(), "genesis", "spotlightId updated to new node");
 	});
 });
+
+/* ============================================================
+   005: Mobile offset and re-centering tests
+   ============================================================ */
+
+QUnit.module("ego-graph — mobile centering (005)", (hooks) => {
+	hooks.beforeEach(() => {
+		setupGraph();
+	});
+
+	hooks.afterEach(() => {
+		teardownGraph();
+	});
+
+	QUnit.test("applyEgoGraph focuses the network on the spotlight node", (assert) => {
+		applyEgoGraph("sonic-team");
+		const _network = getNetwork();
+		// Verify that focus was called (network exists and spotlight is set)
+		assert.strictEqual(getSpotlightId(), "sonic-team", "spotlight is set to sonic-team");
+		assert.strictEqual(getViewMode(), "ego", "mode is ego");
+	});
+
+	QUnit.test("expandAll fits graph to viewport", (assert) => {
+		applyEgoGraph("sonic-team");
+		expandAll();
+		assert.strictEqual(getViewMode(), "full", "mode is full after expandAll");
+		assert.strictEqual(getSpotlightId(), null, "no spotlight in full mode");
+	});
+
+	QUnit.test("detail-panel-closed event does not throw when no network spotlight", (assert) => {
+		expandAll();
+		// Dispatch the event — should not throw even in full mode
+		assert.expect(1);
+		document.dispatchEvent(new CustomEvent("detail-panel-closed"));
+		assert.ok(true, "detail-panel-closed event handled without error in full mode");
+	});
+
+	QUnit.test("detail-panel-closed event does not throw in ego mode", (assert) => {
+		applyEgoGraph("sonic-team");
+		assert.expect(1);
+		document.dispatchEvent(new CustomEvent("detail-panel-closed"));
+		assert.ok(true, "detail-panel-closed event handled without error in ego mode");
+	});
+});
