@@ -19,8 +19,8 @@
 
 **Purpose**: Verify baseline state and branch readiness
 
-- [ ] T001 Verify branch is `feature/006-expand-sega-arcade-data` and working tree is clean
-- [ ] T002 Run baseline validation — confirm 140 nodes, 296 edges, 0 duplicate IDs, 0 broken edges in src/data/nodes.json and src/data/edges.json
+- [x] T001 Verify branch is `feature/006-expand-sega-arcade-data` and working tree is clean
+- [x] T002 Run baseline validation — confirm 140 nodes, 296 edges, 0 duplicate IDs, 0 broken edges in src/data/nodes.json and src/data/edges.json
 
 **Checkpoint**: Baseline confirmed — ready for data expansion
 
@@ -32,12 +32,12 @@
 
 **⚠️ CRITICAL**: No game additions (Phase 3) can begin until studios and platforms exist as edge targets.
 
-- [ ] T003 Add 4 new studio nodes (Compile, Westone, Sega Rosso, Sega AM4) to src/data/nodes.json — use research.md Part 4 for all field values; each needs id, label, group:"studio", summary, founded, defunct, status, focus, wikipediaUrl, wikidataId, thumbnail
-- [ ] T004 Add 2 "division of" edges (sega-rosso → sega, sega-am4 → sega) to src/data/edges.json
-- [ ] T005 Add 5 new platform nodes (Hikaru, RingEdge, RingEdge 2, Nu, Europa-R) to src/data/nodes.json — use research.md Part 3 for all field values; each needs id, label, group:"platform", summary, releaseYear, generation, notableFeatures, wikipediaUrl, wikidataId, thumbnail
-- [ ] T006 Fix Initial D developer edge: change existing edge `{ from: "initial-d-arcade-stage", to: "sega", label: "developed by" }` to `{ from: "initial-d-arcade-stage", to: "sega-rosso", label: "developed by" }` in src/data/edges.json — per data-model.md edge corrections
-- [ ] T007 Add Westone developer edges for Wonder Boy games in src/data/edges.json: add `{ from: "wonder-boy", to: "westone", label: "developed by" }` and `{ from: "wonder-boy-monster-land", to: "westone", label: "developed by" }` — keep existing sega edges as publisher attribution
-- [ ] T008 Run validation — confirm 149 nodes (140+4+5), 300 edges (296+2+2), 0 duplicate IDs, 0 broken edges
+- [x] T003 Add 4 new studio nodes (Compile, Westone, Sega Rosso, Sega AM4) to src/data/nodes.json — use research.md Part 4 for all field values; each needs id, label, group:"studio", summary, founded, defunct, status, focus, wikipediaUrl, wikidataId, thumbnail
+- [x] T004 Add 2 "division of" edges (sega-rosso → sega, sega-am4 → sega) to src/data/edges.json
+- [x] T005 Add 5 new platform nodes (Hikaru, RingEdge, RingEdge 2, Nu, Europa-R) to src/data/nodes.json — use research.md Part 3 for all field values; each needs id, label, group:"platform", summary, releaseYear, generation, notableFeatures, wikipediaUrl, wikidataId, thumbnail
+- [x] T006 Fix Initial D developer edge: change existing edge `{ from: "initial-d-arcade-stage", to: "sega", label: "developed by" }` to `{ from: "initial-d-arcade-stage", to: "sega-rosso", label: "developed by" }` in src/data/edges.json — per data-model.md edge corrections
+- [x] T007 Add Westone developer edges for Wonder Boy games in src/data/edges.json: add `{ from: "wonder-boy", to: "westone", label: "developed by" }` and `{ from: "wonder-boy-monster-land", to: "westone", label: "developed by" }` — keep existing sega edges as publisher attribution
+- [x] T008 Run validation — confirm 149 nodes (140+4+5), 300 edges (296+2+2), 0 duplicate IDs, 0 broken edges
 
 **Checkpoint**: Foundation ready — all studio and platform targets exist for game edge references
 

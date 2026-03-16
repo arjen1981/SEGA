@@ -1616,5 +1616,119 @@
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Mie_Kumagai",
 		"wikidataId": "Q6843511",
 		"thumbnail": null
+	},
+
+	{
+		"id": "compile",
+		"label": "Compile",
+		"group": "studio",
+		"summary": "Compile Co., Ltd. was a Japanese video game developer founded by Masamitsu Niitani in 1982. The company was best known for creating the Puyo Puyo puzzle game series and for developing numerous shoot-'em-up games. Compile went bankrupt in 2003, and the Puyo Puyo intellectual property was acquired by Sega.",
+		"founded": 1982,
+		"defunct": 2003,
+		"status": "defunct",
+		"focus": "Puyo Puyo series, shoot-'em-ups",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/Compile_(company)",
+		"wikidataId": "Q383538",
+		"thumbnail": null
+	},
+	{
+		"id": "westone",
+		"label": "Westone Bit Entertainment",
+		"group": "studio",
+		"summary": "Westone Bit Entertainment, originally known as Escape, was a Japanese video game developer founded in 1986. The company is best known for creating the Wonder Boy and Monster World series for Sega arcade hardware and consoles. Westone closed in 2014.",
+		"founded": 1986,
+		"defunct": 2014,
+		"status": "defunct",
+		"focus": "Wonder Boy / Monster World series",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/Westone_Bit_Entertainment",
+		"wikidataId": "Q7989503",
+		"thumbnail": null
+	},
+	{
+		"id": "sega-rosso",
+		"label": "Sega Rosso",
+		"group": "studio",
+		"summary": "Sega Rosso was a Japanese video game development studio and subsidiary of Sega. Established in 2000, Sega Rosso developed the Initial D Arcade Stage series, one of the most successful racing arcade franchises in Japan. The studio was dissolved in 2003 and merged into Sega's Hitmaker subsidiary.",
+		"founded": 2000,
+		"defunct": 2003,
+		"status": "defunct",
+		"focus": "Initial D Arcade Stage series",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/Sega_Rosso",
+		"wikidataId": "Q10369375",
+		"thumbnail": null
+	},
+	{
+		"id": "sega-am4",
+		"label": "Sega AM4",
+		"group": "studio",
+		"summary": "Sega AM Research & Development No. 4 was an arcade game development division of Sega, established in 1993. AM4 developed racing and sports arcade games. The division was restructured in 2000 and reorganized into Amusement Vision, which later became Ryu Ga Gotoku Studio.",
+		"founded": 1993,
+		"defunct": 2000,
+		"status": "defunct",
+		"focus": "Racing and sports arcade games",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/Sega_AM4",
+		"wikidataId": "Q7451638",
+		"thumbnail": null
+	},
+
+	{
+		"id": "hikaru",
+		"label": "Sega Hikaru",
+		"group": "platform",
+		"summary": "The Sega Hikaru is an arcade system board released by Sega in 2000. Based on the NAOMI architecture, the Hikaru featured a custom 3D GPU capable of advanced real-time phong shading effects. It was used for a small number of visually ambitious arcade titles including Planet Harriers and Brave Firefighters.",
+		"releaseYear": 2000,
+		"generation": "128-bit era",
+		"notableFeatures": "NAOMI-based, custom 3D GPU, real-time phong shading",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/List_of_Sega_arcade_system_boards",
+		"wikidataId": "Q6144535",
+		"thumbnail": null
+	},
+	{
+		"id": "ringedge",
+		"label": "Sega RingEdge",
+		"group": "platform",
+		"summary": "The Sega RingEdge is a PC-based arcade system board released by Sega in 2009. It uses an Intel Celeron processor and NVIDIA GeForce GPU running Windows Embedded. The RingEdge was designed as an affordable, compact arcade platform and was used for games such as Border Break and Hatsune Miku: Project DIVA Arcade.",
+		"releaseYear": 2009,
+		"generation": "PC-based era",
+		"notableFeatures": "Intel Celeron, NVIDIA GeForce, Windows Embedded",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/List_of_Sega_arcade_system_boards",
+		"wikidataId": "Q97369278",
+		"thumbnail": null
+	},
+	{
+		"id": "ringedge2",
+		"label": "Sega RingEdge 2",
+		"group": "platform",
+		"summary": "The Sega RingEdge 2 is an upgraded PC-based arcade system board released by Sega in 2011. Featuring an Intel Core i3/i5 processor and improved NVIDIA GPU running Windows Embedded, it offered greater processing power than its predecessor. It was used for rhythm games such as Maimai.",
+		"releaseYear": 2011,
+		"generation": "PC-based era",
+		"notableFeatures": "Intel Core i3/i5, improved NVIDIA GPU, Windows Embedded",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/List_of_Sega_arcade_system_boards",
+		"wikidataId": "Q19722001",
+		"thumbnail": null
+	},
+	{
+		"id": "nu",
+		"label": "Sega Nu",
+		"group": "platform",
+		"summary": "The Sega Nu is a PC-based arcade system board released by Sega in 2013. Powered by an Intel Core i-series processor and NVIDIA GeForce GTX GPU, the Nu represented a significant performance step up from earlier PC-based boards. It was used for modern arcade titles including Chunithm, Kantai Collection Arcade, and Ongeki.",
+		"releaseYear": 2013,
+		"generation": "PC-based era",
+		"notableFeatures": "Intel Core i-series, NVIDIA GeForce GTX",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/List_of_Sega_arcade_system_boards",
+		"wikidataId": "Q16111625",
+		"thumbnail": null
+	},
+	{
+		"id": "europa-r",
+		"label": "Sega Europa-R",
+		"group": "platform",
+		"summary": "The Sega Europa-R is a budget PC-based arcade system board released by Sega in 2007. Using an AMD Athlon processor and ATI Radeon GPU, the Europa-R served as a lower-cost alternative to the Lindbergh platform. It was used for racing titles such as Sega Rally 3 and Sega Race TV.",
+		"releaseYear": 2007,
+		"generation": "PC-based era",
+		"notableFeatures": "AMD Athlon, ATI Radeon, budget Lindbergh successor",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/List_of_Sega_arcade_system_boards",
+		"wikidataId": "Q19722007",
+		"thumbnail": null
 	}
 ]

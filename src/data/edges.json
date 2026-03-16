@@ -6,6 +6,8 @@
 	{ "from": "ryu-ga-gotoku-studio", "to": "sega", "label": "division of" },
 	{ "from": "smilebit", "to": "sega", "label": "division of" },
 	{ "from": "united-game-artists", "to": "sega", "label": "division of" },
+	{ "from": "sega-rosso", "to": "sega", "label": "division of" },
+	{ "from": "sega-am4", "to": "sega", "label": "division of" },
 
 	{ "from": "hang-on", "to": "sega-am2", "label": "developed by" },
 	{ "from": "space-harrier", "to": "sega-am2", "label": "developed by" },
@@ -141,7 +143,7 @@
 	{ "from": "bonanza-bros", "to": "system-24", "label": "runs on" },
 	{ "from": "golden-axe-revenge-of-death-adder", "to": "sega", "label": "developed by" },
 	{ "from": "golden-axe-revenge-of-death-adder", "to": "system-32", "label": "runs on" },
-	{ "from": "initial-d-arcade-stage", "to": "sega", "label": "developed by" },
+	{ "from": "initial-d-arcade-stage", "to": "sega-rosso", "label": "developed by" },
 	{ "from": "initial-d-arcade-stage", "to": "naomi", "label": "runs on" },
 
 	{ "from": "yu-suzuki", "to": "sega-am2", "label": "worked at" },
@@ -288,8 +290,10 @@
 	{ "from": "choplifter", "to": "sega", "label": "developed by" },
 	{ "from": "choplifter", "to": "system-1", "label": "runs on" },
 	{ "from": "wonder-boy", "to": "sega", "label": "developed by" },
+	{ "from": "wonder-boy", "to": "westone", "label": "developed by" },
 	{ "from": "wonder-boy", "to": "system-1", "label": "runs on" },
 	{ "from": "wonder-boy-monster-land", "to": "sega", "label": "developed by" },
+	{ "from": "wonder-boy-monster-land", "to": "westone", "label": "developed by" },
 	{ "from": "wonder-boy-monster-land", "to": "system-2", "label": "runs on" },
 	{ "from": "alien-syndrome", "to": "sega", "label": "developed by" },
 	{ "from": "alien-syndrome", "to": "system-16", "label": "runs on" },
