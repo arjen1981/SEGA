@@ -135,8 +135,12 @@ export function applyEgoGraph(nodeId) {
 	spotlightId = nodeId;
 	viewMode = "ego";
 
-	// Re-enable physics so the neighborhood can settle into position
-	network.setOptions({ physics: { enabled: true } });
+	// Re-enable physics so the neighborhood can settle into position.
+	// On mobile, use shorter spring length so nodes cluster tighter.
+	const mobilePhysics = isMobile()
+		? { enabled: true, barnesHut: { springLength: 80 } }
+		: { enabled: true };
+	network.setOptions({ physics: mobilePhysics });
 
 	const nodes = network.body.data.nodes;
 	const edges = network.body.data.edges;
@@ -145,15 +149,19 @@ export function applyEgoGraph(nodeId) {
 	const neighborIds = network.getConnectedNodes(nodeId);
 	const visibleNodeIds = new Set([nodeId, ...neighborIds]);
 
-	// Update node visibility and physics
+	// Update node visibility and physics.
+	// Pin the spotlight node (fixed: true) so physics cannot move it while
+	// neighbors settle around it — prevents the visible drift-then-snap.
 	const allNodes = nodes.get();
 	const nodeUpdates = [];
 	for (const node of allNodes) {
 		const isVisible = visibleNodeIds.has(node.id);
+		const isSpotlight = node.id === nodeId;
 		nodeUpdates.push({
 			id: node.id,
 			hidden: !isVisible,
 			physics: isVisible,
+			fixed: isSpotlight ? { x: true, y: true } : false,
 		});
 	}
 	nodes.update(nodeUpdates);
@@ -178,7 +186,7 @@ export function applyEgoGraph(nodeId) {
 	// anticipateOpen: the detail panel always opens right after this call.
 	const offset = getPanelOffset({ anticipateOpen: true });
 	network.focus(nodeId, {
-		scale: 1.5,
+		scale: isMobile() ? 0.9 : 1.5,
 		offset: offset,
 		animation: {
 			duration: 500,
@@ -186,10 +194,11 @@ export function applyEgoGraph(nodeId) {
 		},
 	});
 
-	// Disable physics once the neighborhood has settled to prevent
-	// hover-induced drift and floating nodes after mouse movement.
+	// Once the neighborhood has settled, unpin the spotlight node and
+	// disable physics to lock everything in place.
 	network.once("stabilized", () => {
-		if (viewMode === "ego") {
+		if (viewMode === "ego" && spotlightId) {
+			nodes.update([{ id: spotlightId, fixed: false }]);
 			network.setOptions({ physics: { enabled: false } });
 		}
 	});
@@ -211,8 +220,11 @@ export function expandAll() {
 	spotlightId = null;
 	viewMode = "full";
 
-	// Re-enable physics so the full graph can settle
-	network.setOptions({ physics: { enabled: true } });
+	// Re-enable physics so the full graph can settle.
+	// Reset springLength to default (may have been shortened for mobile ego).
+	network.setOptions({
+		physics: { enabled: true, barnesHut: { springLength: 150 } },
+	});
 
 	const nodes = network.body.data.nodes;
 	const edges = network.body.data.edges;
