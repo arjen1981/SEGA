@@ -13,7 +13,6 @@
 import { closeDetailPanel, initDetailPanel, openDetailPanel } from "./detail-panel.js";
 import {
 	applyEgoGraph,
-	expandAll,
 	getViewMode,
 	initEgoGraph,
 	pickRandomSpotlight,
@@ -101,7 +100,6 @@ async function init() {
 		initEgoGraph(network);
 
 		// DOM references for ego-graph UI
-		const expandAllBtn = document.getElementById("expand-all-btn");
 		const filterToolbar = document.getElementById("filter-toolbar");
 
 		// Wire node click → ego-graph or detail panel based on mode
@@ -113,7 +111,6 @@ async function init() {
 					applyEgoGraph(clickedId);
 					openDetailPanel(clickedId);
 					if (filterToolbar) filterToolbar.classList.add("hidden");
-					if (expandAllBtn) expandAllBtn.hidden = false;
 				} else {
 					// FR-005: Click neighbor in ego mode → new spotlight
 					applyEgoGraph(clickedId);
@@ -173,24 +170,6 @@ async function init() {
 			});
 		}
 
-		// Wire "Expand All" button (FR-007)
-		if (expandAllBtn) {
-			expandAllBtn.addEventListener("click", () => {
-				expandAll();
-				closeDetailPanel();
-				if (filterToolbar) filterToolbar.classList.remove("hidden");
-				expandAllBtn.hidden = true;
-			});
-
-			// T026: Keyboard support for Expand All button
-			expandAllBtn.addEventListener("keydown", (event) => {
-				if (event.key === "Enter" || event.key === " ") {
-					event.preventDefault();
-					expandAllBtn.click();
-				}
-			});
-		}
-
 		// Hide spinner once physics stabilization completes, then apply ego-graph
 		network.once("stabilizationIterationsDone", () => {
 			hideSpinner();
@@ -202,8 +181,6 @@ async function init() {
 
 			// FR-011: Hide filter toolbar in ego mode
 			if (filterToolbar) filterToolbar.classList.add("hidden");
-			// FR-015: Show Expand All button in ego mode
-			if (expandAllBtn) expandAllBtn.hidden = false;
 		});
 
 		// Safety fallback: hide spinner after stabilization finishes completely
@@ -261,9 +238,7 @@ function renderSuggestions(list, results) {
 			openDetailPanel(node.id);
 			// Ensure ego-mode UI state when search triggers ego-graph (FR-012)
 			const filterToolbar = document.getElementById("filter-toolbar");
-			const expandAllBtn = document.getElementById("expand-all-btn");
 			if (filterToolbar) filterToolbar.classList.add("hidden");
-			if (expandAllBtn) expandAllBtn.hidden = false;
 			list.hidden = true;
 			document.getElementById("search-input").value = node.label;
 		});
