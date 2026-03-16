@@ -1,4 +1,4 @@
-﻿[
+[
 	{ "from": "sega-am1", "to": "sega", "label": "division of" },
 	{ "from": "sega-am2", "to": "sega", "label": "division of" },
 	{ "from": "sega-am3", "to": "sega", "label": "division of" },
@@ -162,10 +162,11 @@
 	{ "from": "toshihiro-nagoshi", "to": "sega-am2", "label": "worked at" },
 	{ "from": "toshihiro-nagoshi", "to": "ryu-ga-gotoku-studio", "label": "worked at" },
 	{ "from": "toshihiro-nagoshi", "to": "daytona-usa", "label": "directed" },
+	{ "from": "toshihiro-nagoshi", "to": "daytona-usa", "label": "produced" },
+	{ "from": "toshihiro-nagoshi", "to": "daytona-usa", "label": "designed" },
 	{ "from": "toshihiro-nagoshi", "to": "monkey-ball", "label": "produced" },
 
 	{ "from": "yuji-naka", "to": "sonic-team", "label": "worked at" },
-	{ "from": "yuji-naka", "to": "segasonic-the-hedgehog", "label": "produced" },
 
 	{ "from": "rieko-kodama", "to": "sega", "label": "worked at" },
 
@@ -174,7 +175,7 @@
 	{ "from": "tetsuya-mizuguchi", "to": "sega-rally-championship", "label": "produced" },
 	{ "from": "tetsuya-mizuguchi", "to": "sega-rally-2", "label": "produced" },
 
-	{ "from": "hiroshi-kawaguchi", "to": "sega-am2", "label": "worked at" },
+	{ "from": "hiroshi-kawaguchi", "to": "sega", "label": "worked at" },
 	{ "from": "hiroshi-kawaguchi", "to": "hang-on", "label": "composed for" },
 	{ "from": "hiroshi-kawaguchi", "to": "space-harrier", "label": "composed for" },
 	{ "from": "hiroshi-kawaguchi", "to": "fantasy-zone", "label": "composed for" },
@@ -182,11 +183,12 @@
 	{ "from": "hiroshi-kawaguchi", "to": "after-burner", "label": "composed for" },
 	{ "from": "hiroshi-kawaguchi", "to": "power-drift", "label": "composed for" },
 	{ "from": "hiroshi-kawaguchi", "to": "g-loc-air-battle", "label": "composed for" },
+	{ "from": "hiroshi-kawaguchi", "to": "turbo-out-run", "label": "composed for" },
+	{ "from": "hiroshi-kawaguchi", "to": "gp-rider", "label": "composed for" },
 	{ "from": "hiroshi-kawaguchi", "to": "segasonic-the-hedgehog", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "virtua-fighter-3", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "wave-runner", "label": "composed for" },
 
-	{ "from": "takenobu-mitsuyoshi", "to": "sega-am2", "label": "worked at" },
+
+	{ "from": "takenobu-mitsuyoshi", "to": "sega", "label": "worked at" },
 	{ "from": "takenobu-mitsuyoshi", "to": "g-loc-air-battle", "label": "composed for" },
 	{ "from": "takenobu-mitsuyoshi", "to": "virtua-racing", "label": "composed for" },
 	{ "from": "takenobu-mitsuyoshi", "to": "daytona-usa", "label": "composed for" },
@@ -198,7 +200,7 @@
 	{ "from": "takenobu-mitsuyoshi", "to": "virtua-fighter-3", "label": "composed for" },
 	{ "from": "takenobu-mitsuyoshi", "to": "daytona-usa-2", "label": "composed for" },
 
-	{ "from": "takayuki-nakamura", "to": "sega-am2", "label": "worked at" },
+	{ "from": "takayuki-nakamura", "to": "sega", "label": "worked at" },
 	{ "from": "takayuki-nakamura", "to": "virtua-fighter", "label": "composed for" },
 	{ "from": "takayuki-nakamura", "to": "virtua-fighter-2", "label": "composed for" },
 	{ "from": "takayuki-nakamura", "to": "virtua-fighter-3", "label": "composed for" },
@@ -207,9 +209,8 @@
 	{ "from": "hisao-oguchi", "to": "rad-mobile", "label": "directed" },
 
 	{ "from": "naoto-ohshima", "to": "sonic-team", "label": "worked at" },
-	{ "from": "naoto-ohshima", "to": "segasonic-the-hedgehog", "label": "designed" },
 
-	{ "from": "hirokazu-yasuhara", "to": "sonic-team", "label": "worked at" },
+	{ "from": "hirokazu-yasuhara", "to": "sega", "label": "worked at" },
 
 	{ "from": "takashi-iizuka", "to": "sonic-team", "label": "worked at" },
 
@@ -222,12 +223,10 @@
 	{ "from": "shun-nakamura", "to": "samba-de-amigo", "label": "directed" },
 
 	{ "from": "tomoya-ohtani", "to": "sonic-team", "label": "worked at" },
-	{ "from": "tomoya-ohtani", "to": "samba-de-amigo", "label": "composed for" },
 
-	{ "from": "hideki-naganuma", "to": "smilebit", "label": "worked at" },
+	{ "from": "hideki-naganuma", "to": "sega", "label": "worked at" },
 
 	{ "from": "masayoshi-yokoyama", "to": "ryu-ga-gotoku-studio", "label": "worked at" },
-	{ "from": "masayoshi-yokoyama", "to": "smilebit", "label": "worked at" },
 
 	{ "from": "richard-jacques", "to": "sega", "label": "worked at" },
 	{ "from": "richard-jacques", "to": "outrun-2", "label": "composed for" },
@@ -244,11 +243,8 @@
 	{ "from": "yu-suzuki", "to": "g-loc-air-battle", "label": "directed" },
 	{ "from": "yu-suzuki", "to": "g-loc-air-battle", "label": "designed" },
 	{ "from": "yu-suzuki", "to": "g-loc-air-battle", "label": "programmed" },
-	{ "from": "yu-suzuki", "to": "fighting-vipers", "label": "produced" },
 	{ "from": "yu-suzuki", "to": "virtua-cop", "label": "produced" },
-	{ "from": "yu-suzuki", "to": "virtua-cop-2", "label": "produced" },
 	{ "from": "yu-suzuki", "to": "sonic-the-fighters", "label": "produced" },
-	{ "from": "yu-suzuki", "to": "scud-race", "label": "produced" },
 	{ "from": "yu-suzuki", "to": "virtua-fighter-3", "label": "directed" },
 	{ "from": "yu-suzuki", "to": "virtua-fighter-3", "label": "produced" },
 	{ "from": "yu-suzuki", "to": "daytona-usa", "label": "produced" },
@@ -263,7 +259,6 @@
 	{ "from": "toshihiro-nagoshi", "to": "virtua-fighter-2", "label": "designed" },
 	{ "from": "toshihiro-nagoshi", "to": "scud-race", "label": "directed" },
 	{ "from": "toshihiro-nagoshi", "to": "scud-race", "label": "produced" },
-	{ "from": "toshihiro-nagoshi", "to": "virtua-fighter-3", "label": "designed" },
 	{ "from": "toshihiro-nagoshi", "to": "spikeout", "label": "directed" },
 	{ "from": "toshihiro-nagoshi", "to": "spikeout", "label": "produced" },
 	{ "from": "toshihiro-nagoshi", "to": "spikeout", "label": "designed" },
@@ -318,6 +313,7 @@
 	{ "from": "hiroshi-kawaguchi", "to": "dynamite-dux", "label": "composed for" },
 	{ "from": "hiroshi-kawaguchi", "to": "hotd-scarlet-dawn", "label": "composed for" },
 	{ "from": "hisao-oguchi", "to": "super-monaco-gp", "label": "directed" },
+	{ "from": "hisao-oguchi", "to": "heavyweight-champ", "label": "directed" },
 	{ "from": "hiroshi-kawaguchi", "to": "super-monaco-gp", "label": "composed for" },
 	{ "from": "hiroshi-kawaguchi", "to": "outrunners", "label": "composed for" },
 	{ "from": "takenobu-mitsuyoshi", "to": "outrunners", "label": "composed for" },
@@ -329,6 +325,7 @@
 	{ "from": "space-harrier", "to": "super-scaler", "label": "runs on" },
 	{ "from": "out-run", "to": "outrun-board", "label": "runs on" },
 	{ "from": "rieko-kodama", "to": "quartet", "label": "artwork for" },
+	{ "from": "rieko-kodama", "to": "champion-boxing", "label": "artwork for" },
 
 	{ "from": "periscope", "to": "sega", "label": "developed by" },
 	{ "from": "periscope", "to": "pre-system-1", "label": "runs on" },
@@ -481,24 +478,16 @@
 	{ "from": "ongeki", "to": "nu", "label": "runs on" },
 
 	{ "from": "noriyoshi-ohba", "to": "sega-am1", "label": "worked at" },
-	{ "from": "makoto-uchida", "to": "sega", "label": "worked at" },
+	{ "from": "makoto-uchida", "to": "sega-am1", "label": "worked at" },
 	{ "from": "hayao-nakayama", "to": "sega", "label": "worked at" },
 	{ "from": "david-rosen", "to": "sega", "label": "worked at" },
 	{ "from": "masamitsu-niitani", "to": "compile", "label": "worked at" },
+	{ "from": "masamitsu-niitani", "to": "puyo-puyo", "label": "produced" },
 
-	{ "from": "noriyoshi-ohba", "to": "the-house-of-the-dead", "label": "directed" },
-	{ "from": "noriyoshi-ohba", "to": "the-house-of-the-dead-2", "label": "directed" },
 	{ "from": "makoto-uchida", "to": "golden-axe", "label": "directed" },
-	{ "from": "makoto-uchida", "to": "alien-storm", "label": "directed" },
-	{ "from": "makoto-uchida", "to": "golden-axe-revenge-of-death-adder", "label": "directed" },
-	{ "from": "masamitsu-niitani", "to": "puyo-puyo", "label": "designed" },
-	{ "from": "masamitsu-niitani", "to": "puyo-puyo-tsu", "label": "designed" },
+	{ "from": "makoto-uchida", "to": "altered-beast", "label": "directed" },
 
 	{ "from": "yu-suzuki", "to": "champion-boxing", "label": "designed" },
 	{ "from": "yu-suzuki", "to": "f355-challenge", "label": "produced" },
-	{ "from": "hisao-oguchi", "to": "eighteen-wheeler", "label": "produced" },
-	{ "from": "hisao-oguchi", "to": "top-skater", "label": "produced" },
-	{ "from": "hiroshi-kawaguchi", "to": "enduro-racer", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "scramble-spirits", "label": "composed for" },
-	{ "from": "takenobu-mitsuyoshi", "to": "michael-jacksons-moonwalker", "label": "composed for" }
+	{ "from": "hiroshi-kawaguchi", "to": "enduro-racer", "label": "composed for" }
 ]
