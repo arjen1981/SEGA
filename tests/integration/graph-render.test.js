@@ -100,6 +100,10 @@ module("integration – graph rendering", (hooks) => {
 			"created",
 			"directed",
 			"produced",
+			"designed",
+			"programmed",
+			"composed for",
+			"artwork for",
 		]);
 		for (const edge of edgesData) {
 			assert.ok(
