@@ -182,7 +182,7 @@ export function applyEgoGraph(nodeId) {
 	// anticipateOpen: the detail panel always opens right after this call.
 	const offset = getPanelOffset({ anticipateOpen: true });
 	network.focus(nodeId, {
-		scale: 1.5,
+		scale: isMobile() ? 0.9 : 1.5,
 		offset: offset,
 		animation: {
 			duration: 500,
