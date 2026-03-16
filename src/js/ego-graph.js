@@ -186,10 +186,20 @@ export function applyEgoGraph(nodeId) {
 		},
 	});
 
-	// Disable physics once the neighborhood has settled to prevent
-	// hover-induced drift and floating nodes after mouse movement.
+	// Once the neighborhood has settled, re-center on the spotlight node
+	// (physics may have moved it since the initial focus call) and then
+	// disable physics to prevent hover-induced drift.
 	network.once("stabilized", () => {
-		if (viewMode === "ego") {
+		if (viewMode === "ego" && spotlightId) {
+			const finalOffset = getPanelOffset({ anticipateOpen: true });
+			network.focus(spotlightId, {
+				scale: 1.5,
+				offset: finalOffset,
+				animation: {
+					duration: 300,
+					easingFunction: "easeInOutQuad",
+				},
+			});
 			network.setOptions({ physics: { enabled: false } });
 		}
 	});
