@@ -135,8 +135,12 @@ export function applyEgoGraph(nodeId) {
 	spotlightId = nodeId;
 	viewMode = "ego";
 
-	// Re-enable physics so the neighborhood can settle into position
-	network.setOptions({ physics: { enabled: true } });
+	// Re-enable physics so the neighborhood can settle into position.
+	// On mobile, use shorter spring length so nodes cluster tighter.
+	const mobilePhysics = isMobile()
+		? { enabled: true, barnesHut: { springLength: 80 } }
+		: { enabled: true };
+	network.setOptions({ physics: mobilePhysics });
 
 	const nodes = network.body.data.nodes;
 	const edges = network.body.data.edges;
@@ -216,8 +220,11 @@ export function expandAll() {
 	spotlightId = null;
 	viewMode = "full";
 
-	// Re-enable physics so the full graph can settle
-	network.setOptions({ physics: { enabled: true } });
+	// Re-enable physics so the full graph can settle.
+	// Reset springLength to default (may have been shortened for mobile ego).
+	network.setOptions({
+		physics: { enabled: true, barnesHut: { springLength: 150 } },
+	});
 
 	const nodes = network.body.data.nodes;
 	const edges = network.body.data.edges;
