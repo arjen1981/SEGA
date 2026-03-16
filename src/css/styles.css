@@ -426,7 +426,7 @@ body::after {
 /* --- Search --- */
 .search-container {
 	position: relative;
-	margin-left: 0.75rem;
+	margin-left: auto;
 }
 
 .search-input {
