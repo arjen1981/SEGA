@@ -145,15 +145,19 @@ export function applyEgoGraph(nodeId) {
 	const neighborIds = network.getConnectedNodes(nodeId);
 	const visibleNodeIds = new Set([nodeId, ...neighborIds]);
 
-	// Update node visibility and physics
+	// Update node visibility and physics.
+	// Pin the spotlight node (fixed: true) so physics cannot move it while
+	// neighbors settle around it — prevents the visible drift-then-snap.
 	const allNodes = nodes.get();
 	const nodeUpdates = [];
 	for (const node of allNodes) {
 		const isVisible = visibleNodeIds.has(node.id);
+		const isSpotlight = node.id === nodeId;
 		nodeUpdates.push({
 			id: node.id,
 			hidden: !isVisible,
 			physics: isVisible,
+			fixed: isSpotlight ? { x: true, y: true } : false,
 		});
 	}
 	nodes.update(nodeUpdates);
@@ -186,20 +190,11 @@ export function applyEgoGraph(nodeId) {
 		},
 	});
 
-	// Once the neighborhood has settled, re-center on the spotlight node
-	// (physics may have moved it since the initial focus call) and then
-	// disable physics to prevent hover-induced drift.
+	// Once the neighborhood has settled, unpin the spotlight node and
+	// disable physics to lock everything in place.
 	network.once("stabilized", () => {
 		if (viewMode === "ego" && spotlightId) {
-			const finalOffset = getPanelOffset({ anticipateOpen: true });
-			network.focus(spotlightId, {
-				scale: 1.5,
-				offset: finalOffset,
-				animation: {
-					duration: 300,
-					easingFunction: "easeInOutQuad",
-				},
-			});
+			nodes.update([{ id: spotlightId, fixed: false }]);
 			network.setOptions({ physics: { enabled: false } });
 		}
 	});
