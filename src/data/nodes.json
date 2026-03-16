@@ -2490,5 +2490,71 @@
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Ongeki",
 		"wikidataId": "Q55525471",
 		"thumbnail": null
+	},
+
+	{
+		"id": "noriyoshi-ohba",
+		"label": "Noriyoshi Ohba",
+		"group": "creator",
+		"summary": "Noriyoshi Ohba is a Japanese video game designer and director at Sega AM1. He is best known as the creator and director of The House of the Dead series, one of the most successful light gun arcade game franchises. Ohba has directed multiple entries in the series since the original 1996 release.",
+		"birthYear": 1967,
+		"notableRoles": "Creator and director of The House of the Dead series",
+		"roles": ["director"],
+		"gender": "male",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/Noriyoshi_Ohba",
+		"wikidataId": "Q7051361",
+		"thumbnail": null
+	},
+	{
+		"id": "makoto-uchida",
+		"label": "Makoto Uchida",
+		"group": "creator",
+		"summary": "Makoto Uchida is a Japanese video game designer and director who worked at Sega. He is best known as the creator and director of the Golden Axe series and Alien Storm. Uchida also directed the beat 'em up Dynamite Dux and contributed to the Altered Beast games. He was one of Sega's key arcade game creators during the late 1980s and early 1990s.",
+		"birthYear": 1964,
+		"notableRoles": "Creator and director of Golden Axe, Alien Storm",
+		"roles": ["director", "designer"],
+		"gender": "male",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/Makoto_Uchida_(game_designer)",
+		"wikidataId": "Q3489767",
+		"thumbnail": null
+	},
+	{
+		"id": "hayao-nakayama",
+		"label": "Hayao Nakayama",
+		"group": "creator",
+		"summary": "Hayao Nakayama was a Japanese businessman who served as president of Sega Enterprises from 1984 to 1999. Under his leadership, Sega became one of the world's leading arcade and console game companies, launching the Sega Genesis/Mega Drive and overseeing the development of iconic arcade franchises. He was instrumental in Sega's golden age of arcade hardware innovation.",
+		"birthYear": 1932,
+		"notableRoles": "President of Sega Enterprises (1984–1999)",
+		"roles": ["producer"],
+		"gender": "male",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/Hayao_Nakayama",
+		"wikidataId": "Q5686016",
+		"thumbnail": null
+	},
+	{
+		"id": "david-rosen",
+		"label": "David Rosen",
+		"group": "creator",
+		"summary": "David Rosen is an American businessman who co-founded Sega Enterprises. In the 1950s, he started importing coin-operated amusement machines to Japan. His company, Rosen Enterprises, merged with Service Games in 1965 to form Sega. Rosen served as CEO and was pivotal in establishing Sega as a global arcade game manufacturer.",
+		"birthYear": 1930,
+		"notableRoles": "Co-founder of Sega Enterprises",
+		"roles": ["producer"],
+		"gender": "male",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/David_Rosen_(businessman)",
+		"wikidataId": "Q3018726",
+		"thumbnail": null
+	},
+	{
+		"id": "masamitsu-niitani",
+		"label": "Masamitsu Niitani",
+		"group": "creator",
+		"summary": "Masamitsu Niitani is a Japanese video game designer and programmer who founded Compile in 1982. He is the creator of the Puyo Puyo puzzle game series, which became one of the most popular competitive puzzle franchises in Japan. After Compile went bankrupt in 2003, Niitani founded Compile Heart to continue developing games.",
+		"birthYear": 1960,
+		"notableRoles": "Founder of Compile, creator of Puyo Puyo",
+		"roles": ["designer", "programmer"],
+		"gender": "male",
+		"wikipediaUrl": "https://en.wikipedia.org/wiki/Masamitsu_Niitani",
+		"wikidataId": "Q11376306",
+		"thumbnail": null
 	}
 ]

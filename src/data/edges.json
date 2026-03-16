@@ -480,5 +480,27 @@
 	{ "from": "puyo-puyo-tetris", "to": "sonic-team", "label": "developed by" },
 	{ "from": "puyo-puyo-tetris", "to": "nu", "label": "runs on" },
 	{ "from": "ongeki", "to": "sega", "label": "developed by" },
-	{ "from": "ongeki", "to": "nu", "label": "runs on" }
+	{ "from": "ongeki", "to": "nu", "label": "runs on" },
+
+	{ "from": "noriyoshi-ohba", "to": "sega-am1", "label": "worked at" },
+	{ "from": "makoto-uchida", "to": "sega", "label": "worked at" },
+	{ "from": "hayao-nakayama", "to": "sega", "label": "worked at" },
+	{ "from": "david-rosen", "to": "sega", "label": "worked at" },
+	{ "from": "masamitsu-niitani", "to": "compile", "label": "worked at" },
+
+	{ "from": "noriyoshi-ohba", "to": "the-house-of-the-dead", "label": "directed" },
+	{ "from": "noriyoshi-ohba", "to": "the-house-of-the-dead-2", "label": "directed" },
+	{ "from": "makoto-uchida", "to": "golden-axe", "label": "directed" },
+	{ "from": "makoto-uchida", "to": "alien-storm", "label": "directed" },
+	{ "from": "makoto-uchida", "to": "golden-axe-revenge-of-death-adder", "label": "directed" },
+	{ "from": "masamitsu-niitani", "to": "puyo-puyo", "label": "designed" },
+	{ "from": "masamitsu-niitani", "to": "puyo-puyo-tsu", "label": "designed" },
+
+	{ "from": "yu-suzuki", "to": "champion-boxing", "label": "designed" },
+	{ "from": "yu-suzuki", "to": "f355-challenge", "label": "produced" },
+	{ "from": "hisao-oguchi", "to": "eighteen-wheeler", "label": "produced" },
+	{ "from": "hisao-oguchi", "to": "top-skater", "label": "produced" },
+	{ "from": "hiroshi-kawaguchi", "to": "enduro-racer", "label": "composed for" },
+	{ "from": "hiroshi-kawaguchi", "to": "scramble-spirits", "label": "composed for" },
+	{ "from": "takenobu-mitsuyoshi", "to": "michael-jacksons-moonwalker", "label": "composed for" }
 ]

@@ -79,11 +79,11 @@
 
 **Source**: research.md Part 5 for creator field values and edge mappings.
 
-- [ ] T022 [US2] Add 6 new creator nodes to src/data/nodes.json — Noriyoshi Ohba, Makoto Uchida, Ryuta Ueda, Hayao Nakayama, David Rosen, Masamitsu Niitani — each needs id, label, group:"creator", summary, birthYear, notableRoles, roles[], gender, wikipediaUrl, wikidataId, thumbnail
-- [ ] T023 [US2] Add "worked at" edges for new creators to src/data/edges.json — noriyoshi-ohba → sega-am1, makoto-uchida → sega, ryuta-ueda → sonic-team, hayao-nakayama → sega, david-rosen → sega, masamitsu-niitani → compile (6 edges)
-- [ ] T024 [US2] Add credit edges from new creators to games in src/data/edges.json — Ohba directed house-of-the-dead + house-of-the-dead-2; Uchida directed golden-axe + alien-storm + golden-axe-revenge-of-death-adder; Ueda directed puyo-puyo-fever + puyo-puyo-tetris; Niitani designed puyo-puyo + puyo-puyo-tsu (~9 edges)
-- [ ] T025 [US2] Add credit edges from existing creators to newly added games in src/data/edges.json — Yu Suzuki designed champion-boxing + produced f355-challenge; Hisao Oguchi produced eighteen-wheeler + top-skater; Hiroshi Kawaguchi composed-for enduro-racer + scramble-spirits; Takenobu Mitsuyoshi composed-for michael-jacksons-moonwalker (~7 edges)
-- [ ] T026 [US2] Run validation — confirm 224 nodes (218+6 creators), ~454 edges, 0 duplicate IDs, 0 broken edges, and creator count ≥26
+- [x] T022 [US2] Add 5 new creator nodes to src/data/nodes.json — Noriyoshi Ohba, Makoto Uchida, Hayao Nakayama, David Rosen, Masamitsu Niitani (Ryuta Ueda dropped: no Wikipedia article per Constitution VI) — each needs id, label, group:"creator", summary, birthYear, notableRoles, roles[], gender, wikipediaUrl, wikidataId, thumbnail
+- [x] T023 [US2] Add "worked at" edges for new creators to src/data/edges.json — noriyoshi-ohba → sega-am1, makoto-uchida → sega, hayao-nakayama → sega, david-rosen → sega, masamitsu-niitani → compile (5 edges)
+- [x] T024 [US2] Add credit edges from new creators to games in src/data/edges.json — Ohba directed house-of-the-dead + house-of-the-dead-2; Uchida directed golden-axe + alien-storm + golden-axe-revenge-of-death-adder; Niitani designed puyo-puyo + puyo-puyo-tsu (7 edges)
+- [x] T025 [US2] Add credit edges from existing creators to newly added games in src/data/edges.json — Yu Suzuki designed champion-boxing + produced f355-challenge; Hisao Oguchi produced eighteen-wheeler + top-skater; Hiroshi Kawaguchi composed-for enduro-racer + scramble-spirits; Takenobu Mitsuyoshi composed-for michael-jacksons-moonwalker (7 edges)
+- [x] T026 [US2] Run validation — confirm 223 nodes (218+5 creators), 457 edges, 0 duplicate IDs, 0 broken edges, and creator count ≥25
 
 **Checkpoint**: User Story 2 complete — all creators added with full metadata and relationship edges. Graph shows expanded creator network with proper game credits.
 
