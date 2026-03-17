@@ -398,7 +398,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Hang-On",
 		"wikidataId": "Q1575476",
-		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/b/b4/Hang_on_arcade_flyer.png"
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4ol6.jpg"
 	},
 	{
 		"id": "space-harrier",
@@ -409,7 +409,7 @@
 		"genre": "Rail shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Space_Harrier",
 		"wikidataId": "Q1707792",
-		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/2/21/SpaceHarrier_arcadeflyer.png"
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co20ff.jpg"
 	},
 	{
 		"id": "fantasy-zone",
@@ -420,7 +420,7 @@
 		"genre": "Shoot 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Fantasy_Zone",
 		"wikidataId": "Q1396012",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co56bw.jpg"
 	},
 	{
 		"id": "out-run",
@@ -431,7 +431,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Out_Run",
 		"wikidataId": "Q1142287",
-		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/0/04/Out_Run_Coverart.png"
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/bhsd1igeeyyeesga4d5i.jpg"
 	},
 	{
 		"id": "alex-kidd-the-lost-stars",
@@ -442,7 +442,7 @@
 		"genre": "Platformer",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Alex_Kidd:_The_Lost_Stars",
 		"wikidataId": "Q389174",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6a7l.jpg"
 	},
 	{
 		"id": "quartet",
@@ -453,7 +453,7 @@
 		"genre": "Run and gun",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Quartet_(video_game)",
 		"wikidataId": "Q3927515",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7e95.jpg"
 	},
 	{
 		"id": "shinobi",
@@ -464,7 +464,7 @@
 		"genre": "Action",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Shinobi_(1987_video_game)",
 		"wikidataId": "Q2468410",
-		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/4/45/Shinobi_sales_flyer.png"
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2wg2.jpg"
 	},
 	{
 		"id": "after-burner",
@@ -475,7 +475,7 @@
 		"genre": "Rail shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/After_Burner",
 		"wikidataId": "Q388929",
-		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/1/13/AfterBurner_JParcadeflyer.png"
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co22y6.jpg"
 	},
 	{
 		"id": "thunder-blade",
@@ -486,7 +486,7 @@
 		"genre": "Shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Thunder_Blade",
 		"wikidataId": "Q1752735",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6xpd.jpg"
 	},
 	{
 		"id": "super-hang-on",
@@ -497,7 +497,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Super_Hang-On",
 		"wikidataId": "Q1473298",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4yk4.jpg"
 	},
 	{
 		"id": "altered-beast",
@@ -508,7 +508,7 @@
 		"genre": "Beat 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Altered_Beast",
 		"wikidataId": "Q1355850",
-		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/6/6f/AlteredBeastFlyer.png"
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co25mp.jpg"
 	},
 	{
 		"id": "power-drift",
@@ -519,7 +519,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Power_Drift",
 		"wikidataId": "Q2106655",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8ht5.jpg"
 	},
 	{
 		"id": "galaxy-force-ii",
@@ -530,7 +530,7 @@
 		"genre": "Rail shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Galaxy_Force",
 		"wikidataId": "Q2241870",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co27hg.jpg"
 	},
 	{
 		"id": "gain-ground",
@@ -541,7 +541,7 @@
 		"genre": "Action strategy",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Gain_Ground",
 		"wikidataId": "Q2488009",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6z34.jpg"
 	},
 	{
 		"id": "golden-axe",
@@ -552,7 +552,7 @@
 		"genre": "Beat 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Golden_Axe_(video_game)",
 		"wikidataId": "Q1046574",
-		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/a/ab/Golden_Axe_Promo_Flyer.jpeg"
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co25qt.jpg"
 	},
 	{
 		"id": "columns",
@@ -563,7 +563,7 @@
 		"genre": "Puzzle",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Columns_(video_game)",
 		"wikidataId": "Q1112940",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2897.jpg"
 	},
 	{
 		"id": "bonanza-bros",
@@ -574,7 +574,7 @@
 		"genre": "Action",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Bonanza_Bros.",
 		"wikidataId": "Q897166",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co67qx.jpg"
 	},
 	{
 		"id": "g-loc-air-battle",
@@ -585,7 +585,7 @@
 		"genre": "Flight combat",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/G-LOC:_Air_Battle",
 		"wikidataId": "Q2490765",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/coad0b.jpg"
 	},
 	{
 		"id": "rad-mobile",
@@ -596,7 +596,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Rad_Mobile",
 		"wikidataId": "Q2126050",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8fla.jpg"
 	},
 	{
 		"id": "virtua-racing",
@@ -607,7 +607,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Racing",
 		"wikidataId": "Q1849822",
-		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/1/12/Virtua_Racing_arcade_flyer.jpg"
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6aec.jpg"
 	},
 	{
 		"id": "golden-axe-revenge-of-death-adder",
@@ -618,7 +618,7 @@
 		"genre": "Beat 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Golden_Axe:_The_Revenge_of_Death_Adder",
 		"wikidataId": "Q2461197",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6f4m.jpg"
 	},
 	{
 		"id": "virtua-fighter",
@@ -629,7 +629,7 @@
 		"genre": "Fighting",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Fighter_(video_game)",
 		"wikidataId": "Q1060660",
-		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/b/bb/VirtuaFighter_arcadeflyer.png"
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co84c6.jpg"
 	},
 	{
 		"id": "segasonic-the-hedgehog",
@@ -640,7 +640,7 @@
 		"genre": "Platformer",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/SegaSonic_the_Hedgehog",
 		"wikidataId": "Q1752757",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1zsw.jpg"
 	},
 	{
 		"id": "daytona-usa",
@@ -651,7 +651,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Daytona_USA",
 		"wikidataId": "Q1326048",
-		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/c/c2/Daytona_USA_arcade_flyer.jpg"
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1w7l.jpg"
 	},
 	{
 		"id": "virtua-cop",
@@ -662,7 +662,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Cop",
 		"wikidataId": "Q1970425",
-		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/c/ca/Virtuacop.jpg"
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co25zv.jpg"
 	},
 	{
 		"id": "virtua-fighter-2",
@@ -673,7 +673,7 @@
 		"genre": "Fighting",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Fighter_2",
 		"wikidataId": "Q2410458",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/coavy0.jpg"
 	},
 	{
 		"id": "virtua-striker",
@@ -684,7 +684,7 @@
 		"genre": "Sports",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Striker",
 		"wikidataId": "Q2070588",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3inc.jpg"
 	},
 	{
 		"id": "sega-rally-championship",
@@ -695,7 +695,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Sega_Rally_Championship",
 		"wikidataId": "Q1754927",
-		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/e/eb/Sega_Rally_flyer.jpg"
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9ael.jpg"
 	},
 	{
 		"id": "fighting-vipers",
@@ -706,7 +706,7 @@
 		"genre": "Fighting",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Fighting_Vipers",
 		"wikidataId": "Q4038731",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co407w.jpg"
 	},
 	{
 		"id": "manx-tt-superbike",
@@ -717,7 +717,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Manx_TT_Superbike",
 		"wikidataId": "Q3843913",
-		"thumbnail": null
+		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/b/b2/ManxTTSuperbikeBox.jpg"
 	},
 	{
 		"id": "virtual-on",
@@ -728,7 +728,7 @@
 		"genre": "Mech combat",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtual_On",
 		"wikidataId": "Q1051576",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co522k.jpg"
 	},
 	{
 		"id": "virtua-cop-2",
@@ -739,7 +739,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Cop_2",
 		"wikidataId": "Q2091758",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9fqj.jpg"
 	},
 	{
 		"id": "sonic-the-fighters",
@@ -750,7 +750,7 @@
 		"genre": "Fighting",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Sonic_the_Fighters",
 		"wikidataId": "Q1752729",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa1e0.jpg"
 	},
 	{
 		"id": "last-bronx",
@@ -761,7 +761,7 @@
 		"genre": "Fighting",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Last_Bronx",
 		"wikidataId": "Q3218710",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3gz1.jpg"
 	},
 	{
 		"id": "die-hard-arcade",
@@ -772,7 +772,7 @@
 		"genre": "Beat 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Die_Hard_Arcade",
 		"wikidataId": "Q1219274",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4l1s.jpg"
 	},
 	{
 		"id": "gunblade-ny",
@@ -783,7 +783,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Gunblade_NY",
 		"wikidataId": "Q3120530",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8fdn.jpg"
 	},
 	{
 		"id": "wave-runner",
@@ -794,7 +794,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Wave_Runner_(video_game)",
 		"wikidataId": "Q7975181",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8ekg.jpg"
 	},
 	{
 		"id": "decathlete",
@@ -805,7 +805,7 @@
 		"genre": "Sports",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Decathlete",
 		"wikidataId": "Q2349082",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8eiz.jpg"
 	},
 	{
 		"id": "scud-race",
@@ -816,7 +816,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Scud_Race",
 		"wikidataId": "Q3474866",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2xik.jpg"
 	},
 	{
 		"id": "virtua-fighter-3",
@@ -827,7 +827,7 @@
 		"genre": "Fighting",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Fighter_3",
 		"wikidataId": "Q2526361",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3kco.jpg"
 	},
 	{
 		"id": "the-house-of-the-dead",
@@ -838,7 +838,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/The_House_of_the_Dead_(video_game)",
 		"wikidataId": "Q6113095",
-		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/2/2a/House_of_the_Dead_arcade_flyer.jpg"
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2z1j.jpg"
 	},
 	{
 		"id": "spikeout",
@@ -849,7 +849,7 @@
 		"genre": "Beat 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Spikeout",
 		"wikidataId": "Q2371424",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4gj8.jpg"
 	},
 	{
 		"id": "daytona-usa-2",
@@ -860,7 +860,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Daytona_USA_2",
 		"wikidataId": "Q2131779",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9zfb.jpg"
 	},
 	{
 		"id": "sega-rally-2",
@@ -871,7 +871,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Sega_Rally_2",
 		"wikidataId": "Q2001792",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob3fw.jpg"
 	},
 	{
 		"id": "the-ocean-hunter",
@@ -882,7 +882,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/The_Ocean_Hunter",
 		"wikidataId": "Q7741744",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2p10.jpg"
 	},
 	{
 		"id": "the-house-of-the-dead-2",
@@ -893,7 +893,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/The_House_of_the_Dead_2",
 		"wikidataId": "Q1753023",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5nra.jpg"
 	},
 	{
 		"id": "virtual-on-oratorio-tangram",
@@ -904,7 +904,7 @@
 		"genre": "Mech combat",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtual_On_Oratorio_Tangram",
 		"wikidataId": "Q4013580",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co45rz.jpg"
 	},
 	{
 		"id": "dynamite-cop",
@@ -915,7 +915,7 @@
 		"genre": "Beat 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Dynamite_Cop",
 		"wikidataId": "Q1269139",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4lkr.jpg"
 	},
 	{
 		"id": "crazy-taxi",
@@ -926,7 +926,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Crazy_Taxi_(video_game)",
 		"wikidataId": "Q1139272",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7jt6.jpg"
 	},
 	{
 		"id": "virtua-tennis",
@@ -937,7 +937,7 @@
 		"genre": "Sports",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Tennis",
 		"wikidataId": "Q14711888",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2f1k.jpg"
 	},
 	{
 		"id": "derby-owners-club",
@@ -948,7 +948,7 @@
 		"genre": "Simulation",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Derby_Owners_Club",
 		"wikidataId": "Q5261074",
-		"thumbnail": null
+		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/DOC-Derby_Owners_Club.jpg/250px-DOC-Derby_Owners_Club.jpg"
 	},
 	{
 		"id": "samba-de-amigo",
@@ -959,7 +959,7 @@
 		"genre": "Rhythm",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Samba_de_Amigo",
 		"wikidataId": "Q1475020",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7l0w.jpg"
 	},
 	{
 		"id": "jambo-safari",
@@ -970,7 +970,7 @@
 		"genre": "Driving",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Jambo!_Safari",
 		"wikidataId": "Q3161017",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7fpq.jpg"
 	},
 	{
 		"id": "monkey-ball",
@@ -981,7 +981,7 @@
 		"genre": "Puzzle platformer",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Super_Monkey_Ball_(video_game)",
 		"wikidataId": "Q289882",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co608s.jpg"
 	},
 	{
 		"id": "initial-d-arcade-stage",
@@ -992,7 +992,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Initial_D_(video_game_series)",
 		"wikidataId": "Q721641",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4xlc.jpg"
 	},
 	{
 		"id": "virtua-fighter-4",
@@ -1003,7 +1003,7 @@
 		"genre": "Fighting",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Fighter_4",
 		"wikidataId": "Q2526362",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co849r.jpg"
 	},
 	{
 		"id": "virtua-striker-3",
@@ -1014,7 +1014,7 @@
 		"genre": "Sports",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Striker_3",
 		"wikidataId": "Q2070589",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8ezo.jpg"
 	},
 	{
 		"id": "virtua-tennis-2",
@@ -1025,7 +1025,7 @@
 		"genre": "Sports",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Tennis_2",
 		"wikidataId": "Q961428",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co90z3.jpg"
 	},
 	{
 		"id": "the-house-of-the-dead-iii",
@@ -1036,7 +1036,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/The_House_of_the_Dead_III",
 		"wikidataId": "Q1753025",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8op9.jpg"
 	},
 	{
 		"id": "outrun-2",
@@ -1047,7 +1047,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/OutRun_2",
 		"wikidataId": "Q2032064",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2qwt.jpg"
 	},
 	{
 		"id": "virtua-cop-3",
@@ -1058,7 +1058,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Cop_3",
 		"wikidataId": "Q3561028",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4oq4.jpg"
 	},
 	{
 		"id": "the-house-of-the-dead-4",
@@ -1069,7 +1069,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/The_House_of_the_Dead_4",
 		"wikidataId": "Q1753026",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2iti.jpg"
 	},
 	{
 		"id": "virtua-fighter-5",
@@ -1080,7 +1080,7 @@
 		"genre": "Fighting",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Fighter_5",
 		"wikidataId": "Q1058841",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9re0.jpg"
 	},
 	{
 		"id": "after-burner-climax",
@@ -1091,7 +1091,7 @@
 		"genre": "Rail shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/After_Burner_Climax",
 		"wikidataId": "Q389028",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2it8.jpg"
 	},
 	{
 		"id": "lets-go-jungle",
@@ -1102,7 +1102,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Let%27s_Go_Jungle!:_Lost_on_the_Island_of_Spice",
 		"wikidataId": "Q3830093",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8d0b.jpg"
 	},
 	{
 		"id": "confidential-mission",
@@ -1113,7 +1113,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Confidential_Mission",
 		"wikidataId": "Q2316363",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co40f6.jpg"
 	},
 	{
 		"id": "sega-marine-fishing",
@@ -1124,7 +1124,7 @@
 		"genre": "Simulation",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Sega_Marine_Fishing",
 		"wikidataId": "Q3954558",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/coat4p.jpg"
 	},
 	{
 		"id": "turbo-arcade",
@@ -1135,7 +1135,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Turbo_(video_game)",
 		"wikidataId": "Q7853801",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/coam3x.jpg"
 	},
 	{
 		"id": "buck-rogers",
@@ -1146,7 +1146,7 @@
 		"genre": "Rail shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Buck_Rogers:_Planet_of_Zoom",
 		"wikidataId": "Q2682583",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/bjb17zewk3uqtmhfysur.jpg"
 	},
 	{
 		"id": "zaxxon",
@@ -1157,7 +1157,7 @@
 		"genre": "Scrolling shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Zaxxon",
 		"wikidataId": "Q91247",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2bag.jpg"
 	},
 	{
 		"id": "pengo",
@@ -1168,7 +1168,7 @@
 		"genre": "Maze",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Pengo_(video_game)",
 		"wikidataId": "Q917027",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4kh9.jpg"
 	},
 	{
 		"id": "congo-bongo",
@@ -1179,7 +1179,7 @@
 		"genre": "Platform",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Congo_Bongo",
 		"wikidataId": "Q1125773",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1pj5.jpg"
 	},
 	{
 		"id": "astron-belt",
@@ -1190,7 +1190,7 @@
 		"genre": "Rail shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Astron_Belt",
 		"wikidataId": "Q4811604",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7e92.jpg"
 	},
 	{
 		"id": "star-trek-sos",
@@ -1201,7 +1201,7 @@
 		"genre": "Space combat simulator",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Star_Trek_(arcade_game)",
 		"wikidataId": "Q3496992",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6nae.jpg"
 	},
 	{
 		"id": "flicky",
@@ -1212,7 +1212,7 @@
 		"genre": "Platform",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Flicky",
 		"wikidataId": "Q593781",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7cni.jpg"
 	},
 	{
 		"id": "choplifter",
@@ -1223,7 +1223,7 @@
 		"genre": "Scrolling shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Choplifter",
 		"wikidataId": "Q1076255",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8zki.jpg"
 	},
 	{
 		"id": "wonder-boy",
@@ -1234,7 +1234,7 @@
 		"genre": "Platform",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Wonder_Boy_(video_game)",
 		"wikidataId": "Q780496",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob3us.jpg"
 	},
 	{
 		"id": "wonder-boy-monster-land",
@@ -1245,7 +1245,7 @@
 		"genre": "Platform/action RPG",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Wonder_Boy_in_Monster_Land",
 		"wikidataId": "Q864340",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co52d4.jpg"
 	},
 	{
 		"id": "alien-syndrome",
@@ -1256,7 +1256,7 @@
 		"genre": "Run and gun",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Alien_Syndrome",
 		"wikidataId": "Q3273389",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co85m5.jpg"
 	},
 	{
 		"id": "dynamite-dux",
@@ -1267,7 +1267,7 @@
 		"genre": "Beat 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Dynamite_D%C3%BCx",
 		"wikidataId": "Q3327300",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/dl8lu1mbgdpmtvhtmvyt.jpg"
 	},
 	{
 		"id": "galaxy-force",
@@ -1278,7 +1278,7 @@
 		"genre": "Rail shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Galaxy_Force",
 		"wikidataId": "Q3094543",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co27hg.jpg"
 	},
 	{
 		"id": "eswat",
@@ -1289,7 +1289,7 @@
 		"genre": "Run and gun",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Cyber_Police_ESWAT",
 		"wikidataId": "Q1099141",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7baa.jpg"
 	},
 	{
 		"id": "super-monaco-gp",
@@ -1300,7 +1300,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Super_Monaco_GP",
 		"wikidataId": "Q2110427",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3d5t.jpg"
 	},
 	{
 		"id": "shadow-dancer",
@@ -1311,7 +1311,7 @@
 		"genre": "Platform/action",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Shadow_Dancer_(1989_video_game)",
 		"wikidataId": "Q2651563",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8gf1.jpg"
 	},
 	{
 		"id": "alien-storm",
@@ -1322,7 +1322,7 @@
 		"genre": "Beat 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Alien_Storm",
 		"wikidataId": "Q2160091",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2er6.jpg"
 	},
 	{
 		"id": "outrunners",
@@ -1333,7 +1333,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/OutRunners",
 		"wikidataId": "Q2599190",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5ozj.jpg"
 	},
 	{
 		"id": "ollie-king",
@@ -1344,7 +1344,7 @@
 		"genre": "Sports",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Ollie_King",
 		"wikidataId": "Q3351504",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/kykimrexl79decglqjuv.jpg"
 	},
 	{
 		"id": "hotd-scarlet-dawn",
@@ -1355,7 +1355,7 @@
 		"genre": "Rail shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/House_of_the_Dead:_Scarlet_Dawn",
 		"wikidataId": "Q50333282",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7jzx.jpg"
 	},
 	{
 		"id": "yu-suzuki",
@@ -1364,7 +1364,12 @@
 		"summary": "Yu Suzuki is a Japanese game designer, producer, programmer, and engineer, who headed Sega's AM2 team for 18 years. Considered one of the first auteurs of video games, he created pioneering arcade hits including Hang-On, Space Harrier, Out Run, After Burner, Virtua Racing, and Virtua Fighter, as well as the critically acclaimed Shenmue series.",
 		"birthYear": 1958,
 		"notableRoles": "Game director, Producer, Hardware engineer",
-		"roles": ["director", "producer", "designer", "programmer"],
+		"roles": [
+			"director",
+			"producer",
+			"designer",
+			"programmer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Yu_Suzuki",
 		"wikidataId": "Q282263",
@@ -1377,7 +1382,11 @@
 		"summary": "Toshihiro Nagoshi is a Japanese video game producer, director, and designer. He was the chief creative officer for Sega until 2021 and the general director of Ryu Ga Gotoku Studio. He joined Sega in 1989 and worked on Daytona USA at AM2 before leading Amusement Vision on Monkey Ball.",
 		"birthYear": 1965,
 		"notableRoles": "Producer, Director, Chief Creative Officer",
-		"roles": ["director", "producer", "designer"],
+		"roles": [
+			"director",
+			"producer",
+			"designer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Toshihiro_Nagoshi",
 		"wikidataId": "Q2572612",
@@ -1390,7 +1399,10 @@
 		"summary": "Yuji Naka is a Japanese former video game designer and programmer. He is the co-creator of the Sonic the Hedgehog series and was the president of Sonic Team at Sega until his departure in 2006. His programming work on early arcade and console titles helped establish Sega's technical reputation.",
 		"birthYear": 1965,
 		"notableRoles": "Lead programmer, Director, Sonic Team president",
-		"roles": ["designer", "programmer"],
+		"roles": [
+			"designer",
+			"programmer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Yuji_Naka",
 		"wikidataId": "Q726119",
@@ -1403,7 +1415,11 @@
 		"summary": "Rieko Kodama, also known as Phoenix Rie, was a Japanese video game artist, director, and producer employed by Sega from 1984 until her death in 2022. She is primarily known for her work on the Phantasy Star series and Skies of Arcadia, and is recognized as one of the first successful women in the video game industry.",
 		"birthYear": 1963,
 		"notableRoles": "Artist, Director, Producer",
-		"roles": ["artist", "director", "producer"],
+		"roles": [
+			"artist",
+			"director",
+			"producer"
+		],
 		"gender": "female",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Rieko_Kodama",
 		"wikidataId": "Q7333106",
@@ -1416,7 +1432,10 @@
 		"summary": "Tetsuya Mizuguchi is a Japanese video game designer and producer. He worked at Sega's AM3 division on Sega Rally Championship and other arcade titles before heading United Game Artists, where he directed Space Channel 5 and Rez. He later founded Q Entertainment and Enhance.",
 		"birthYear": 1965,
 		"notableRoles": "Game director, Producer",
-		"roles": ["designer", "producer"],
+		"roles": [
+			"designer",
+			"producer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Tetsuya_Mizuguchi",
 		"wikidataId": "Q536801",
@@ -1429,7 +1448,9 @@
 		"summary": "Sega's longest-serving game music composer, joining in 1984. Created the iconic soundtracks for Yu Suzuki's super scaler arcade games including Out Run, Space Harrier, After Burner, and Hang-On. Known by the alias \"Hiro\" in early game credits.",
 		"birthYear": 1965,
 		"notableRoles": "Composer, Sound Designer",
-		"roles": ["composer"],
+		"roles": [
+			"composer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Hiroshi_Kawaguchi_(composer)",
 		"wikidataId": "Q3136362",
@@ -1442,7 +1463,9 @@
 		"summary": "Sega composer and vocalist famous for singing the Daytona USA soundtrack (\"Let's Go Away\", \"Rolling Start\"). Joined Sega in 1990 and composed music for many AM2 arcade titles including Virtua Fighter 2 and Virtua Striker. Also provided the voice of Kage-Maru in the Virtua Fighter series.",
 		"birthYear": 1967,
 		"notableRoles": "Composer, Vocalist, Sound Director",
-		"roles": ["composer"],
+		"roles": [
+			"composer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Takenobu_Mitsuyoshi",
 		"wikidataId": "Q3178490",
@@ -1455,7 +1478,9 @@
 		"summary": "Sega AM2 composer (1989–1996) who created the soundtracks for Virtua Fighter and OutRunners. After leaving Sega in 1996, he composed the critically acclaimed Lumines soundtrack. Also contributed sound programming to Streets of Rage.",
 		"birthYear": 1967,
 		"notableRoles": "Composer, Musician",
-		"roles": ["composer"],
+		"roles": [
+			"composer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Takayuki_Nakamura",
 		"wikidataId": "Q929814",
@@ -1468,7 +1493,10 @@
 		"summary": "Head of Sega AM3/Hitmaker who directed Super Monaco GP and Rad Mobile. Joined Sega in 1984 and managed AM3 from 1993, overseeing development of Crazy Taxi, Derby Owners Club, and Virtua Tennis. Became president of Sega in 2003.",
 		"birthYear": 1960,
 		"notableRoles": "Director, Producer, Sega President (2003–2004)",
-		"roles": ["director", "producer"],
+		"roles": [
+			"director",
+			"producer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Hisao_Oguchi",
 		"wikidataId": "Q5772322",
@@ -1481,7 +1509,11 @@
 		"summary": "Creator of the Sonic the Hedgehog character design. Joined Sega in 1987 and worked as character designer and artist before directing NiGHTS into Dreams and Burning Rangers at Sonic Team. Also designed Dr. Eggman. Left Sega in 1999 to co-found Artoon.",
 		"birthYear": 1964,
 		"notableRoles": "Character Designer, Game Director",
-		"roles": ["designer", "artist", "director"],
+		"roles": [
+			"designer",
+			"artist",
+			"director"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Naoto_Ohshima",
 		"wikidataId": "Q658384",
@@ -1494,7 +1526,9 @@
 		"summary": "Co-creator of Sonic the Hedgehog who designed the gameplay mechanics and stage layouts for the original Sonic games. Joined Sega in 1988 and directed Sonic 3 and Sonic & Knuckles. Left Sega in 1999, later worked at Naughty Dog on the Uncharted series.",
 		"birthYear": 1965,
 		"notableRoles": "Game Designer, Level Designer",
-		"roles": ["designer"],
+		"roles": [
+			"designer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Hirokazu_Yasuhara",
 		"wikidataId": "Q3136259",
@@ -1507,7 +1541,10 @@
 		"summary": "Current head of Sonic Team since 2008. Lead game designer of NiGHTS into Dreams and director of Sonic Adventure and Sonic Adventure 2. Joined Sega in 1992 and has been the custodian of the Sonic franchise for over two decades.",
 		"birthYear": 1970,
 		"notableRoles": "Game Designer, Director, Sonic Team Head (2008–present)",
-		"roles": ["designer", "director"],
+		"roles": [
+			"designer",
+			"director"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Takashi_Iizuka_(game_designer)",
 		"wikidataId": "Q3514194",
@@ -1520,7 +1557,9 @@
 		"summary": "Sonic Team composer and guitarist of the band Crush 40. Lead composer for the Sonic Adventure series, known for the rock-influenced Sonic soundtracks. Joined Sega in 1993. Also contributed music to Sega Rally 2.",
 		"birthYear": 1970,
 		"notableRoles": "Composer, Guitarist, Crush 40 vocalist",
-		"roles": ["composer"],
+		"roles": [
+			"composer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Jun_Senoue",
 		"wikidataId": "Q2669787",
@@ -1533,7 +1572,10 @@
 		"summary": "Sonic Team's creative director who designed iconic characters including Metal Sonic, Amy Rose, Shadow the Hedgehog, and the Chao. Joined Sega in 1991 and served as art director for the Sonic Adventure series.",
 		"birthYear": 1967,
 		"notableRoles": "Creative Director, Character Designer, Art Director",
-		"roles": ["artist", "designer"],
+		"roles": [
+			"artist",
+			"designer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Kazuyuki_Hoshino",
 		"wikidataId": "Q3194511",
@@ -1546,7 +1588,10 @@
 		"summary": "Sonic Team game designer who directed Samba de Amigo (arcade) and Billy Hatcher and the Giant Egg. Joined Sega around 1997 and worked as field designer on Sonic Adventure before taking director roles on original Sonic Team IPs.",
 		"birthYear": 1972,
 		"notableRoles": "Game Designer, Director, Producer",
-		"roles": ["designer", "director"],
+		"roles": [
+			"designer",
+			"director"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Shun_Nakamura",
 		"wikidataId": "Q4312504",
@@ -1559,7 +1604,9 @@
 		"summary": "Sonic Team's lead composer since Sonic the Hedgehog (2006), creating iconic soundtracks for the modern Sonic era including Sonic Unleashed, Sonic Colors, and Sonic Frontiers. Joined Sega in 1999.",
 		"birthYear": 1974,
 		"notableRoles": "Composer, Bassist, Sound Director",
-		"roles": ["composer"],
+		"roles": [
+			"composer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Tomoya_Ohtani",
 		"wikidataId": "Q16204298",
@@ -1572,7 +1619,9 @@
 		"summary": "Composer and DJ famous for Jet Set Radio's groundbreaking funk/hip-hop/electronic soundtrack. Joined Sega in 1998 and worked at Smilebit. Also composed music for Ollie King (arcade) and Sonic Rush. Left Sega in 2008.",
 		"birthYear": 1972,
 		"notableRoles": "Composer, DJ, Sound Designer",
-		"roles": ["composer"],
+		"roles": [
+			"composer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Hideki_Naganuma",
 		"wikidataId": "Q4311482",
@@ -1585,7 +1634,11 @@
 		"summary": "Current head of Ryu Ga Gotoku Studio since 2021 and key developer of the Yakuza/Like a Dragon series. Started at Sega in 1999 as a planner on Jet Set Radio before becoming central to the Yakuza franchise as scenario writer, producer, and ultimately studio head.",
 		"birthYear": 1976,
 		"notableRoles": "Director, Producer, Writer, RGG Studio Head (2021–present)",
-		"roles": ["designer", "director", "producer"],
+		"roles": [
+			"designer",
+			"director",
+			"producer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Masayoshi_Yokoyama",
 		"wikidataId": "Q11542565",
@@ -1598,7 +1651,9 @@
 		"summary": "British composer who worked at Sega Europe from 1994 to 2004. Known for Sonic R's vocal soundtrack (\"Can You Feel the Sunshine\"), Jet Set Radio, and Headhunter. The only non-Japanese creator in this research set.",
 		"birthYear": 1973,
 		"notableRoles": "Composer, Musician",
-		"roles": ["composer"],
+		"roles": [
+			"composer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Richard_Jacques",
 		"wikidataId": "Q2121109",
@@ -1611,13 +1666,15 @@
 		"summary": "Japanese video game producer and director at Sega AM3/Hitmaker. She became the first female president of a Japanese video game company when she took over as head of Hitmaker. Produced Virtua Tennis, Derby Owners Club, and Gunblade NY, and directed Confidential Mission.",
 		"birthYear": 1968,
 		"notableRoles": "Producer, Director, Hitmaker President",
-		"roles": ["director", "producer"],
+		"roles": [
+			"director",
+			"producer"
+		],
 		"gender": "female",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Mie_Kumagai",
 		"wikidataId": "Q6843511",
 		"thumbnail": null
 	},
-
 	{
 		"id": "compile",
 		"label": "Compile",
@@ -1670,7 +1727,6 @@
 		"wikidataId": "Q7451638",
 		"thumbnail": null
 	},
-
 	{
 		"id": "hikaru",
 		"label": "Sega Hikaru",
@@ -1731,7 +1787,6 @@
 		"wikidataId": "Q19722007",
 		"thumbnail": null
 	},
-
 	{
 		"id": "periscope",
 		"label": "Periscope",
@@ -1741,7 +1796,7 @@
 		"genre": "EM shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Periscope_(arcade_game)",
 		"wikidataId": "Q18754124",
-		"thumbnail": null
+		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Sega_Periscope.jpg/250px-Sega_Periscope.jpg"
 	},
 	{
 		"id": "heavyweight-champ",
@@ -1752,7 +1807,7 @@
 		"genre": "Fighting",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Heavyweight_Champ",
 		"wikidataId": "Q3129158",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/coavrz.jpg"
 	},
 	{
 		"id": "head-on",
@@ -1763,7 +1818,7 @@
 		"genre": "Maze/racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Head_On_(video_game)",
 		"wikidataId": "Q1592239",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6vcr.jpg"
 	},
 	{
 		"id": "monaco-gp",
@@ -1774,7 +1829,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Monaco_GP_(video_game)",
 		"wikidataId": "Q3320087",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9iup.jpg"
 	},
 	{
 		"id": "deep-scan",
@@ -1785,7 +1840,7 @@
 		"genre": "Shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Deep_Scan",
 		"wikidataId": "Q5250293",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3whf.jpg"
 	},
 	{
 		"id": "carnival-arcade",
@@ -1796,7 +1851,7 @@
 		"genre": "Gallery shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Carnival_(video_game)",
 		"wikidataId": "Q2939793",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1pjo.jpg"
 	},
 	{
 		"id": "frogger",
@@ -1807,7 +1862,7 @@
 		"genre": "Action",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Frogger",
 		"wikidataId": "Q524267",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5bk2.jpg"
 	},
 	{
 		"id": "astro-blaster",
@@ -1818,7 +1873,7 @@
 		"genre": "Fixed shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Astro_Blaster",
 		"wikidataId": "Q3627626",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3wkk.jpg"
 	},
 	{
 		"id": "space-fury",
@@ -1829,7 +1884,7 @@
 		"genre": "Multidirectional shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Space_Fury",
 		"wikidataId": "Q7572361",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/mtpx1uxuwxnhu9b84cjs.jpg"
 	},
 	{
 		"id": "subroc-3d",
@@ -1840,7 +1895,7 @@
 		"genre": "Shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Subroc-3D",
 		"wikidataId": "Q3502377",
-		"thumbnail": null
+		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/8/89/Subroc_3d_poster.jpg"
 	},
 	{
 		"id": "tac-scan",
@@ -1851,7 +1906,7 @@
 		"genre": "Multidirectional shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Tac/Scan",
 		"wikidataId": "Q7673660",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/yibqqvsfhdvuhecpilkk.jpg"
 	},
 	{
 		"id": "champion-boxing",
@@ -1862,7 +1917,7 @@
 		"genre": "Sports/Fighting",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Champion_Boxing",
 		"wikidataId": "Q2948687",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4sxo.jpg"
 	},
 	{
 		"id": "bank-panic",
@@ -1873,7 +1928,7 @@
 		"genre": "Shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Bank_Panic",
 		"wikidataId": "Q602074",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/jqyxtuhkbemjbz3hxdy3.jpg"
 	},
 	{
 		"id": "my-hero",
@@ -1884,7 +1939,7 @@
 		"genre": "Beat 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/My_Hero_(video_game)",
 		"wikidataId": "Q3331195",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/icmzyoeomsmbx7ha6nkn.jpg"
 	},
 	{
 		"id": "teddy-boy-blues",
@@ -1895,7 +1950,7 @@
 		"genre": "Platformer",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Teddy_Boy_Blues",
 		"wikidataId": "Q3517073",
-		"thumbnail": null
+		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Teddy-Boy-Blues-arcade-flyer.jpg/120px-Teddy-Boy-Blues-arcade-flyer.jpg"
 	},
 	{
 		"id": "ninja-princess",
@@ -1906,7 +1961,7 @@
 		"genre": "Run and gun",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Ninja_Princess",
 		"wikidataId": "Q3477719",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7e8e.jpg"
 	},
 	{
 		"id": "enduro-racer",
@@ -1917,7 +1972,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Enduro_Racer",
 		"wikidataId": "Q5376685",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7e97.jpg"
 	},
 	{
 		"id": "action-fighter",
@@ -1928,7 +1983,7 @@
 		"genre": "Scrolling shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Action_Fighter",
 		"wikidataId": "Q2411036",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/coacwf.jpg"
 	},
 	{
 		"id": "sdi-arcade",
@@ -1939,7 +1994,7 @@
 		"genre": "Shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/SDI_(video_game)",
 		"wikidataId": "Q3943319",
-		"thumbnail": null
+		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/7/77/SDI_arcadeflyer.png"
 	},
 	{
 		"id": "scramble-spirits",
@@ -1950,7 +2005,7 @@
 		"genre": "Scrolling shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Scramble_Spirits",
 		"wikidataId": "Q3476413",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4xly.jpg"
 	},
 	{
 		"id": "turbo-out-run",
@@ -1961,7 +2016,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Turbo_Out_Run",
 		"wikidataId": "Q2567511",
-		"thumbnail": null
+		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/5/54/Turbo_Outrun_cover.jpg"
 	},
 	{
 		"id": "wrestle-war",
@@ -1972,7 +2027,7 @@
 		"genre": "Wrestling",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Wrestle_War",
 		"wikidataId": "Q3570110",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7e8z.jpg"
 	},
 	{
 		"id": "crack-down",
@@ -1983,7 +2038,7 @@
 		"genre": "Action",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Crack_Down_(video_game)",
 		"wikidataId": "Q2742747",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co50ez.jpg"
 	},
 	{
 		"id": "michael-jacksons-moonwalker",
@@ -1994,7 +2049,7 @@
 		"genre": "Beat 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Michael_Jackson%27s_Moonwalker",
 		"wikidataId": "Q2536351",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6mpq.jpg"
 	},
 	{
 		"id": "gp-rider",
@@ -2005,7 +2060,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/GP_Rider",
 		"wikidataId": "Q5514371",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6ymo.jpg"
 	},
 	{
 		"id": "laser-ghost",
@@ -2016,7 +2071,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Laser_Ghost",
 		"wikidataId": "Q3827361",
-		"thumbnail": null
+		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Laser_ghost.jpg/250px-Laser_ghost.jpg"
 	},
 	{
 		"id": "bloxeed",
@@ -2027,7 +2082,7 @@
 		"genre": "Puzzle",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Bloxeed",
 		"wikidataId": "Q2907111",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co25i0.jpg"
 	},
 	{
 		"id": "puyo-puyo",
@@ -2038,7 +2093,7 @@
 		"genre": "Puzzle",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Puyo_Puyo_(video_game)",
 		"wikidataId": "Q11286214",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2zl0.jpg"
 	},
 	{
 		"id": "rail-chase",
@@ -2049,7 +2104,7 @@
 		"genre": "Rail shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Rail_Chase",
 		"wikidataId": "Q11350084",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co54ff.jpg"
 	},
 	{
 		"id": "spider-man-arcade",
@@ -2060,7 +2115,7 @@
 		"genre": "Beat 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Spider-Man:_The_Video_Game",
 		"wikidataId": "Q3493434",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6s9q.jpg"
 	},
 	{
 		"id": "arabian-fight",
@@ -2071,7 +2126,7 @@
 		"genre": "Beat 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Arabian_Fight",
 		"wikidataId": "Q4783363",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co65ds.jpg"
 	},
 	{
 		"id": "alien3-the-gun",
@@ -2082,7 +2137,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Alien3:_The_Gun",
 		"wikidataId": "Q4033709",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5fns.jpg"
 	},
 	{
 		"id": "golden-axe-the-duel",
@@ -2093,7 +2148,7 @@
 		"genre": "Fighting",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Golden_Axe:_The_Duel",
 		"wikidataId": "Q10290397",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co47yo.jpg"
 	},
 	{
 		"id": "puyo-puyo-tsu",
@@ -2104,7 +2159,7 @@
 		"genre": "Puzzle",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Puyo_Puyo_Tsu",
 		"wikidataId": "Q906679",
-		"thumbnail": null
+		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Puyo_Puyo_2_PS_cover_art.jpg/250px-Puyo_Puyo_2_PS_cover_art.jpg"
 	},
 	{
 		"id": "wing-war",
@@ -2115,7 +2170,7 @@
 		"genre": "Combat flight",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Wing_War",
 		"wikidataId": "Q3508883",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8gpu.jpg"
 	},
 	{
 		"id": "puyo-puyo-sun",
@@ -2126,7 +2181,7 @@
 		"genre": "Puzzle",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Puyo_Puyo_Sun",
 		"wikidataId": "Q3411121",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6j2a.jpg"
 	},
 	{
 		"id": "virtua-fighter-kids",
@@ -2137,7 +2192,7 @@
 		"genre": "Fighting",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Fighter_Kids",
 		"wikidataId": "Q89268198",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3vna.jpg"
 	},
 	{
 		"id": "virtua-striker-2",
@@ -2148,7 +2203,7 @@
 		"genre": "Sports",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Striker_2",
 		"wikidataId": "Q51597158",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co45k7.jpg"
 	},
 	{
 		"id": "top-skater",
@@ -2159,7 +2214,7 @@
 		"genre": "Sports",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Top_Skater",
 		"wikidataId": "Q16259427",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/jayn0saz3xfmrjcg7uvg.jpg"
 	},
 	{
 		"id": "the-lost-world-jurassic-park",
@@ -2170,7 +2225,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/The_Lost_World:_Jurassic_Park_(arcade_game)",
 		"wikidataId": "Q3521670",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2znt.jpg"
 	},
 	{
 		"id": "star-wars-trilogy-arcade",
@@ -2181,7 +2236,7 @@
 		"genre": "Rail shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Star_Wars_Trilogy_Arcade",
 		"wikidataId": "Q55248",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2ea6.jpg"
 	},
 	{
 		"id": "la-machineguns",
@@ -2192,7 +2247,7 @@
 		"genre": "Rail shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/L.A._Machineguns",
 		"wikidataId": "Q11228737",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/ffskewjtldqgghhvxwlr.jpg"
 	},
 	{
 		"id": "f355-challenge",
@@ -2203,7 +2258,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/F355_Challenge",
 		"wikidataId": "Q616830",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co40hf.jpg"
 	},
 	{
 		"id": "sega-bass-fishing",
@@ -2214,7 +2269,7 @@
 		"genre": "Sports",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Sega_Bass_Fishing",
 		"wikidataId": "Q2388752",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6iis.jpg"
 	},
 	{
 		"id": "fighting-vipers-2",
@@ -2225,7 +2280,7 @@
 		"genre": "Fighting",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Fighting_Vipers_2",
 		"wikidataId": "Q3071651",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5594.jpg"
 	},
 	{
 		"id": "zombie-revenge",
@@ -2236,7 +2291,7 @@
 		"genre": "Beat 'em up",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Zombie_Revenge",
 		"wikidataId": "Q5227936",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2mse.jpg"
 	},
 	{
 		"id": "the-typing-of-the-dead",
@@ -2247,7 +2302,7 @@
 		"genre": "Typing/shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/The_Typing_of_the_Dead",
 		"wikidataId": "Q3141916",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3tq7.jpg"
 	},
 	{
 		"id": "eighteen-wheeler",
@@ -2269,7 +2324,7 @@
 		"genre": "Third-person shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Outtrigger_(video_game)",
 		"wikidataId": "Q374102",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co41ar.jpg"
 	},
 	{
 		"id": "beach-spikers",
@@ -2280,7 +2335,7 @@
 		"genre": "Sports",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Beach_Spikers",
 		"wikidataId": "Q812837",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8gv6.jpg"
 	},
 	{
 		"id": "planet-harriers",
@@ -2291,7 +2346,7 @@
 		"genre": "Rail shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Planet_Harriers",
 		"wikidataId": "Q16323079",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4gj6.jpg"
 	},
 	{
 		"id": "world-club-champion-football",
@@ -2302,7 +2357,7 @@
 		"genre": "Card sports",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/World_Club_Champion_Football",
 		"wikidataId": "Q10926273",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8qqg.jpg"
 	},
 	{
 		"id": "puyo-puyo-fever",
@@ -2313,7 +2368,7 @@
 		"genre": "Puzzle",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Puyo_Puyo_Fever",
 		"wikidataId": "Q1058179",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co85z9.jpg"
 	},
 	{
 		"id": "ghost-squad",
@@ -2324,7 +2379,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Ghost_Squad_(video_game)",
 		"wikidataId": "Q4386452",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6fle.jpg"
 	},
 	{
 		"id": "outrun-2-sp",
@@ -2335,7 +2390,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/OutRun_2",
 		"wikidataId": "Q2633382",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1oy6.jpg"
 	},
 	{
 		"id": "sangokushi-taisen",
@@ -2346,7 +2401,7 @@
 		"genre": "Card strategy",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Sangokushi_Taisen",
 		"wikidataId": "Q877004",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/rkypckpqo4kmylzz8kmp.jpg"
 	},
 	{
 		"id": "virtua-tennis-3",
@@ -2357,7 +2412,7 @@
 		"genre": "Sports",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Virtua_Tennis_3",
 		"wikidataId": "Q2604206",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co25zy.jpg"
 	},
 	{
 		"id": "rambo-arcade",
@@ -2368,7 +2423,7 @@
 		"genre": "Light gun shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Rambo_(2008_video_game)",
 		"wikidataId": "Q55065767",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co76bu.jpg"
 	},
 	{
 		"id": "sega-rally-3",
@@ -2379,7 +2434,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Sega_Rally_3",
 		"wikidataId": "Q3954237",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2qrz.jpg"
 	},
 	{
 		"id": "sega-race-tv",
@@ -2390,7 +2445,7 @@
 		"genre": "Racing",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Sega_Race_TV",
 		"wikidataId": "Q7446159",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/ag8grajouoyzsvds5wlb.jpg"
 	},
 	{
 		"id": "mushiking",
@@ -2401,7 +2456,7 @@
 		"genre": "Card battling",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Mushiking",
 		"wikidataId": "Q2274675",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9cmi.jpg"
 	},
 	{
 		"id": "love-and-berry",
@@ -2412,7 +2467,7 @@
 		"genre": "Card/rhythm",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Oshare_Majo:_Love_and_Berry",
 		"wikidataId": "Q7106582",
-		"thumbnail": null
+		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Loveandberry.jpg/250px-Loveandberry.jpg"
 	},
 	{
 		"id": "kancolle-arcade",
@@ -2423,7 +2478,7 @@
 		"genre": "Card strategy",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Kantai_Collection",
 		"wikidataId": "Q14785138",
-		"thumbnail": null
+		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/0/02/Kantai_Collection_logo.png"
 	},
 	{
 		"id": "border-break",
@@ -2434,7 +2489,7 @@
 		"genre": "Third-person shooter",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Border_Break",
 		"wikidataId": "Q1070977",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2plu.jpg"
 	},
 	{
 		"id": "hatsune-miku-project-diva",
@@ -2445,7 +2500,7 @@
 		"genre": "Rhythm",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Hatsune_Miku:_Project_DIVA",
 		"wikidataId": "Q553201",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/coaurk.jpg"
 	},
 	{
 		"id": "maimai",
@@ -2456,7 +2511,7 @@
 		"genre": "Rhythm",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Maimai_(video_game)",
 		"wikidataId": "Q11232688",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9eoi.jpg"
 	},
 	{
 		"id": "chunithm",
@@ -2467,7 +2522,7 @@
 		"genre": "Rhythm",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Chunithm",
 		"wikidataId": "Q22130940",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3c8r.jpg"
 	},
 	{
 		"id": "puyo-puyo-tetris",
@@ -2478,7 +2533,7 @@
 		"genre": "Puzzle",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Puyo_Puyo_Tetris",
 		"wikidataId": "Q16501135",
-		"thumbnail": null
+		"thumbnail": "https://upload.wikimedia.org/wikipedia/en/0/0c/Puyo_Puyo_Tetris_cover.jpg"
 	},
 	{
 		"id": "ongeki",
@@ -2489,9 +2544,8 @@
 		"genre": "Rhythm",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Ongeki",
 		"wikidataId": "Q55525471",
-		"thumbnail": null
+		"thumbnail": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3d6d.jpg"
 	},
-
 	{
 		"id": "noriyoshi-ohba",
 		"label": "Noriyoshi Ohba",
@@ -2512,7 +2566,9 @@
 		"summary": "Makoto Uchida is a Japanese video game director who worked at Sega AM1. He directed Golden Axe and Altered Beast, two landmark Sega arcade titles from the late 1980s.",
 		"birthYear": null,
 		"notableRoles": "Director of Golden Axe and Altered Beast",
-		"roles": ["director"],
+		"roles": [
+			"director"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Makoto_Uchida_(game_developer)",
 		"wikidataId": "Q3489767",
@@ -2525,7 +2581,9 @@
 		"summary": "Hayao Nakayama was a Japanese businessman who served as president of Sega Enterprises from 1984 to 1999. Under his leadership, Sega became one of the world's leading arcade and console game companies, launching the Sega Genesis/Mega Drive and overseeing the development of iconic arcade franchises. He was instrumental in Sega's golden age of arcade hardware innovation.",
 		"birthYear": 1932,
 		"notableRoles": "President of Sega Enterprises (1984–1999)",
-		"roles": ["producer"],
+		"roles": [
+			"producer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Hayao_Nakayama",
 		"wikidataId": "Q5686016",
@@ -2538,7 +2596,9 @@
 		"summary": "David Rosen is an American businessman who co-founded Sega Enterprises. In the 1950s, he started importing coin-operated amusement machines to Japan. His company, Rosen Enterprises, merged with Service Games in 1965 to form Sega. Rosen served as CEO and was pivotal in establishing Sega as a global arcade game manufacturer.",
 		"birthYear": 1930,
 		"notableRoles": "Co-founder of Sega Enterprises",
-		"roles": ["producer"],
+		"roles": [
+			"producer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/David_Rosen_(businessman)",
 		"wikidataId": "Q3018726",
@@ -2551,7 +2611,9 @@
 		"summary": "Masamitsu Niitani, also known as Moo Niitani, is the founder of Compile and producer of the original Puyo Puyo puzzle game. After Compile went bankrupt in 2003, he founded Compile Heart.",
 		"birthYear": null,
 		"notableRoles": "Founder of Compile, producer of Puyo Puyo",
-		"roles": ["producer"],
+		"roles": [
+			"producer"
+		],
 		"gender": "male",
 		"wikipediaUrl": "https://en.wikipedia.org/wiki/Compile_(company)",
 		"wikidataId": "Q11376306",

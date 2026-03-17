@@ -14,6 +14,8 @@ Auto-generated from all feature plans. Last updated: 2026-02-09
 - Static JSON files (`nodes.json`, `edges.json`) — unchanged by this feature (005-fix-mobile-layout)
 - Static HTML/CSS/JS — no build step, no transpilation + vis-network 9.1.9 (CDN), no npm/node (feature/006-expand-sega-arcade-data)
 - Two JSON files: `src/data/nodes.json`, `src/data/edges.json` (feature/006-expand-sega-arcade-data)
+- Node.js 18+ (enrichment script); static HTML/CSS/JS (application — unchanged) + vis-network 9.1.9 (CDN, unchanged); `node-fetch` or built-in `fetch` (Node 18+) for IGDB/Wikipedia API calls (007-igdb-game-images)
+- Two JSON files: `src/data/nodes.json`, `src/data/edges.json` (only `nodes.json` modified) (007-igdb-game-images)
 
 - HTML5, CSS3, JavaScript (ES6+) — no build step required + vis-network v10 (CDN: single `<script>` tag from unpkg, ~95 KB gzipped) (001-sega-graph-visualization)
 
@@ -34,9 +36,9 @@ npm test; npm run lint
 HTML5, CSS3, JavaScript (ES6+) — no build step required: Follow standard conventions
 
 ## Recent Changes
+- 007-igdb-game-images: Added Node.js 18+ (enrichment script); static HTML/CSS/JS (application — unchanged) + vis-network 9.1.9 (CDN, unchanged); `node-fetch` or built-in `fetch` (Node 18+) for IGDB/Wikipedia API calls
 - feature/006-expand-sega-arcade-data: Added Static HTML/CSS/JS — no build step, no transpilation + vis-network 9.1.9 (CDN), no npm/node
 - 005-fix-mobile-layout: Added HTML5, CSS3, JavaScript ES2020+ (ES modules) + vis-network v10 (CDN), Press Start 2P font (Google Fonts CDN)
-- 004-expand-sega-arcade: Added Vanilla JavaScript (ES modules, no transpilation) + vis-network v10 (CDN), QUnit 2.25 (CDN), Google Fonts (Press Start 2P)
 
 
 <!-- MANUAL ADDITIONS START -->

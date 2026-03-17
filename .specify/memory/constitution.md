@@ -1,15 +1,20 @@
 <!--
   Sync Impact Report
   ==================
-  Version change: 1.0.0 → 1.1.0
-  Modified principles: None
-  Added sections:
+  Version change: 1.1.0 → 1.2.0
+  Modified principles:
     - Principle VI: Wikipedia as Single Source of Truth
+      Added media asset exception: images/thumbnails MAY be
+      sourced from specialized open databases (e.g., IGDB)
+      when Wikipedia coverage is insufficient.
+  Added sections: None
   Removed sections: None
   Templates requiring updates:
-    - All templates ✅ no update needed
-      (new principle is a data-sourcing constraint; does not
-       alter template structure)
+    - plan-template.md ✅ no update needed
+      (Constitution Check already references Principle VI;
+       the amended wording does not change the check flow)
+    - spec-template.md ✅ no update needed
+    - tasks-template.md ✅ no update needed
   Follow-up TODOs: None
 -->
 
@@ -85,19 +90,30 @@ polish applied after launch.
 
 ### VI. Wikipedia as Single Source of Truth (NON-NEGOTIABLE)
 
-All factual data displayed in the application MUST be sourced
-exclusively from Wikipedia. No other external data source,
-proprietary database, or manually curated dataset is permitted
-for content that is presented to the user as factual information.
-Data MUST be attributable to a specific Wikipedia article URL.
-When Wikipedia lacks information for a given entity, the
-application MUST clearly indicate that no data is available
-rather than fabricate or infer content.
+All factual **text** data displayed in the application MUST be
+sourced exclusively from Wikipedia. No other external data
+source, proprietary database, or manually curated dataset is
+permitted for content that is presented to the user as factual
+information. Data MUST be attributable to a specific Wikipedia
+article URL. When Wikipedia lacks information for a given
+entity, the application MUST clearly indicate that no data is
+available rather than fabricate or infer content.
+
+**Media asset exception**: Thumbnail images and other visual
+assets MAY be sourced from specialized open databases (e.g.,
+IGDB for game cover art, Wikimedia Commons) when Wikipedia
+coverage is insufficient. The image source MUST be a publicly
+accessible, non-authenticated URL. This exception applies
+solely to visual media — all textual content (summaries,
+facts, descriptions) remains Wikipedia-exclusive.
 
 **Rationale**: A single, publicly verifiable source ensures
 consistency, transparency, and eliminates licensing ambiguity.
 Wikipedia's open license and broad coverage make it the ideal
-canonical reference for this project.
+canonical reference for textual content. For visual media,
+specialized databases offer superior coverage and quality
+(e.g., IGDB covers 90%+ of game cover art vs. Wikipedia's 8%
+for this project's dataset).
 
 ## Quality Gates
 
@@ -157,4 +173,4 @@ reviews MUST verify compliance with these principles.
 - Periodic reviews SHOULD be scheduled to assess principle
   relevance and adherence.
 
-**Version**: 1.1.0 | **Ratified**: 2026-02-09 | **Last Amended**: 2026-02-09
+**Version**: 1.2.0 | **Ratified**: 2026-02-09 | **Last Amended**: 2026-03-17
