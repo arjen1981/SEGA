@@ -1,12 +1,12 @@
 <!--
   Sync Impact Report
   ==================
-  Version change: 1.1.0 → 1.2.0
+  Version change: 1.2.0 → 1.3.0
   Modified principles:
     - Principle VI: Wikipedia as Single Source of Truth
-      Added media asset exception: images/thumbnails MAY be
-      sourced from specialized open databases (e.g., IGDB)
-      when Wikipedia coverage is insufficient.
+      Added structured data exception: factual, structured
+      relationships (e.g., game credits) MAY be sourced from
+      Wikidata (CC0) when Wikipedia lacks structured data.
   Added sections: None
   Removed sections: None
   Templates requiring updates:
@@ -107,6 +107,15 @@ accessible, non-authenticated URL. This exception applies
 solely to visual media — all textual content (summaries,
 facts, descriptions) remains Wikipedia-exclusive.
 
+**Structured data exception**: Factual, structured relationships
+(e.g., "Person X directed Game Y") MAY be sourced from Wikidata
+(wikidata.org) when the equivalent information is not available
+in structured form on Wikipedia. The data MUST be from the
+Wikimedia ecosystem (CC0 license). This exception applies solely
+to verifiable factual relationships — all descriptive text
+content (biographies, summaries, descriptions) remains
+Wikipedia-exclusive.
+
 **Rationale**: A single, publicly verifiable source ensures
 consistency, transparency, and eliminates licensing ambiguity.
 Wikipedia's open license and broad coverage make it the ideal
@@ -173,4 +182,4 @@ reviews MUST verify compliance with these principles.
 - Periodic reviews SHOULD be scheduled to assess principle
   relevance and adherence.
 
-**Version**: 1.2.0 | **Ratified**: 2026-02-09 | **Last Amended**: 2026-03-17
+**Version**: 1.3.0 | **Ratified**: 2026-02-09 | **Last Amended**: 2026-03-19

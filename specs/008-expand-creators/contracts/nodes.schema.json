@@ -1,0 +1,109 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "SEGA Graph Nodes (008 — unchanged from 006)",
+	"description": "Node schema for 008-expand-creators. Identical to 006 schema — no new fields or types. New creator nodes conform to existing creator schema with all required fields.",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"required": ["id", "label", "group", "summary", "wikipediaUrl", "wikidataId"],
+		"properties": {
+			"id": {
+				"type": "string",
+				"description": "Unique identifier for the node (kebab-case)",
+				"pattern": "^[a-z0-9][a-z0-9-]*$"
+			},
+			"label": {
+				"type": "string",
+				"description": "Display name shown on the graph node",
+				"minLength": 1
+			},
+			"group": {
+				"type": "string",
+				"description": "Node category — determines visual styling and icon selection",
+				"enum": ["company", "studio", "platform", "game", "creator"]
+			},
+			"summary": {
+				"type": "string",
+				"description": "Wikipedia extract (1–2 paragraphs) for the detail panel",
+				"minLength": 1
+			},
+			"wikipediaUrl": {
+				"type": "string",
+				"description": "Canonical English Wikipedia article URL, or Wikidata entity URL for creators without Wikipedia pages",
+				"format": "uri"
+			},
+			"wikidataId": {
+				"type": "string",
+				"description": "Wikidata Q-ID for provenance tracking",
+				"pattern": "^Q[0-9]+$"
+			},
+			"thumbnail": {
+				"type": ["string", "null"],
+				"description": "Wikimedia-hosted or IGDB thumbnail image URL",
+				"format": "uri"
+			},
+			"founded": {
+				"type": "integer",
+				"description": "Year founded (company, studio)"
+			},
+			"defunct": {
+				"type": ["integer", "null"],
+				"description": "Year closed (studio), or null if active"
+			},
+			"status": {
+				"type": "string",
+				"description": "Active/defunct status (studio)",
+				"enum": ["active", "defunct"]
+			},
+			"headquarters": {
+				"type": "string",
+				"description": "Headquarters location (company)"
+			},
+			"focus": {
+				"type": "string",
+				"description": "Notable focus areas (studio)"
+			},
+			"releaseYear": {
+				"type": "integer",
+				"description": "Year of release (platform, game)"
+			},
+			"generation": {
+				"type": "string",
+				"description": "Arcade generation or era (platform)"
+			},
+			"notableFeatures": {
+				"type": "string",
+				"description": "Notable technical features (platform)"
+			},
+			"genre": {
+				"type": "string",
+				"description": "Game genre (game)"
+			},
+			"birthYear": {
+				"type": "integer",
+				"description": "Year of birth (creator)"
+			},
+			"notableRoles": {
+				"type": "string",
+				"description": "Notable roles/titles, free-text for human display (creator)"
+			},
+			"roles": {
+				"type": "array",
+				"description": "Structured role labels for badge rendering and filtering (creator only).",
+				"items": {
+					"type": "string",
+					"enum": ["director", "producer", "designer", "programmer", "composer", "artist"]
+				},
+				"uniqueItems": true,
+				"minItems": 1
+			},
+			"gender": {
+				"type": "string",
+				"description": "Gender of the creator for icon selection.",
+				"enum": ["male", "female"]
+			}
+		},
+		"additionalProperties": false
+	},
+	"minItems": 1
+}

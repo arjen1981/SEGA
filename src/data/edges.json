@@ -1,493 +1,2432 @@
-[
-	{ "from": "sega-am1", "to": "sega", "label": "division of" },
-	{ "from": "sega-am2", "to": "sega", "label": "division of" },
-	{ "from": "sega-am3", "to": "sega", "label": "division of" },
-	{ "from": "sonic-team", "to": "sega", "label": "division of" },
-	{ "from": "ryu-ga-gotoku-studio", "to": "sega", "label": "division of" },
-	{ "from": "smilebit", "to": "sega", "label": "division of" },
-	{ "from": "united-game-artists", "to": "sega", "label": "division of" },
-	{ "from": "sega-rosso", "to": "sega", "label": "division of" },
-	{ "from": "sega-am4", "to": "sega", "label": "division of" },
-
-	{ "from": "hang-on", "to": "sega-am2", "label": "developed by" },
-	{ "from": "space-harrier", "to": "sega-am2", "label": "developed by" },
-	{ "from": "out-run", "to": "sega-am2", "label": "developed by" },
-	{ "from": "after-burner", "to": "sega-am2", "label": "developed by" },
-	{ "from": "after-burner", "to": "x-board", "label": "runs on" },
-	{ "from": "thunder-blade", "to": "sega-am2", "label": "developed by" },
-	{ "from": "thunder-blade", "to": "x-board", "label": "runs on" },
-	{ "from": "super-hang-on", "to": "sega-am2", "label": "developed by" },
-	{ "from": "super-hang-on", "to": "x-board", "label": "runs on" },
-	{ "from": "power-drift", "to": "sega-am2", "label": "developed by" },
-	{ "from": "power-drift", "to": "y-board", "label": "runs on" },
-	{ "from": "galaxy-force-ii", "to": "sega-am2", "label": "developed by" },
-	{ "from": "galaxy-force-ii", "to": "y-board", "label": "runs on" },
-	{ "from": "g-loc-air-battle", "to": "sega-am2", "label": "developed by" },
-	{ "from": "g-loc-air-battle", "to": "y-board", "label": "runs on" },
-	{ "from": "rad-mobile", "to": "sega-am2", "label": "developed by" },
-	{ "from": "rad-mobile", "to": "system-32", "label": "runs on" },
-	{ "from": "virtua-racing", "to": "sega-am2", "label": "developed by" },
-	{ "from": "virtua-racing", "to": "model-1", "label": "runs on" },
-	{ "from": "virtua-fighter", "to": "sega-am2", "label": "developed by" },
-	{ "from": "virtua-fighter", "to": "model-1", "label": "runs on" },
-	{ "from": "daytona-usa", "to": "sega-am2", "label": "developed by" },
-	{ "from": "daytona-usa", "to": "model-2", "label": "runs on" },
-	{ "from": "virtua-cop", "to": "sega-am2", "label": "developed by" },
-	{ "from": "virtua-cop", "to": "model-2", "label": "runs on" },
-	{ "from": "virtua-fighter-2", "to": "sega-am2", "label": "developed by" },
-	{ "from": "virtua-fighter-2", "to": "model-2", "label": "runs on" },
-	{ "from": "virtua-striker", "to": "sega-am2", "label": "developed by" },
-	{ "from": "virtua-striker", "to": "model-2", "label": "runs on" },
-	{ "from": "fighting-vipers", "to": "sega-am2", "label": "developed by" },
-	{ "from": "fighting-vipers", "to": "model-2", "label": "runs on" },
-	{ "from": "sonic-the-fighters", "to": "sega-am2", "label": "developed by" },
-	{ "from": "sonic-the-fighters", "to": "model-2", "label": "runs on" },
-	{ "from": "wave-runner", "to": "sega-am2", "label": "developed by" },
-	{ "from": "wave-runner", "to": "model-2", "label": "runs on" },
-	{ "from": "virtua-cop-2", "to": "sega-am2", "label": "developed by" },
-	{ "from": "virtua-cop-2", "to": "model-2", "label": "runs on" },
-	{ "from": "scud-race", "to": "sega-am2", "label": "developed by" },
-	{ "from": "scud-race", "to": "model-3", "label": "runs on" },
-	{ "from": "virtua-fighter-3", "to": "sega-am2", "label": "developed by" },
-	{ "from": "virtua-fighter-3", "to": "model-3", "label": "runs on" },
-	{ "from": "spikeout", "to": "sega-am2", "label": "developed by" },
-	{ "from": "spikeout", "to": "model-3", "label": "runs on" },
-	{ "from": "daytona-usa-2", "to": "sega-am2", "label": "developed by" },
-	{ "from": "daytona-usa-2", "to": "model-3", "label": "runs on" },
-	{ "from": "virtua-fighter-4", "to": "sega-am2", "label": "developed by" },
-	{ "from": "virtua-fighter-4", "to": "naomi-2", "label": "runs on" },
-	{ "from": "virtua-striker-3", "to": "sega-am2", "label": "developed by" },
-	{ "from": "virtua-striker-3", "to": "naomi-2", "label": "runs on" },
-	{ "from": "outrun-2", "to": "sega-am2", "label": "developed by" },
-	{ "from": "outrun-2", "to": "chihiro", "label": "runs on" },
-	{ "from": "virtua-cop-3", "to": "sega-am2", "label": "developed by" },
-	{ "from": "virtua-cop-3", "to": "chihiro", "label": "runs on" },
-	{ "from": "virtua-fighter-5", "to": "sega-am2", "label": "developed by" },
-	{ "from": "virtua-fighter-5", "to": "lindbergh", "label": "runs on" },
-	{ "from": "after-burner-climax", "to": "sega-am2", "label": "developed by" },
-	{ "from": "after-burner-climax", "to": "lindbergh", "label": "runs on" },
-
-	{ "from": "sega-rally-championship", "to": "sega-am3", "label": "developed by" },
-	{ "from": "sega-rally-championship", "to": "model-2", "label": "runs on" },
-	{ "from": "manx-tt-superbike", "to": "sega-am3", "label": "developed by" },
-	{ "from": "manx-tt-superbike", "to": "model-2", "label": "runs on" },
-	{ "from": "virtual-on", "to": "sega-am3", "label": "developed by" },
-	{ "from": "virtual-on", "to": "model-2", "label": "runs on" },
-	{ "from": "last-bronx", "to": "sega-am3", "label": "developed by" },
-	{ "from": "last-bronx", "to": "model-2", "label": "runs on" },
-	{ "from": "decathlete", "to": "sega-am3", "label": "developed by" },
-	{ "from": "decathlete", "to": "st-v", "label": "runs on" },
-	{ "from": "sega-rally-2", "to": "sega-am3", "label": "developed by" },
-	{ "from": "sega-rally-2", "to": "model-3", "label": "runs on" },
-	{ "from": "crazy-taxi", "to": "sega-am3", "label": "developed by" },
-	{ "from": "crazy-taxi", "to": "naomi", "label": "runs on" },
-	{ "from": "virtua-tennis", "to": "sega-am3", "label": "developed by" },
-	{ "from": "virtua-tennis", "to": "naomi", "label": "runs on" },
-	{ "from": "derby-owners-club", "to": "sega-am3", "label": "developed by" },
-	{ "from": "derby-owners-club", "to": "naomi", "label": "runs on" },
-	{ "from": "sega-marine-fishing", "to": "sega-am3", "label": "developed by" },
-	{ "from": "sega-marine-fishing", "to": "naomi", "label": "runs on" },
-	{ "from": "virtual-on-oratorio-tangram", "to": "sega-am3", "label": "developed by" },
-	{ "from": "virtual-on-oratorio-tangram", "to": "naomi", "label": "runs on" },
-	{ "from": "virtua-tennis-2", "to": "sega-am3", "label": "developed by" },
-	{ "from": "virtua-tennis-2", "to": "naomi-2", "label": "runs on" },
-
-	{ "from": "the-house-of-the-dead", "to": "sega-am1", "label": "developed by" },
-	{ "from": "the-house-of-the-dead", "to": "model-2", "label": "runs on" },
-	{ "from": "die-hard-arcade", "to": "sega-am1", "label": "developed by" },
-	{ "from": "die-hard-arcade", "to": "st-v", "label": "runs on" },
-	{ "from": "gunblade-ny", "to": "sega-am1", "label": "developed by" },
-	{ "from": "gunblade-ny", "to": "model-2", "label": "runs on" },
-	{ "from": "the-ocean-hunter", "to": "sega-am1", "label": "developed by" },
-	{ "from": "the-ocean-hunter", "to": "model-3", "label": "runs on" },
-	{ "from": "the-house-of-the-dead-2", "to": "sega-am1", "label": "developed by" },
-	{ "from": "the-house-of-the-dead-2", "to": "naomi", "label": "runs on" },
-	{ "from": "dynamite-cop", "to": "sega-am1", "label": "developed by" },
-	{ "from": "dynamite-cop", "to": "naomi", "label": "runs on" },
-	{ "from": "jambo-safari", "to": "sega-am1", "label": "developed by" },
-	{ "from": "jambo-safari", "to": "naomi", "label": "runs on" },
-	{ "from": "confidential-mission", "to": "sega-am1", "label": "developed by" },
-	{ "from": "confidential-mission", "to": "naomi", "label": "runs on" },
-	{ "from": "the-house-of-the-dead-iii", "to": "sega-am1", "label": "developed by" },
-	{ "from": "the-house-of-the-dead-iii", "to": "chihiro", "label": "runs on" },
-	{ "from": "the-house-of-the-dead-4", "to": "sega-am1", "label": "developed by" },
-	{ "from": "the-house-of-the-dead-4", "to": "lindbergh", "label": "runs on" },
-	{ "from": "lets-go-jungle", "to": "sega-am1", "label": "developed by" },
-	{ "from": "lets-go-jungle", "to": "lindbergh", "label": "runs on" },
-
-	{ "from": "segasonic-the-hedgehog", "to": "sonic-team", "label": "developed by" },
-	{ "from": "segasonic-the-hedgehog", "to": "system-32", "label": "runs on" },
-	{ "from": "samba-de-amigo", "to": "sonic-team", "label": "developed by" },
-	{ "from": "samba-de-amigo", "to": "naomi", "label": "runs on" },
-
-	{ "from": "monkey-ball", "to": "ryu-ga-gotoku-studio", "label": "developed by" },
-	{ "from": "monkey-ball", "to": "naomi", "label": "runs on" },
-
-	{ "from": "fantasy-zone", "to": "sega-am1", "label": "developed by" },
-	{ "from": "fantasy-zone", "to": "system-16", "label": "runs on" },
-	{ "from": "alex-kidd-the-lost-stars", "to": "sega", "label": "developed by" },
-	{ "from": "alex-kidd-the-lost-stars", "to": "system-16", "label": "runs on" },
-	{ "from": "quartet", "to": "sega", "label": "developed by" },
-	{ "from": "quartet", "to": "system-16", "label": "runs on" },
-	{ "from": "shinobi", "to": "sega-am1", "label": "developed by" },
-	{ "from": "shinobi", "to": "system-16", "label": "runs on" },
-	{ "from": "altered-beast", "to": "sega-am1", "label": "developed by" },
-	{ "from": "altered-beast", "to": "system-16", "label": "runs on" },
-	{ "from": "golden-axe", "to": "sega-am1", "label": "developed by" },
-	{ "from": "golden-axe", "to": "system-16", "label": "runs on" },
-	{ "from": "columns", "to": "sega", "label": "developed by" },
-	{ "from": "columns", "to": "system-c", "label": "runs on" },
-	{ "from": "gain-ground", "to": "sega", "label": "developed by" },
-	{ "from": "gain-ground", "to": "system-24", "label": "runs on" },
-	{ "from": "bonanza-bros", "to": "sega", "label": "developed by" },
-	{ "from": "bonanza-bros", "to": "system-24", "label": "runs on" },
-	{ "from": "golden-axe-revenge-of-death-adder", "to": "sega-am1", "label": "developed by" },
-	{ "from": "golden-axe-revenge-of-death-adder", "to": "system-32", "label": "runs on" },
-	{ "from": "initial-d-arcade-stage", "to": "sega-rosso", "label": "developed by" },
-	{ "from": "initial-d-arcade-stage", "to": "naomi", "label": "runs on" },
-
-	{ "from": "yu-suzuki", "to": "sega-am2", "label": "worked at" },
-	{ "from": "yu-suzuki", "to": "hang-on", "label": "designed" },
-	{ "from": "yu-suzuki", "to": "hang-on", "label": "programmed" },
-	{ "from": "yu-suzuki", "to": "space-harrier", "label": "designed" },
-	{ "from": "yu-suzuki", "to": "space-harrier", "label": "programmed" },
-	{ "from": "yu-suzuki", "to": "out-run", "label": "designed" },
-	{ "from": "yu-suzuki", "to": "out-run", "label": "programmed" },
-	{ "from": "yu-suzuki", "to": "after-burner", "label": "designed" },
-	{ "from": "yu-suzuki", "to": "after-burner", "label": "programmed" },
-	{ "from": "yu-suzuki", "to": "virtua-racing", "label": "directed" },
-	{ "from": "yu-suzuki", "to": "virtua-fighter", "label": "directed" },
-	{ "from": "yu-suzuki", "to": "virtua-fighter-2", "label": "produced" },
-
-	{ "from": "toshihiro-nagoshi", "to": "sega-am2", "label": "worked at" },
-	{ "from": "toshihiro-nagoshi", "to": "ryu-ga-gotoku-studio", "label": "worked at" },
-	{ "from": "toshihiro-nagoshi", "to": "daytona-usa", "label": "directed" },
-	{ "from": "toshihiro-nagoshi", "to": "daytona-usa", "label": "produced" },
-	{ "from": "toshihiro-nagoshi", "to": "daytona-usa", "label": "designed" },
-	{ "from": "toshihiro-nagoshi", "to": "monkey-ball", "label": "produced" },
-
-	{ "from": "yuji-naka", "to": "sonic-team", "label": "worked at" },
-
-	{ "from": "rieko-kodama", "to": "sega", "label": "worked at" },
-
-	{ "from": "tetsuya-mizuguchi", "to": "sega-am3", "label": "worked at" },
-	{ "from": "tetsuya-mizuguchi", "to": "united-game-artists", "label": "worked at" },
-	{ "from": "tetsuya-mizuguchi", "to": "sega-rally-championship", "label": "produced" },
-	{ "from": "tetsuya-mizuguchi", "to": "sega-rally-2", "label": "produced" },
-
-	{ "from": "hiroshi-kawaguchi", "to": "sega", "label": "worked at" },
-	{ "from": "hiroshi-kawaguchi", "to": "hang-on", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "space-harrier", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "fantasy-zone", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "out-run", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "after-burner", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "power-drift", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "g-loc-air-battle", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "turbo-out-run", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "gp-rider", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "segasonic-the-hedgehog", "label": "composed for" },
-
-
-	{ "from": "takenobu-mitsuyoshi", "to": "sega", "label": "worked at" },
-	{ "from": "takenobu-mitsuyoshi", "to": "g-loc-air-battle", "label": "composed for" },
-	{ "from": "takenobu-mitsuyoshi", "to": "virtua-racing", "label": "composed for" },
-	{ "from": "takenobu-mitsuyoshi", "to": "daytona-usa", "label": "composed for" },
-	{ "from": "takenobu-mitsuyoshi", "to": "virtua-fighter-2", "label": "composed for" },
-	{ "from": "takenobu-mitsuyoshi", "to": "virtua-striker", "label": "composed for" },
-	{ "from": "takenobu-mitsuyoshi", "to": "sega-rally-championship", "label": "composed for" },
-	{ "from": "takenobu-mitsuyoshi", "to": "manx-tt-superbike", "label": "composed for" },
-	{ "from": "takenobu-mitsuyoshi", "to": "sonic-the-fighters", "label": "composed for" },
-	{ "from": "takenobu-mitsuyoshi", "to": "virtua-fighter-3", "label": "composed for" },
-	{ "from": "takenobu-mitsuyoshi", "to": "daytona-usa-2", "label": "composed for" },
-
-	{ "from": "takayuki-nakamura", "to": "sega", "label": "worked at" },
-	{ "from": "takayuki-nakamura", "to": "virtua-fighter", "label": "composed for" },
-	{ "from": "takayuki-nakamura", "to": "virtua-fighter-2", "label": "composed for" },
-	{ "from": "takayuki-nakamura", "to": "virtua-fighter-3", "label": "composed for" },
-
-	{ "from": "hisao-oguchi", "to": "sega-am3", "label": "worked at" },
-	{ "from": "hisao-oguchi", "to": "rad-mobile", "label": "directed" },
-
-	{ "from": "naoto-ohshima", "to": "sonic-team", "label": "worked at" },
-
-	{ "from": "hirokazu-yasuhara", "to": "sega", "label": "worked at" },
-
-	{ "from": "takashi-iizuka", "to": "sonic-team", "label": "worked at" },
-
-	{ "from": "jun-senoue", "to": "sonic-team", "label": "worked at" },
-	{ "from": "jun-senoue", "to": "sega-rally-2", "label": "composed for" },
-
-	{ "from": "kazuyuki-hoshino", "to": "sonic-team", "label": "worked at" },
-
-	{ "from": "shun-nakamura", "to": "sonic-team", "label": "worked at" },
-	{ "from": "shun-nakamura", "to": "samba-de-amigo", "label": "directed" },
-
-	{ "from": "tomoya-ohtani", "to": "sonic-team", "label": "worked at" },
-
-	{ "from": "hideki-naganuma", "to": "sega", "label": "worked at" },
-
-	{ "from": "masayoshi-yokoyama", "to": "ryu-ga-gotoku-studio", "label": "worked at" },
-
-	{ "from": "richard-jacques", "to": "sega", "label": "worked at" },
-	{ "from": "richard-jacques", "to": "outrun-2", "label": "composed for" },
-
-	{ "from": "mie-kumagai", "to": "sega-am3", "label": "worked at" },
-	{ "from": "mie-kumagai", "to": "gunblade-ny", "label": "produced" },
-	{ "from": "mie-kumagai", "to": "decathlete", "label": "produced" },
-	{ "from": "mie-kumagai", "to": "confidential-mission", "label": "directed" },
-	{ "from": "mie-kumagai", "to": "virtua-tennis", "label": "produced" },
-	{ "from": "mie-kumagai", "to": "derby-owners-club", "label": "produced" },
-	{ "from": "mie-kumagai", "to": "virtua-tennis-2", "label": "produced" },
-
-	{ "from": "yu-suzuki", "to": "power-drift", "label": "directed" },
-	{ "from": "yu-suzuki", "to": "g-loc-air-battle", "label": "directed" },
-	{ "from": "yu-suzuki", "to": "g-loc-air-battle", "label": "designed" },
-	{ "from": "yu-suzuki", "to": "g-loc-air-battle", "label": "programmed" },
-	{ "from": "yu-suzuki", "to": "virtua-cop", "label": "produced" },
-	{ "from": "yu-suzuki", "to": "sonic-the-fighters", "label": "produced" },
-	{ "from": "yu-suzuki", "to": "virtua-fighter-3", "label": "directed" },
-	{ "from": "yu-suzuki", "to": "virtua-fighter-3", "label": "produced" },
-	{ "from": "yu-suzuki", "to": "daytona-usa", "label": "produced" },
-	{ "from": "yu-suzuki", "to": "outrun-2", "label": "produced" },
-	{ "from": "yu-suzuki", "to": "virtua-cop-3", "label": "directed" },
-	{ "from": "yu-suzuki", "to": "virtua-fighter-4", "label": "directed" },
-	{ "from": "yu-suzuki", "to": "virtua-fighter-4", "label": "produced" },
-
-	{ "from": "toshihiro-nagoshi", "to": "g-loc-air-battle", "label": "designed" },
-	{ "from": "toshihiro-nagoshi", "to": "virtua-racing", "label": "designed" },
-	{ "from": "toshihiro-nagoshi", "to": "virtua-fighter", "label": "designed" },
-	{ "from": "toshihiro-nagoshi", "to": "virtua-fighter-2", "label": "designed" },
-	{ "from": "toshihiro-nagoshi", "to": "scud-race", "label": "directed" },
-	{ "from": "toshihiro-nagoshi", "to": "scud-race", "label": "produced" },
-	{ "from": "toshihiro-nagoshi", "to": "spikeout", "label": "directed" },
-	{ "from": "toshihiro-nagoshi", "to": "spikeout", "label": "produced" },
-	{ "from": "toshihiro-nagoshi", "to": "spikeout", "label": "designed" },
-	{ "from": "toshihiro-nagoshi", "to": "daytona-usa-2", "label": "produced" },
-
-	{ "from": "yuji-naka", "to": "samba-de-amigo", "label": "produced" },
-
-	{ "from": "turbo-arcade", "to": "sega", "label": "developed by" },
-	{ "from": "turbo-arcade", "to": "vco-object", "label": "runs on" },
-	{ "from": "buck-rogers", "to": "sega", "label": "developed by" },
-	{ "from": "buck-rogers", "to": "vco-object", "label": "runs on" },
-	{ "from": "zaxxon", "to": "sega", "label": "developed by" },
-	{ "from": "zaxxon", "to": "pre-system-1", "label": "runs on" },
-	{ "from": "pengo", "to": "sega", "label": "developed by" },
-	{ "from": "pengo", "to": "pre-system-1", "label": "runs on" },
-	{ "from": "congo-bongo", "to": "sega", "label": "developed by" },
-	{ "from": "congo-bongo", "to": "pre-system-1", "label": "runs on" },
-	{ "from": "astron-belt", "to": "sega", "label": "developed by" },
-	{ "from": "astron-belt", "to": "sega-laserdisc", "label": "runs on" },
-	{ "from": "star-trek-sos", "to": "sega", "label": "developed by" },
-	{ "from": "star-trek-sos", "to": "g80", "label": "runs on" },
-	{ "from": "flicky", "to": "sega", "label": "developed by" },
-	{ "from": "flicky", "to": "system-1", "label": "runs on" },
-	{ "from": "choplifter", "to": "sega-am1", "label": "developed by" },
-	{ "from": "choplifter", "to": "system-1", "label": "runs on" },
-	{ "from": "wonder-boy", "to": "westone", "label": "developed by" },
-	{ "from": "wonder-boy", "to": "system-1", "label": "runs on" },
-	{ "from": "wonder-boy-monster-land", "to": "westone", "label": "developed by" },
-	{ "from": "wonder-boy-monster-land", "to": "system-2", "label": "runs on" },
-	{ "from": "alien-syndrome", "to": "sega-am1", "label": "developed by" },
-	{ "from": "alien-syndrome", "to": "system-16", "label": "runs on" },
-	{ "from": "dynamite-dux", "to": "sega-am2", "label": "developed by" },
-	{ "from": "dynamite-dux", "to": "system-16", "label": "runs on" },
-	{ "from": "galaxy-force", "to": "sega-am1", "label": "developed by" },
-	{ "from": "galaxy-force", "to": "y-board", "label": "runs on" },
-	{ "from": "eswat", "to": "sega-am1", "label": "developed by" },
-	{ "from": "eswat", "to": "system-16", "label": "runs on" },
-	{ "from": "super-monaco-gp", "to": "sega", "label": "developed by" },
-	{ "from": "super-monaco-gp", "to": "x-board", "label": "runs on" },
-	{ "from": "shadow-dancer", "to": "sega", "label": "developed by" },
-	{ "from": "shadow-dancer", "to": "system-18", "label": "runs on" },
-	{ "from": "alien-storm", "to": "sega-am1", "label": "developed by" },
-	{ "from": "alien-storm", "to": "system-18", "label": "runs on" },
-	{ "from": "outrunners", "to": "sega-am2", "label": "developed by" },
-	{ "from": "outrunners", "to": "system-32", "label": "runs on" },
-	{ "from": "ollie-king", "to": "smilebit", "label": "developed by" },
-	{ "from": "ollie-king", "to": "chihiro", "label": "runs on" },
-	{ "from": "hotd-scarlet-dawn", "to": "sega", "label": "developed by" },
-	{ "from": "hotd-scarlet-dawn", "to": "alls", "label": "runs on" },
-
-	{ "from": "yu-suzuki", "to": "dynamite-dux", "label": "produced" },
-	{ "from": "hiroshi-kawaguchi", "to": "dynamite-dux", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "hotd-scarlet-dawn", "label": "composed for" },
-	{ "from": "hisao-oguchi", "to": "super-monaco-gp", "label": "directed" },
-	{ "from": "hisao-oguchi", "to": "heavyweight-champ", "label": "directed" },
-	{ "from": "hiroshi-kawaguchi", "to": "super-monaco-gp", "label": "composed for" },
-	{ "from": "hiroshi-kawaguchi", "to": "outrunners", "label": "composed for" },
-	{ "from": "takenobu-mitsuyoshi", "to": "outrunners", "label": "composed for" },
-	{ "from": "takayuki-nakamura", "to": "outrunners", "label": "composed for" },
-	{ "from": "hideki-naganuma", "to": "ollie-king", "label": "composed for" },
-	{ "from": "masayoshi-yokoyama", "to": "ollie-king", "label": "directed" },
-
-	{ "from": "hang-on", "to": "super-scaler", "label": "runs on" },
-	{ "from": "space-harrier", "to": "super-scaler", "label": "runs on" },
-	{ "from": "out-run", "to": "outrun-board", "label": "runs on" },
-	{ "from": "rieko-kodama", "to": "quartet", "label": "artwork for" },
-	{ "from": "rieko-kodama", "to": "champion-boxing", "label": "artwork for" },
-
-	{ "from": "periscope", "to": "sega", "label": "developed by" },
-	{ "from": "periscope", "to": "pre-system-1", "label": "runs on" },
-	{ "from": "heavyweight-champ", "to": "sega", "label": "developed by" },
-	{ "from": "heavyweight-champ", "to": "pre-system-1", "label": "runs on" },
-	{ "from": "head-on", "to": "sega", "label": "developed by" },
-	{ "from": "head-on", "to": "pre-system-1", "label": "runs on" },
-	{ "from": "monaco-gp", "to": "sega", "label": "developed by" },
-	{ "from": "monaco-gp", "to": "pre-system-1", "label": "runs on" },
-	{ "from": "deep-scan", "to": "sega", "label": "developed by" },
-	{ "from": "deep-scan", "to": "pre-system-1", "label": "runs on" },
-	{ "from": "carnival-arcade", "to": "sega", "label": "developed by" },
-	{ "from": "carnival-arcade", "to": "pre-system-1", "label": "runs on" },
-
-	{ "from": "frogger", "to": "sega", "label": "developed by" },
-	{ "from": "frogger", "to": "pre-system-1", "label": "runs on" },
-	{ "from": "astro-blaster", "to": "sega", "label": "developed by" },
-	{ "from": "astro-blaster", "to": "g80", "label": "runs on" },
-	{ "from": "space-fury", "to": "sega", "label": "developed by" },
-	{ "from": "space-fury", "to": "g80", "label": "runs on" },
-	{ "from": "subroc-3d", "to": "sega", "label": "developed by" },
-	{ "from": "subroc-3d", "to": "g80", "label": "runs on" },
-	{ "from": "tac-scan", "to": "sega", "label": "developed by" },
-	{ "from": "tac-scan", "to": "g80", "label": "runs on" },
-
-	{ "from": "champion-boxing", "to": "sega", "label": "developed by" },
-	{ "from": "champion-boxing", "to": "system-1", "label": "runs on" },
-	{ "from": "bank-panic", "to": "sega", "label": "developed by" },
-	{ "from": "bank-panic", "to": "system-1", "label": "runs on" },
-	{ "from": "my-hero", "to": "sega", "label": "developed by" },
-	{ "from": "my-hero", "to": "system-1", "label": "runs on" },
-	{ "from": "teddy-boy-blues", "to": "sega", "label": "developed by" },
-	{ "from": "teddy-boy-blues", "to": "system-1", "label": "runs on" },
-	{ "from": "ninja-princess", "to": "sega-am1", "label": "developed by" },
-	{ "from": "ninja-princess", "to": "system-1", "label": "runs on" },
-
-	{ "from": "enduro-racer", "to": "sega", "label": "developed by" },
-	{ "from": "enduro-racer", "to": "super-scaler", "label": "runs on" },
-	{ "from": "action-fighter", "to": "sega-am1", "label": "developed by" },
-	{ "from": "action-fighter", "to": "system-16", "label": "runs on" },
-	{ "from": "sdi-arcade", "to": "sega-am1", "label": "developed by" },
-	{ "from": "sdi-arcade", "to": "system-16", "label": "runs on" },
-	{ "from": "scramble-spirits", "to": "sega", "label": "developed by" },
-	{ "from": "scramble-spirits", "to": "system-16", "label": "runs on" },
-	{ "from": "turbo-out-run", "to": "sega-am2", "label": "developed by" },
-	{ "from": "turbo-out-run", "to": "outrun-board", "label": "runs on" },
-	{ "from": "wrestle-war", "to": "sega", "label": "developed by" },
-	{ "from": "wrestle-war", "to": "system-16", "label": "runs on" },
-	{ "from": "crack-down", "to": "sega", "label": "developed by" },
-	{ "from": "crack-down", "to": "system-24", "label": "runs on" },
-
-	{ "from": "michael-jacksons-moonwalker", "to": "sega", "label": "developed by" },
-	{ "from": "michael-jacksons-moonwalker", "to": "system-18", "label": "runs on" },
-	{ "from": "gp-rider", "to": "sega-am2", "label": "developed by" },
-	{ "from": "gp-rider", "to": "system-16", "label": "runs on" },
-	{ "from": "laser-ghost", "to": "sega", "label": "developed by" },
-	{ "from": "laser-ghost", "to": "system-16", "label": "runs on" },
-	{ "from": "bloxeed", "to": "sega", "label": "developed by" },
-	{ "from": "bloxeed", "to": "system-c", "label": "runs on" },
-	{ "from": "puyo-puyo", "to": "compile", "label": "developed by" },
-	{ "from": "puyo-puyo", "to": "system-c", "label": "runs on" },
-	{ "from": "rail-chase", "to": "sega-am3", "label": "developed by" },
-	{ "from": "rail-chase", "to": "system-32", "label": "runs on" },
-	{ "from": "spider-man-arcade", "to": "sega", "label": "developed by" },
-	{ "from": "spider-man-arcade", "to": "system-32", "label": "runs on" },
-	{ "from": "arabian-fight", "to": "sega-am2", "label": "developed by" },
-	{ "from": "arabian-fight", "to": "system-32", "label": "runs on" },
-	{ "from": "alien3-the-gun", "to": "sega", "label": "developed by" },
-	{ "from": "alien3-the-gun", "to": "system-32", "label": "runs on" },
-
-	{ "from": "golden-axe-the-duel", "to": "sega-am1", "label": "developed by" },
-	{ "from": "golden-axe-the-duel", "to": "st-v", "label": "runs on" },
-	{ "from": "puyo-puyo-tsu", "to": "compile", "label": "developed by" },
-	{ "from": "puyo-puyo-tsu", "to": "system-c", "label": "runs on" },
-	{ "from": "wing-war", "to": "sega-am2", "label": "developed by" },
-	{ "from": "wing-war", "to": "model-1", "label": "runs on" },
-	{ "from": "puyo-puyo-sun", "to": "compile", "label": "developed by" },
-	{ "from": "puyo-puyo-sun", "to": "st-v", "label": "runs on" },
-	{ "from": "virtua-fighter-kids", "to": "sega-am2", "label": "developed by" },
-	{ "from": "virtua-fighter-kids", "to": "st-v", "label": "runs on" },
-	{ "from": "virtua-striker-2", "to": "sega-am2", "label": "developed by" },
-	{ "from": "virtua-striker-2", "to": "model-3", "label": "runs on" },
-	{ "from": "top-skater", "to": "sega-am2", "label": "developed by" },
-	{ "from": "top-skater", "to": "model-2", "label": "runs on" },
-
-	{ "from": "the-lost-world-jurassic-park", "to": "sega-am3", "label": "developed by" },
-	{ "from": "the-lost-world-jurassic-park", "to": "model-3", "label": "runs on" },
-	{ "from": "star-wars-trilogy-arcade", "to": "sega-am2", "label": "developed by" },
-	{ "from": "star-wars-trilogy-arcade", "to": "model-3", "label": "runs on" },
-	{ "from": "la-machineguns", "to": "sega-am1", "label": "developed by" },
-	{ "from": "la-machineguns", "to": "model-3", "label": "runs on" },
-	{ "from": "f355-challenge", "to": "sega-am2", "label": "developed by" },
-	{ "from": "f355-challenge", "to": "model-3", "label": "runs on" },
-
-	{ "from": "sega-bass-fishing", "to": "sega-am1", "label": "developed by" },
-	{ "from": "sega-bass-fishing", "to": "naomi", "label": "runs on" },
-	{ "from": "fighting-vipers-2", "to": "sega-am2", "label": "developed by" },
-	{ "from": "fighting-vipers-2", "to": "naomi", "label": "runs on" },
-	{ "from": "zombie-revenge", "to": "sega-am1", "label": "developed by" },
-	{ "from": "zombie-revenge", "to": "naomi", "label": "runs on" },
-	{ "from": "the-typing-of-the-dead", "to": "sega-am1", "label": "developed by" },
-	{ "from": "the-typing-of-the-dead", "to": "naomi", "label": "runs on" },
-	{ "from": "eighteen-wheeler", "to": "sega-am2", "label": "developed by" },
-	{ "from": "eighteen-wheeler", "to": "naomi", "label": "runs on" },
-	{ "from": "outtrigger", "to": "sega-am2", "label": "developed by" },
-	{ "from": "outtrigger", "to": "naomi", "label": "runs on" },
-	{ "from": "beach-spikers", "to": "sega-am2", "label": "developed by" },
-	{ "from": "beach-spikers", "to": "naomi-2", "label": "runs on" },
-	{ "from": "planet-harriers", "to": "sega-am2", "label": "developed by" },
-	{ "from": "planet-harriers", "to": "hikaru", "label": "runs on" },
-	{ "from": "world-club-champion-football", "to": "sega-am3", "label": "developed by" },
-	{ "from": "world-club-champion-football", "to": "naomi", "label": "runs on" },
-	{ "from": "puyo-puyo-fever", "to": "sonic-team", "label": "developed by" },
-	{ "from": "puyo-puyo-fever", "to": "naomi", "label": "runs on" },
-
-	{ "from": "ghost-squad", "to": "sega-am2", "label": "developed by" },
-	{ "from": "ghost-squad", "to": "chihiro", "label": "runs on" },
-	{ "from": "outrun-2-sp", "to": "sega-am2", "label": "developed by" },
-	{ "from": "outrun-2-sp", "to": "chihiro", "label": "runs on" },
-
-	{ "from": "sangokushi-taisen", "to": "sega-am1", "label": "developed by" },
-	{ "from": "sangokushi-taisen", "to": "lindbergh", "label": "runs on" },
-	{ "from": "virtua-tennis-3", "to": "sega-am3", "label": "developed by" },
-	{ "from": "virtua-tennis-3", "to": "lindbergh", "label": "runs on" },
-	{ "from": "rambo-arcade", "to": "sega-am1", "label": "developed by" },
-	{ "from": "rambo-arcade", "to": "lindbergh", "label": "runs on" },
-	{ "from": "sega-rally-3", "to": "sega", "label": "developed by" },
-	{ "from": "sega-rally-3", "to": "europa-r", "label": "runs on" },
-	{ "from": "sega-race-tv", "to": "sega", "label": "developed by" },
-	{ "from": "sega-race-tv", "to": "europa-r", "label": "runs on" },
-
-	{ "from": "mushiking", "to": "sega", "label": "developed by" },
-	{ "from": "mushiking", "to": "naomi", "label": "runs on" },
-	{ "from": "love-and-berry", "to": "sega", "label": "developed by" },
-	{ "from": "love-and-berry", "to": "naomi", "label": "runs on" },
-	{ "from": "kancolle-arcade", "to": "sega-am2", "label": "developed by" },
-	{ "from": "kancolle-arcade", "to": "nu", "label": "runs on" },
-
-	{ "from": "border-break", "to": "sega-am2", "label": "developed by" },
-	{ "from": "border-break", "to": "ringedge", "label": "runs on" },
-	{ "from": "hatsune-miku-project-diva", "to": "sega", "label": "developed by" },
-	{ "from": "hatsune-miku-project-diva", "to": "ringedge", "label": "runs on" },
-	{ "from": "maimai", "to": "sega", "label": "developed by" },
-	{ "from": "maimai", "to": "ringedge2", "label": "runs on" },
-	{ "from": "chunithm", "to": "sega", "label": "developed by" },
-	{ "from": "chunithm", "to": "nu", "label": "runs on" },
-	{ "from": "puyo-puyo-tetris", "to": "sonic-team", "label": "developed by" },
-	{ "from": "puyo-puyo-tetris", "to": "nu", "label": "runs on" },
-	{ "from": "ongeki", "to": "sega", "label": "developed by" },
-	{ "from": "ongeki", "to": "nu", "label": "runs on" },
-
-	{ "from": "noriyoshi-ohba", "to": "sega-am1", "label": "worked at" },
-	{ "from": "makoto-uchida", "to": "sega-am1", "label": "worked at" },
-	{ "from": "hayao-nakayama", "to": "sega", "label": "worked at" },
-	{ "from": "david-rosen", "to": "sega", "label": "worked at" },
-	{ "from": "masamitsu-niitani", "to": "compile", "label": "worked at" },
-	{ "from": "masamitsu-niitani", "to": "puyo-puyo", "label": "produced" },
-
-	{ "from": "makoto-uchida", "to": "golden-axe", "label": "directed" },
-	{ "from": "makoto-uchida", "to": "altered-beast", "label": "directed" },
-
-	{ "from": "yu-suzuki", "to": "champion-boxing", "label": "designed" },
-	{ "from": "yu-suzuki", "to": "f355-challenge", "label": "produced" },
-	{ "from": "hiroshi-kawaguchi", "to": "enduro-racer", "label": "composed for" }
+﻿[
+    {
+        "from":  "sega-am1",
+        "to":  "sega",
+        "label":  "division of"
+    },
+    {
+        "from":  "sega-am2",
+        "to":  "sega",
+        "label":  "division of"
+    },
+    {
+        "from":  "sega-am3",
+        "to":  "sega",
+        "label":  "division of"
+    },
+    {
+        "from":  "sonic-team",
+        "to":  "sega",
+        "label":  "division of"
+    },
+    {
+        "from":  "ryu-ga-gotoku-studio",
+        "to":  "sega",
+        "label":  "division of"
+    },
+    {
+        "from":  "smilebit",
+        "to":  "sega",
+        "label":  "division of"
+    },
+    {
+        "from":  "united-game-artists",
+        "to":  "sega",
+        "label":  "division of"
+    },
+    {
+        "from":  "sega-rosso",
+        "to":  "sega",
+        "label":  "division of"
+    },
+    {
+        "from":  "sega-am4",
+        "to":  "sega",
+        "label":  "division of"
+    },
+    {
+        "from":  "hang-on",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "space-harrier",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "out-run",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "after-burner",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "after-burner",
+        "to":  "x-board",
+        "label":  "runs on"
+    },
+    {
+        "from":  "thunder-blade",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "thunder-blade",
+        "to":  "x-board",
+        "label":  "runs on"
+    },
+    {
+        "from":  "super-hang-on",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "super-hang-on",
+        "to":  "x-board",
+        "label":  "runs on"
+    },
+    {
+        "from":  "power-drift",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "power-drift",
+        "to":  "y-board",
+        "label":  "runs on"
+    },
+    {
+        "from":  "galaxy-force-ii",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "galaxy-force-ii",
+        "to":  "y-board",
+        "label":  "runs on"
+    },
+    {
+        "from":  "g-loc-air-battle",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "g-loc-air-battle",
+        "to":  "y-board",
+        "label":  "runs on"
+    },
+    {
+        "from":  "rad-mobile",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "rad-mobile",
+        "to":  "system-32",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-racing",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-racing",
+        "to":  "model-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-fighter",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-fighter",
+        "to":  "model-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "daytona-usa",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "daytona-usa",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-cop",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-cop",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-fighter-2",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-fighter-2",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-striker",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-striker",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "fighting-vipers",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "fighting-vipers",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "sonic-the-fighters",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "sonic-the-fighters",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "wave-runner",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "wave-runner",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-cop-2",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-cop-2",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "scud-race",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "scud-race",
+        "to":  "model-3",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-fighter-3",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-fighter-3",
+        "to":  "model-3",
+        "label":  "runs on"
+    },
+    {
+        "from":  "spikeout",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "spikeout",
+        "to":  "model-3",
+        "label":  "runs on"
+    },
+    {
+        "from":  "daytona-usa-2",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "daytona-usa-2",
+        "to":  "model-3",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-fighter-4",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-fighter-4",
+        "to":  "naomi-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-striker-3",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-striker-3",
+        "to":  "naomi-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "outrun-2",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "outrun-2",
+        "to":  "chihiro",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-cop-3",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-cop-3",
+        "to":  "chihiro",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-fighter-5",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-fighter-5",
+        "to":  "lindbergh",
+        "label":  "runs on"
+    },
+    {
+        "from":  "after-burner-climax",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "after-burner-climax",
+        "to":  "lindbergh",
+        "label":  "runs on"
+    },
+    {
+        "from":  "sega-rally-championship",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "sega-rally-championship",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "manx-tt-superbike",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "manx-tt-superbike",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtual-on",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtual-on",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "last-bronx",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "last-bronx",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "decathlete",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "decathlete",
+        "to":  "st-v",
+        "label":  "runs on"
+    },
+    {
+        "from":  "sega-rally-2",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "sega-rally-2",
+        "to":  "model-3",
+        "label":  "runs on"
+    },
+    {
+        "from":  "crazy-taxi",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "crazy-taxi",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-tennis",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-tennis",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "derby-owners-club",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "derby-owners-club",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "sega-marine-fishing",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "sega-marine-fishing",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtual-on-oratorio-tangram",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtual-on-oratorio-tangram",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-tennis-2",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-tennis-2",
+        "to":  "naomi-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "the-house-of-the-dead",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "the-house-of-the-dead",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "die-hard-arcade",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "die-hard-arcade",
+        "to":  "st-v",
+        "label":  "runs on"
+    },
+    {
+        "from":  "gunblade-ny",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "gunblade-ny",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "the-ocean-hunter",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "the-ocean-hunter",
+        "to":  "model-3",
+        "label":  "runs on"
+    },
+    {
+        "from":  "the-house-of-the-dead-2",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "the-house-of-the-dead-2",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "dynamite-cop",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "dynamite-cop",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "jambo-safari",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "jambo-safari",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "confidential-mission",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "confidential-mission",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "the-house-of-the-dead-iii",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "the-house-of-the-dead-iii",
+        "to":  "chihiro",
+        "label":  "runs on"
+    },
+    {
+        "from":  "the-house-of-the-dead-4",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "the-house-of-the-dead-4",
+        "to":  "lindbergh",
+        "label":  "runs on"
+    },
+    {
+        "from":  "lets-go-jungle",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "lets-go-jungle",
+        "to":  "lindbergh",
+        "label":  "runs on"
+    },
+    {
+        "from":  "segasonic-the-hedgehog",
+        "to":  "sonic-team",
+        "label":  "developed by"
+    },
+    {
+        "from":  "segasonic-the-hedgehog",
+        "to":  "system-32",
+        "label":  "runs on"
+    },
+    {
+        "from":  "samba-de-amigo",
+        "to":  "sonic-team",
+        "label":  "developed by"
+    },
+    {
+        "from":  "samba-de-amigo",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "monkey-ball",
+        "to":  "ryu-ga-gotoku-studio",
+        "label":  "developed by"
+    },
+    {
+        "from":  "monkey-ball",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "fantasy-zone",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "fantasy-zone",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "alex-kidd-the-lost-stars",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "alex-kidd-the-lost-stars",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "quartet",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "quartet",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "shinobi",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "shinobi",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "altered-beast",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "altered-beast",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "golden-axe",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "golden-axe",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "columns",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "columns",
+        "to":  "system-c",
+        "label":  "runs on"
+    },
+    {
+        "from":  "gain-ground",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "gain-ground",
+        "to":  "system-24",
+        "label":  "runs on"
+    },
+    {
+        "from":  "bonanza-bros",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "bonanza-bros",
+        "to":  "system-24",
+        "label":  "runs on"
+    },
+    {
+        "from":  "golden-axe-revenge-of-death-adder",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "golden-axe-revenge-of-death-adder",
+        "to":  "system-32",
+        "label":  "runs on"
+    },
+    {
+        "from":  "initial-d-arcade-stage",
+        "to":  "sega-rosso",
+        "label":  "developed by"
+    },
+    {
+        "from":  "initial-d-arcade-stage",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "sega-am2",
+        "label":  "worked at"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "hang-on",
+        "label":  "designed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "hang-on",
+        "label":  "programmed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "space-harrier",
+        "label":  "designed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "space-harrier",
+        "label":  "programmed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "out-run",
+        "label":  "designed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "out-run",
+        "label":  "programmed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "after-burner",
+        "label":  "designed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "after-burner",
+        "label":  "programmed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "virtua-racing",
+        "label":  "directed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "virtua-fighter",
+        "label":  "directed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "virtua-fighter-2",
+        "label":  "produced"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "sega-am2",
+        "label":  "worked at"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "ryu-ga-gotoku-studio",
+        "label":  "worked at"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "daytona-usa",
+        "label":  "directed"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "daytona-usa",
+        "label":  "produced"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "daytona-usa",
+        "label":  "designed"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "monkey-ball",
+        "label":  "produced"
+    },
+    {
+        "from":  "yuji-naka",
+        "to":  "sonic-team",
+        "label":  "worked at"
+    },
+    {
+        "from":  "rieko-kodama",
+        "to":  "sega",
+        "label":  "worked at"
+    },
+    {
+        "from":  "tetsuya-mizuguchi",
+        "to":  "sega-am3",
+        "label":  "worked at"
+    },
+    {
+        "from":  "tetsuya-mizuguchi",
+        "to":  "united-game-artists",
+        "label":  "worked at"
+    },
+    {
+        "from":  "tetsuya-mizuguchi",
+        "to":  "sega-rally-championship",
+        "label":  "produced"
+    },
+    {
+        "from":  "tetsuya-mizuguchi",
+        "to":  "sega-rally-2",
+        "label":  "produced"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "sega",
+        "label":  "worked at"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "hang-on",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "space-harrier",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "fantasy-zone",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "out-run",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "after-burner",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "power-drift",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "g-loc-air-battle",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "turbo-out-run",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "gp-rider",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "segasonic-the-hedgehog",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takenobu-mitsuyoshi",
+        "to":  "sega",
+        "label":  "worked at"
+    },
+    {
+        "from":  "takenobu-mitsuyoshi",
+        "to":  "g-loc-air-battle",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takenobu-mitsuyoshi",
+        "to":  "virtua-racing",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takenobu-mitsuyoshi",
+        "to":  "daytona-usa",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takenobu-mitsuyoshi",
+        "to":  "virtua-fighter-2",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takenobu-mitsuyoshi",
+        "to":  "virtua-striker",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takenobu-mitsuyoshi",
+        "to":  "sega-rally-championship",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takenobu-mitsuyoshi",
+        "to":  "manx-tt-superbike",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takenobu-mitsuyoshi",
+        "to":  "sonic-the-fighters",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takenobu-mitsuyoshi",
+        "to":  "virtua-fighter-3",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takenobu-mitsuyoshi",
+        "to":  "daytona-usa-2",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takayuki-nakamura",
+        "to":  "sega",
+        "label":  "worked at"
+    },
+    {
+        "from":  "takayuki-nakamura",
+        "to":  "virtua-fighter",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takayuki-nakamura",
+        "to":  "virtua-fighter-2",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takayuki-nakamura",
+        "to":  "virtua-fighter-3",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hisao-oguchi",
+        "to":  "sega-am3",
+        "label":  "worked at"
+    },
+    {
+        "from":  "hisao-oguchi",
+        "to":  "rad-mobile",
+        "label":  "directed"
+    },
+    {
+        "from":  "naoto-ohshima",
+        "to":  "sonic-team",
+        "label":  "worked at"
+    },
+    {
+        "from":  "hirokazu-yasuhara",
+        "to":  "sega",
+        "label":  "worked at"
+    },
+    {
+        "from":  "takashi-iizuka",
+        "to":  "sonic-team",
+        "label":  "worked at"
+    },
+    {
+        "from":  "jun-senoue",
+        "to":  "sonic-team",
+        "label":  "worked at"
+    },
+    {
+        "from":  "jun-senoue",
+        "to":  "sega-rally-2",
+        "label":  "composed for"
+    },
+    {
+        "from":  "kazuyuki-hoshino",
+        "to":  "sonic-team",
+        "label":  "worked at"
+    },
+    {
+        "from":  "shun-nakamura",
+        "to":  "sonic-team",
+        "label":  "worked at"
+    },
+    {
+        "from":  "shun-nakamura",
+        "to":  "samba-de-amigo",
+        "label":  "directed"
+    },
+    {
+        "from":  "tomoya-ohtani",
+        "to":  "sonic-team",
+        "label":  "worked at"
+    },
+    {
+        "from":  "hideki-naganuma",
+        "to":  "sega",
+        "label":  "worked at"
+    },
+    {
+        "from":  "masayoshi-yokoyama",
+        "to":  "ryu-ga-gotoku-studio",
+        "label":  "worked at"
+    },
+    {
+        "from":  "richard-jacques",
+        "to":  "sega",
+        "label":  "worked at"
+    },
+    {
+        "from":  "richard-jacques",
+        "to":  "outrun-2",
+        "label":  "composed for"
+    },
+    {
+        "from":  "mie-kumagai",
+        "to":  "sega-am3",
+        "label":  "worked at"
+    },
+    {
+        "from":  "mie-kumagai",
+        "to":  "gunblade-ny",
+        "label":  "produced"
+    },
+    {
+        "from":  "mie-kumagai",
+        "to":  "decathlete",
+        "label":  "produced"
+    },
+    {
+        "from":  "mie-kumagai",
+        "to":  "confidential-mission",
+        "label":  "directed"
+    },
+    {
+        "from":  "mie-kumagai",
+        "to":  "virtua-tennis",
+        "label":  "produced"
+    },
+    {
+        "from":  "mie-kumagai",
+        "to":  "derby-owners-club",
+        "label":  "produced"
+    },
+    {
+        "from":  "mie-kumagai",
+        "to":  "virtua-tennis-2",
+        "label":  "produced"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "power-drift",
+        "label":  "directed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "g-loc-air-battle",
+        "label":  "directed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "g-loc-air-battle",
+        "label":  "designed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "g-loc-air-battle",
+        "label":  "programmed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "virtua-cop",
+        "label":  "produced"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "sonic-the-fighters",
+        "label":  "produced"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "virtua-fighter-3",
+        "label":  "directed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "virtua-fighter-3",
+        "label":  "produced"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "daytona-usa",
+        "label":  "produced"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "outrun-2",
+        "label":  "produced"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "virtua-cop-3",
+        "label":  "directed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "virtua-fighter-4",
+        "label":  "directed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "virtua-fighter-4",
+        "label":  "produced"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "g-loc-air-battle",
+        "label":  "designed"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "virtua-racing",
+        "label":  "designed"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "virtua-fighter",
+        "label":  "designed"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "virtua-fighter-2",
+        "label":  "designed"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "scud-race",
+        "label":  "directed"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "scud-race",
+        "label":  "produced"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "spikeout",
+        "label":  "directed"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "spikeout",
+        "label":  "produced"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "spikeout",
+        "label":  "designed"
+    },
+    {
+        "from":  "toshihiro-nagoshi",
+        "to":  "daytona-usa-2",
+        "label":  "produced"
+    },
+    {
+        "from":  "yuji-naka",
+        "to":  "samba-de-amigo",
+        "label":  "produced"
+    },
+    {
+        "from":  "turbo-arcade",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "turbo-arcade",
+        "to":  "vco-object",
+        "label":  "runs on"
+    },
+    {
+        "from":  "buck-rogers",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "buck-rogers",
+        "to":  "vco-object",
+        "label":  "runs on"
+    },
+    {
+        "from":  "zaxxon",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "zaxxon",
+        "to":  "pre-system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "pengo",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "pengo",
+        "to":  "pre-system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "congo-bongo",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "congo-bongo",
+        "to":  "pre-system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "astron-belt",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "astron-belt",
+        "to":  "sega-laserdisc",
+        "label":  "runs on"
+    },
+    {
+        "from":  "star-trek-sos",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "star-trek-sos",
+        "to":  "g80",
+        "label":  "runs on"
+    },
+    {
+        "from":  "flicky",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "flicky",
+        "to":  "system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "choplifter",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "choplifter",
+        "to":  "system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "wonder-boy",
+        "to":  "westone",
+        "label":  "developed by"
+    },
+    {
+        "from":  "wonder-boy",
+        "to":  "system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "wonder-boy-monster-land",
+        "to":  "westone",
+        "label":  "developed by"
+    },
+    {
+        "from":  "wonder-boy-monster-land",
+        "to":  "system-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "alien-syndrome",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "alien-syndrome",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "dynamite-dux",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "dynamite-dux",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "galaxy-force",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "galaxy-force",
+        "to":  "y-board",
+        "label":  "runs on"
+    },
+    {
+        "from":  "eswat",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "eswat",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "super-monaco-gp",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "super-monaco-gp",
+        "to":  "x-board",
+        "label":  "runs on"
+    },
+    {
+        "from":  "shadow-dancer",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "shadow-dancer",
+        "to":  "system-18",
+        "label":  "runs on"
+    },
+    {
+        "from":  "alien-storm",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "alien-storm",
+        "to":  "system-18",
+        "label":  "runs on"
+    },
+    {
+        "from":  "outrunners",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "outrunners",
+        "to":  "system-32",
+        "label":  "runs on"
+    },
+    {
+        "from":  "ollie-king",
+        "to":  "smilebit",
+        "label":  "developed by"
+    },
+    {
+        "from":  "ollie-king",
+        "to":  "chihiro",
+        "label":  "runs on"
+    },
+    {
+        "from":  "hotd-scarlet-dawn",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "hotd-scarlet-dawn",
+        "to":  "alls",
+        "label":  "runs on"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "dynamite-dux",
+        "label":  "produced"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "dynamite-dux",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "hotd-scarlet-dawn",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hisao-oguchi",
+        "to":  "super-monaco-gp",
+        "label":  "directed"
+    },
+    {
+        "from":  "hisao-oguchi",
+        "to":  "heavyweight-champ",
+        "label":  "directed"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "super-monaco-gp",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "outrunners",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takenobu-mitsuyoshi",
+        "to":  "outrunners",
+        "label":  "composed for"
+    },
+    {
+        "from":  "takayuki-nakamura",
+        "to":  "outrunners",
+        "label":  "composed for"
+    },
+    {
+        "from":  "hideki-naganuma",
+        "to":  "ollie-king",
+        "label":  "composed for"
+    },
+    {
+        "from":  "masayoshi-yokoyama",
+        "to":  "ollie-king",
+        "label":  "directed"
+    },
+    {
+        "from":  "hang-on",
+        "to":  "super-scaler",
+        "label":  "runs on"
+    },
+    {
+        "from":  "space-harrier",
+        "to":  "super-scaler",
+        "label":  "runs on"
+    },
+    {
+        "from":  "out-run",
+        "to":  "outrun-board",
+        "label":  "runs on"
+    },
+    {
+        "from":  "rieko-kodama",
+        "to":  "quartet",
+        "label":  "artwork for"
+    },
+    {
+        "from":  "rieko-kodama",
+        "to":  "champion-boxing",
+        "label":  "artwork for"
+    },
+    {
+        "from":  "periscope",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "periscope",
+        "to":  "pre-system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "heavyweight-champ",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "heavyweight-champ",
+        "to":  "pre-system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "head-on",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "head-on",
+        "to":  "pre-system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "monaco-gp",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "monaco-gp",
+        "to":  "pre-system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "deep-scan",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "deep-scan",
+        "to":  "pre-system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "carnival-arcade",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "carnival-arcade",
+        "to":  "pre-system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "frogger",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "frogger",
+        "to":  "pre-system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "astro-blaster",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "astro-blaster",
+        "to":  "g80",
+        "label":  "runs on"
+    },
+    {
+        "from":  "space-fury",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "space-fury",
+        "to":  "g80",
+        "label":  "runs on"
+    },
+    {
+        "from":  "subroc-3d",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "subroc-3d",
+        "to":  "g80",
+        "label":  "runs on"
+    },
+    {
+        "from":  "tac-scan",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "tac-scan",
+        "to":  "g80",
+        "label":  "runs on"
+    },
+    {
+        "from":  "champion-boxing",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "champion-boxing",
+        "to":  "system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "bank-panic",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "bank-panic",
+        "to":  "system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "my-hero",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "my-hero",
+        "to":  "system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "teddy-boy-blues",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "teddy-boy-blues",
+        "to":  "system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "ninja-princess",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "ninja-princess",
+        "to":  "system-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "enduro-racer",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "enduro-racer",
+        "to":  "super-scaler",
+        "label":  "runs on"
+    },
+    {
+        "from":  "action-fighter",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "action-fighter",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "sdi-arcade",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "sdi-arcade",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "scramble-spirits",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "scramble-spirits",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "turbo-out-run",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "turbo-out-run",
+        "to":  "outrun-board",
+        "label":  "runs on"
+    },
+    {
+        "from":  "wrestle-war",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "wrestle-war",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "crack-down",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "crack-down",
+        "to":  "system-24",
+        "label":  "runs on"
+    },
+    {
+        "from":  "michael-jacksons-moonwalker",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "michael-jacksons-moonwalker",
+        "to":  "system-18",
+        "label":  "runs on"
+    },
+    {
+        "from":  "gp-rider",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "gp-rider",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "laser-ghost",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "laser-ghost",
+        "to":  "system-16",
+        "label":  "runs on"
+    },
+    {
+        "from":  "bloxeed",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "bloxeed",
+        "to":  "system-c",
+        "label":  "runs on"
+    },
+    {
+        "from":  "puyo-puyo",
+        "to":  "compile",
+        "label":  "developed by"
+    },
+    {
+        "from":  "puyo-puyo",
+        "to":  "system-c",
+        "label":  "runs on"
+    },
+    {
+        "from":  "rail-chase",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "rail-chase",
+        "to":  "system-32",
+        "label":  "runs on"
+    },
+    {
+        "from":  "spider-man-arcade",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "spider-man-arcade",
+        "to":  "system-32",
+        "label":  "runs on"
+    },
+    {
+        "from":  "arabian-fight",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "arabian-fight",
+        "to":  "system-32",
+        "label":  "runs on"
+    },
+    {
+        "from":  "alien3-the-gun",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "alien3-the-gun",
+        "to":  "system-32",
+        "label":  "runs on"
+    },
+    {
+        "from":  "golden-axe-the-duel",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "golden-axe-the-duel",
+        "to":  "st-v",
+        "label":  "runs on"
+    },
+    {
+        "from":  "puyo-puyo-tsu",
+        "to":  "compile",
+        "label":  "developed by"
+    },
+    {
+        "from":  "puyo-puyo-tsu",
+        "to":  "system-c",
+        "label":  "runs on"
+    },
+    {
+        "from":  "wing-war",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "wing-war",
+        "to":  "model-1",
+        "label":  "runs on"
+    },
+    {
+        "from":  "puyo-puyo-sun",
+        "to":  "compile",
+        "label":  "developed by"
+    },
+    {
+        "from":  "puyo-puyo-sun",
+        "to":  "st-v",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-fighter-kids",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-fighter-kids",
+        "to":  "st-v",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-striker-2",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-striker-2",
+        "to":  "model-3",
+        "label":  "runs on"
+    },
+    {
+        "from":  "top-skater",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "top-skater",
+        "to":  "model-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "the-lost-world-jurassic-park",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "the-lost-world-jurassic-park",
+        "to":  "model-3",
+        "label":  "runs on"
+    },
+    {
+        "from":  "star-wars-trilogy-arcade",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "star-wars-trilogy-arcade",
+        "to":  "model-3",
+        "label":  "runs on"
+    },
+    {
+        "from":  "la-machineguns",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "la-machineguns",
+        "to":  "model-3",
+        "label":  "runs on"
+    },
+    {
+        "from":  "f355-challenge",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "f355-challenge",
+        "to":  "model-3",
+        "label":  "runs on"
+    },
+    {
+        "from":  "sega-bass-fishing",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "sega-bass-fishing",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "fighting-vipers-2",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "fighting-vipers-2",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "zombie-revenge",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "zombie-revenge",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "the-typing-of-the-dead",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "the-typing-of-the-dead",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "eighteen-wheeler",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "eighteen-wheeler",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "outtrigger",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "outtrigger",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "beach-spikers",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "beach-spikers",
+        "to":  "naomi-2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "planet-harriers",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "planet-harriers",
+        "to":  "hikaru",
+        "label":  "runs on"
+    },
+    {
+        "from":  "world-club-champion-football",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "world-club-champion-football",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "puyo-puyo-fever",
+        "to":  "sonic-team",
+        "label":  "developed by"
+    },
+    {
+        "from":  "puyo-puyo-fever",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "ghost-squad",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "ghost-squad",
+        "to":  "chihiro",
+        "label":  "runs on"
+    },
+    {
+        "from":  "outrun-2-sp",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "outrun-2-sp",
+        "to":  "chihiro",
+        "label":  "runs on"
+    },
+    {
+        "from":  "sangokushi-taisen",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "sangokushi-taisen",
+        "to":  "lindbergh",
+        "label":  "runs on"
+    },
+    {
+        "from":  "virtua-tennis-3",
+        "to":  "sega-am3",
+        "label":  "developed by"
+    },
+    {
+        "from":  "virtua-tennis-3",
+        "to":  "lindbergh",
+        "label":  "runs on"
+    },
+    {
+        "from":  "rambo-arcade",
+        "to":  "sega-am1",
+        "label":  "developed by"
+    },
+    {
+        "from":  "rambo-arcade",
+        "to":  "lindbergh",
+        "label":  "runs on"
+    },
+    {
+        "from":  "sega-rally-3",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "sega-rally-3",
+        "to":  "europa-r",
+        "label":  "runs on"
+    },
+    {
+        "from":  "sega-race-tv",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "sega-race-tv",
+        "to":  "europa-r",
+        "label":  "runs on"
+    },
+    {
+        "from":  "mushiking",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "mushiking",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "love-and-berry",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "love-and-berry",
+        "to":  "naomi",
+        "label":  "runs on"
+    },
+    {
+        "from":  "kancolle-arcade",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "kancolle-arcade",
+        "to":  "nu",
+        "label":  "runs on"
+    },
+    {
+        "from":  "border-break",
+        "to":  "sega-am2",
+        "label":  "developed by"
+    },
+    {
+        "from":  "border-break",
+        "to":  "ringedge",
+        "label":  "runs on"
+    },
+    {
+        "from":  "hatsune-miku-project-diva",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "hatsune-miku-project-diva",
+        "to":  "ringedge",
+        "label":  "runs on"
+    },
+    {
+        "from":  "maimai",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "maimai",
+        "to":  "ringedge2",
+        "label":  "runs on"
+    },
+    {
+        "from":  "chunithm",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "chunithm",
+        "to":  "nu",
+        "label":  "runs on"
+    },
+    {
+        "from":  "puyo-puyo-tetris",
+        "to":  "sonic-team",
+        "label":  "developed by"
+    },
+    {
+        "from":  "puyo-puyo-tetris",
+        "to":  "nu",
+        "label":  "runs on"
+    },
+    {
+        "from":  "ongeki",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "ongeki",
+        "to":  "nu",
+        "label":  "runs on"
+    },
+    {
+        "from":  "noriyoshi-ohba",
+        "to":  "sega-am1",
+        "label":  "worked at"
+    },
+    {
+        "from":  "makoto-uchida",
+        "to":  "sega-am1",
+        "label":  "worked at"
+    },
+    {
+        "from":  "hayao-nakayama",
+        "to":  "sega",
+        "label":  "worked at"
+    },
+    {
+        "from":  "david-rosen",
+        "to":  "sega",
+        "label":  "worked at"
+    },
+    {
+        "from":  "masamitsu-niitani",
+        "to":  "compile",
+        "label":  "worked at"
+    },
+    {
+        "from":  "masamitsu-niitani",
+        "to":  "puyo-puyo",
+        "label":  "produced"
+    },
+    {
+        "from":  "makoto-uchida",
+        "to":  "golden-axe",
+        "label":  "directed"
+    },
+    {
+        "from":  "makoto-uchida",
+        "to":  "altered-beast",
+        "label":  "directed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "champion-boxing",
+        "label":  "designed"
+    },
+    {
+        "from":  "yu-suzuki",
+        "to":  "f355-challenge",
+        "label":  "produced"
+    },
+    {
+        "from":  "hiroshi-kawaguchi",
+        "to":  "enduro-racer",
+        "label":  "composed for"
+    },
+    {
+        "from":  "streets-of-rage",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "golden-axe-ii",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "golden-axe-iii",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "yakuza-0",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "valkyria-chronicles",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "from":  "sakura-wars",
+        "to":  "sega",
+        "label":  "developed by"
+    },
+    {
+        "label":  "composed for",
+        "from":  "katsuhiro-hayashi",
+        "to":  "gain-ground"
+    },
+    {
+        "label":  "composed for",
+        "from":  "katsuhiro-hayashi",
+        "to":  "rambo-arcade"
+    },
+    {
+        "label":  "composed for",
+        "from":  "yasuhiro-kawakami",
+        "to":  "scramble-spirits"
+    },
+    {
+        "label":  "composed for",
+        "from":  "yasuhiro-kawakami",
+        "to":  "crack-down"
+    },
+    {
+        "label":  "composed for",
+        "from":  "shinichi-sakamoto",
+        "to":  "wonder-boy-monster-land"
+    },
+    {
+        "label":  "composed for",
+        "from":  "yuzo-koshiro",
+        "to":  "streets-of-rage"
+    },
+    {
+        "label":  "composed for",
+        "from":  "naofumi-hataya",
+        "to":  "golden-axe-ii"
+    },
+    {
+        "label":  "composed for",
+        "from":  "naofumi-hataya",
+        "to":  "golden-axe-iii"
+    },
+    {
+        "label":  "composed for",
+        "from":  "hidenori-shoji",
+        "to":  "yakuza-0"
+    },
+    {
+        "label":  "composed for",
+        "from":  "hitoshi-sakimoto",
+        "to":  "valkyria-chronicles"
+    },
+    {
+        "label":  "composed for",
+        "from":  "kohei-tanaka",
+        "to":  "sakura-wars"
+    },
+    {
+        "label":  "composed for",
+        "from":  "takayuki-nakamura",
+        "to":  "eswat"
+    },
+    {
+        "label":  "composed for",
+        "from":  "takenobu-mitsuyoshi",
+        "to":  "lets-go-jungle"
+    },
+    {
+        "label":  "composed for",
+        "from":  "hideki-naganuma",
+        "to":  "monkey-ball"
+    },
+    {
+        "label":  "composed for",
+        "from":  "tomoya-ohtani",
+        "to":  "monkey-ball"
+    },
+    {
+        "label":  "directed",
+        "from":  "makoto-uchida",
+        "to":  "golden-axe-revenge-of-death-adder"
+    },
+    {
+        "label":  "composed for",
+        "from":  "hiroshi-kawaguchi",
+        "to":  "alex-kidd-the-lost-stars"
+    },
+    {
+        "label":  "worked at",
+        "from":  "katsuhiro-hayashi",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "yasuhiro-kawakami",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "shinichi-sakamoto",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "yuzo-koshiro",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "naofumi-hataya",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "hidenori-shoji",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "hitoshi-sakimoto",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "saori-kobayashi",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "tatsuyuki-maeda",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "hideaki-kobayashi",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "kohei-tanaka",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "spencer-nilsen",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "motoaki-takenouchi",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "hiroki-kikuta",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "tetsu-katano",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "hiroshi-miyamoto",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "hiroyoshi-kato",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "mitsuharu-fukuyama",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "mariko-nanba",
+        "to":  "sega"
+    },
+    {
+        "label":  "worked at",
+        "from":  "akiyuki-tateyama",
+        "to":  "sega"
+    }
 ]
