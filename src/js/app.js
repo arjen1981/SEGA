@@ -10,13 +10,9 @@
  * @module app
  */
 
+import { clearHash, initDeepLink, updateHash } from "./deep-link.js";
 import { closeDetailPanel, initDetailPanel, openDetailPanel } from "./detail-panel.js";
-import {
-	applyEgoGraph,
-	getViewMode,
-	initEgoGraph,
-	pickRandomSpotlight,
-} from "./ego-graph.js";
+import { applyEgoGraph, getViewMode, initEgoGraph, pickRandomSpotlight } from "./ego-graph.js";
 import { initFilters, toggleGroup } from "./filters.js";
 import { createGraph } from "./graph.js";
 import { assignNodeIcons, getIconDataUri } from "./icons.js";
@@ -64,6 +60,30 @@ function hideSpinner() {
 }
 
 /**
+ * Show a transient toast notification that auto-dismisses after 4 seconds.
+ * @param {string} message — plain-text message to display
+ */
+function showToast(message) {
+	let container = document.getElementById("toast-container");
+	if (!container) {
+		container = document.createElement("div");
+		container.id = "toast-container";
+		container.className = "toast-container";
+		container.setAttribute("role", "status");
+		container.setAttribute("aria-live", "polite");
+		document.body.appendChild(container);
+	}
+	const toast = document.createElement("div");
+	toast.className = "toast";
+	toast.textContent = message;
+	container.appendChild(toast);
+	setTimeout(() => {
+		toast.classList.add("fade-out");
+		toast.addEventListener("transitionend", () => toast.remove());
+	}, 4000);
+}
+
+/**
  * Main initialization — called when the DOM is ready.
  */
 async function init() {
@@ -99,6 +119,23 @@ async function init() {
 		// Initialize ego-graph module
 		initEgoGraph(network);
 
+		// Initialize deep-link module (011: URL-based deep linking)
+		const { initialNodeId } = initDeepLink(nodeMap, {
+			onNavigate: (nodeId) => {
+				if (nodeId === null) {
+					closeDetailPanel();
+					return;
+				}
+				applyEgoGraph(nodeId);
+				openDetailPanel(nodeId);
+				const ft = document.getElementById("filter-toolbar");
+				if (ft) ft.classList.add("hidden");
+			},
+			onInvalidNode: (nodeId) => {
+				showToast(`Node "${nodeId}" was not found`);
+			},
+		});
+
 		// DOM references for ego-graph UI
 		const filterToolbar = document.getElementById("filter-toolbar");
 
@@ -116,12 +153,16 @@ async function init() {
 					applyEgoGraph(clickedId);
 					openDetailPanel(clickedId);
 				}
+				// 011: Update URL hash on node selection
+				updateHash(clickedId);
 			}
 		});
 
 		// Wire deselect → close detail panel
 		network.on("deselectNode", () => {
 			closeDetailPanel();
+			// 011: Clear URL hash on deselection
+			clearHash();
 		});
 
 		// Initialize filters module
@@ -244,10 +285,15 @@ async function init() {
 		network.once("stabilizationIterationsDone", () => {
 			hideSpinner();
 
-			// Apply ego-graph spotlight on initial load (FR-001)
-			const spotlightNodeId = pickRandomSpotlight(nodesData);
+			// 011: Use deep-link node if present, otherwise random spotlight
+			const spotlightNodeId = initialNodeId || pickRandomSpotlight(nodesData);
 			applyEgoGraph(spotlightNodeId);
 			openDetailPanel(spotlightNodeId);
+			if (!initialNodeId) {
+				// Only update hash for deep-linked nodes (random spotlight gets no hash)
+			} else {
+				updateHash(spotlightNodeId);
+			}
 
 			// FR-011: Hide filter toolbar in ego mode
 			if (filterToolbar) filterToolbar.classList.add("hidden");

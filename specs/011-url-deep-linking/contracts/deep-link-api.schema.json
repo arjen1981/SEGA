@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Deep Link Module API Contract",
+  "description": "Public API surface of src/js/deep-link.js",
+  "definitions": {
+    "InitOptions": {
+      "type": "object",
+      "description": "Configuration passed to initDeepLink()",
+      "properties": {
+        "onNavigate": {
+          "type": "function",
+          "description": "Callback invoked when hash navigation should focus a valid node. Receives (nodeId: string). Caller is responsible for calling applyEgoGraph + openDetailPanel."
+        },
+        "onInvalidNode": {
+          "type": "function",
+          "description": "Callback invoked when hash contains a node ID not found in nodeMap. Receives (nodeId: string). Caller should show notification and fall back to default view."
+        }
+      },
+      "required": ["onNavigate", "onInvalidNode"]
+    },
+    "InitResult": {
+      "type": "object",
+      "description": "Return value of initDeepLink()",
+      "properties": {
+        "initialNodeId": {
+          "type": ["string", "null"],
+          "description": "The valid node ID from the initial URL hash, or null if no valid deep link was present"
+        }
+      },
+      "required": ["initialNodeId"]
+    },
+    "ParsedHash": {
+      "type": "object",
+      "description": "Internal result of parsing location.hash",
+      "properties": {
+        "nodeId": {
+          "type": ["string", "null"],
+          "description": "URL-decoded node ID extracted from #node=<value>, or null if hash is malformed/empty"
+        }
+      },
+      "required": ["nodeId"]
+    }
+  },
+  "exports": {
+    "initDeepLink": {
+      "description": "Initialize the deep-link module. Sets up popstate listener for browser back/forward. Returns the initial deep-link node ID if present and valid.",
+      "parameters": [
+        {
+          "name": "nodeMap",
+          "type": "Map<string, object>",
+          "description": "Map of node ID → node data object, used to validate that a hash references an existing node"
+        },
+        {
+          "name": "options",
+          "type": "InitOptions",
+          "description": "Callback handlers for navigation and invalid node events"
+        }
+      ],
+      "returns": "InitResult"
+    },
+    "updateHash": {
+      "description": "Update the URL hash to reflect the currently selected node. Uses history.pushState to avoid triggering popstate/hashchange.",
+      "parameters": [
+        {
+          "name": "nodeId",
+          "type": "string",
+          "description": "The node ID to encode in the hash (e.g., 'virtua-fighter' → '#node=virtua-fighter')"
+        }
+      ],
+      "returns": "void"
+    },
+    "clearHash": {
+      "description": "Remove the hash from the URL when no node is selected. Uses history.pushState to avoid triggering popstate.",
+      "parameters": [],
+      "returns": "void"
+    },
+    "parseHash": {
+      "description": "Parse a hash string into a node ID. Exported for testing.",
+      "parameters": [
+        {
+          "name": "hash",
+          "type": "string",
+          "description": "The hash string to parse (e.g., '#node=virtua-fighter')"
+        }
+      ],
+      "returns": "ParsedHash"
+    }
+  }
+}

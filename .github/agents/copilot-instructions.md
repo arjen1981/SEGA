@@ -21,6 +21,8 @@ Auto-generated from all feature plans. Last updated: 2026-02-09
 - N/A (static site, no backend) (009-fix-bugs-techdebt)
 - JavaScript ES2020+ (vanilla, no framework, no build step) + vis-network 10 (CDN), QUnit 2.25.0 (CDN) (010-a11y-improvements)
 - N/A (static JSON files) (010-a11y-improvements)
+- Vanilla JavaScript (ES2015+), ES modules via browser `type="module"` + vis-network v10 (CDN), Biome (dev linter) (011-url-deep-linking)
+- N/A (static JSON data files, no server-side state) (011-url-deep-linking)
 
 - HTML5, CSS3, JavaScript (ES6+) — no build step required + vis-network v10 (CDN: single `<script>` tag from unpkg, ~95 KB gzipped) (001-sega-graph-visualization)
 
@@ -41,9 +43,9 @@ npm test; npm run lint
 HTML5, CSS3, JavaScript (ES6+) — no build step required: Follow standard conventions
 
 ## Recent Changes
+- 011-url-deep-linking: Added Vanilla JavaScript (ES2015+), ES modules via browser `type="module"` + vis-network v10 (CDN), Biome (dev linter)
 - 010-a11y-improvements: Added JavaScript ES2020+ (vanilla, no framework, no build step) + vis-network 10 (CDN), QUnit 2.25.0 (CDN)
 - 009-fix-bugs-techdebt: Added JavaScript ES2020+ (vanilla, no build step) + vis-network 10 (CDN)
-- 008-expand-creators: Added Vanilla JavaScript (ES modules, no transpilation); PowerShell for enrichment script + vis-network 9.1.9 (CDN), QUnit (CDN), Wikidata SPARQL endpoint
 
 
 <!-- MANUAL ADDITIONS START -->

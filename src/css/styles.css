@@ -84,8 +84,8 @@ body {
 	z-index: 0;
 	pointer-events: none;
 	background-image:
-		linear-gradient(to right, rgba(255, 255, 255, 0.10) 1px, transparent 1px),
-		linear-gradient(to bottom, rgba(255, 255, 255, 0.10) 1px, transparent 1px);
+		linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
 	background-size: 32px 32px;
 }
 
@@ -417,7 +417,6 @@ body::after {
 	background-position: center;
 }
 
-
 /* --- Filter Toolbar Hidden State (ego mode) --- */
 .filter-toolbar.hidden {
 	display: none;
@@ -661,4 +660,29 @@ body::after {
 	body::after {
 		display: none;
 	}
+}
+/* --- Toast Notification (011: Deep Linking) --- */
+.toast-container {
+	position: fixed;
+	bottom: 1.5rem;
+	left: 1.5rem;
+	z-index: 1000;
+	pointer-events: none;
+}
+
+.toast {
+	background: var(--color-panel-bg, #1a1a2e);
+	color: var(--color-text, #e0e0e0);
+	border: 1px solid var(--color-border, #333);
+	border-radius: 4px;
+	padding: 0.75rem 1.25rem;
+	font-family: inherit;
+	font-size: 0.85rem;
+	opacity: 1;
+	transition: opacity 0.4s ease-out;
+	pointer-events: auto;
+}
+
+.toast.fade-out {
+	opacity: 0;
 }
