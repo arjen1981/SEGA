@@ -481,7 +481,8 @@ body::after {
 	transition: background-color 0.1s ease;
 }
 
-.search-suggestion-item:hover {
+.search-suggestion-item:hover,
+.search-suggestion-item.highlighted {
 	background-color: rgba(0, 68, 255, 0.1);
 }
 

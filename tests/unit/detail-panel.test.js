@@ -381,3 +381,82 @@ module("detail-panel – missing optional fields", (hooks) => {
 		assert.notOk(img, "should not render thumbnail when missing");
 	});
 });
+
+/* ============================================================
+   Aria-live Announcement Tests (010-a11y-improvements)
+   ============================================================ */
+
+module("detail-panel – aria-live announcements", (hooks) => {
+	let content;
+
+	hooks.beforeEach(() => {
+		const allNodes = [COMPANY_NODE, STUDIO_NODE, GAME_NODE, CREATOR_NODE];
+		initDetailPanel(buildNodeMap(allNodes));
+		content = document.getElementById("detail-content");
+	});
+
+	hooks.afterEach(() => {
+		closeDetailPanel();
+	});
+
+	// T025: Opening detail panel sets announcement text containing entity name
+	test("T025 opening panel announces entity name", (assert) => {
+		openDetailPanel("sega");
+		const statusEl = content.querySelector(".sr-announcement");
+		assert.ok(statusEl, "should have an sr-announcement element");
+		assert.ok(
+			statusEl.textContent.includes("SEGA"),
+			"announcement should contain entity name",
+		);
+	});
+
+	// T026: Updating with different node announces new entity name
+	test("T026 updating panel with different node announces new name", (assert) => {
+		openDetailPanel("sega");
+		openDetailPanel("am2");
+		const statusEl = content.querySelector(".sr-announcement");
+		assert.ok(statusEl, "should have an sr-announcement element");
+		assert.ok(
+			statusEl.textContent.includes("Sega AM2"),
+			"announcement should contain new entity name",
+		);
+		assert.false(
+			statusEl.textContent.includes("SEGA Corporation"),
+			"should not contain old entity name",
+		);
+	});
+
+	// T027: Same node consecutively does NOT re-announce (duplicate suppression)
+	test("T027 same node does not re-announce", (assert) => {
+		openDetailPanel("sega");
+		const firstAnnouncement = content.querySelector(".sr-announcement")?.textContent;
+
+		// Open same node again
+		openDetailPanel("sega");
+
+		// The sr-announcement should be cleared to prevent screen reader re-reading
+		const statusEl = content.querySelector(".sr-announcement");
+		if (statusEl) {
+			assert.strictEqual(
+				statusEl.textContent,
+				"",
+				"announcement should be empty on duplicate open",
+			);
+		} else {
+			// Alternatively, the element might be removed entirely
+			assert.ok(true, "no sr-announcement element on duplicate — suppressed");
+		}
+	});
+
+	// T028: Closing panel announces "Detail panel closed"
+	test("T028 closing panel announces closure", (assert) => {
+		openDetailPanel("sega");
+		closeDetailPanel();
+		const statusEl = content.querySelector(".sr-announcement");
+		assert.ok(statusEl, "should have an sr-announcement element after close");
+		assert.ok(
+			statusEl.textContent.includes("Detail panel closed"),
+			"should announce panel closed",
+		);
+	});
+});

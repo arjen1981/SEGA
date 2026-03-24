@@ -13,12 +13,12 @@
     <div id="graph-container" style="width:800px;height:600px;"></div>
     <aside id="detail-panel" class="detail-panel" hidden>
       <button id="detail-close" aria-label="Close detail panel">&times;</button>
-      <div id="detail-content"></div>
+      <div id="detail-content" aria-live="polite"></div>
     </aside>
     <div id="filter-toolbar"></div>
     <button id="expand-all-btn" hidden>Expand All</button>
-    <input id="search-input" type="text" placeholder="Search...">
-    <ul id="search-suggestions"></ul>
+    <input id="search-input" type="text" placeholder="Search..." role="combobox" aria-expanded="false" aria-controls="search-suggestions" aria-activedescendant="">
+    <ul id="search-suggestions" role="listbox"></ul>
   </div>
 
   <!-- QUnit framework -->

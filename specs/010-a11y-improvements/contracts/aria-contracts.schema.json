@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "combobox-aria-contract",
+  "title": "Search Combobox ARIA Contract",
+  "description": "Defines the required ARIA attributes for the search combobox pattern (WAI-ARIA 1.2 Combobox with Listbox popup)",
+  "type": "object",
+  "properties": {
+    "searchInput": {
+      "description": "The search input element (#search-input)",
+      "type": "object",
+      "properties": {
+        "role": { "const": "combobox" },
+        "aria-expanded": { "enum": ["true", "false"] },
+        "aria-controls": { "const": "search-suggestions" },
+        "aria-activedescendant": {
+          "type": "string",
+          "pattern": "^(search-suggestion-\\d+|)$",
+          "description": "ID of highlighted suggestion or empty string"
+        },
+        "aria-label": { "type": "string", "minLength": 1 }
+      },
+      "required": ["role", "aria-expanded", "aria-controls", "aria-activedescendant", "aria-label"]
+    },
+    "suggestionList": {
+      "description": "The suggestion dropdown (#search-suggestions)",
+      "type": "object",
+      "properties": {
+        "role": { "const": "listbox" },
+        "id": { "const": "search-suggestions" }
+      },
+      "required": ["role", "id"]
+    },
+    "suggestionItem": {
+      "description": "Each suggestion list item (li.search-suggestion-item)",
+      "type": "object",
+      "properties": {
+        "role": { "const": "option" },
+        "id": {
+          "type": "string",
+          "pattern": "^search-suggestion-\\d+$"
+        },
+        "aria-selected": { "enum": ["true", "false"] }
+      },
+      "required": ["role", "id", "aria-selected"]
+    },
+    "detailContent": {
+      "description": "The detail panel content area (#detail-content)",
+      "type": "object",
+      "properties": {
+        "aria-live": { "const": "polite" }
+      },
+      "required": ["aria-live"]
+    }
+  },
+  "required": ["searchInput", "suggestionList", "suggestionItem", "detailContent"]
+}

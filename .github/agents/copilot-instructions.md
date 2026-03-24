@@ -19,6 +19,8 @@ Auto-generated from all feature plans. Last updated: 2026-02-09
 - Vanilla JavaScript (ES modules, no transpilation); PowerShell for enrichment script + vis-network 9.1.9 (CDN), QUnit (CDN), Wikidata SPARQL endpoint (008-expand-creators)
 - JavaScript ES2020+ (vanilla, no build step) + vis-network 10 (CDN) (009-fix-bugs-techdebt)
 - N/A (static site, no backend) (009-fix-bugs-techdebt)
+- JavaScript ES2020+ (vanilla, no framework, no build step) + vis-network 10 (CDN), QUnit 2.25.0 (CDN) (010-a11y-improvements)
+- N/A (static JSON files) (010-a11y-improvements)
 
 - HTML5, CSS3, JavaScript (ES6+) — no build step required + vis-network v10 (CDN: single `<script>` tag from unpkg, ~95 KB gzipped) (001-sega-graph-visualization)
 
@@ -39,9 +41,9 @@ npm test; npm run lint
 HTML5, CSS3, JavaScript (ES6+) — no build step required: Follow standard conventions
 
 ## Recent Changes
+- 010-a11y-improvements: Added JavaScript ES2020+ (vanilla, no framework, no build step) + vis-network 10 (CDN), QUnit 2.25.0 (CDN)
 - 009-fix-bugs-techdebt: Added JavaScript ES2020+ (vanilla, no build step) + vis-network 10 (CDN)
 - 008-expand-creators: Added Vanilla JavaScript (ES modules, no transpilation); PowerShell for enrichment script + vis-network 9.1.9 (CDN), QUnit (CDN), Wikidata SPARQL endpoint
-- 007-igdb-game-images: Added Node.js 18+ (enrichment script); static HTML/CSS/JS (application — unchanged) + vis-network 9.1.9 (CDN, unchanged); `node-fetch` or built-in `fetch` (Node 18+) for IGDB/Wikipedia API calls
 
 
 <!-- MANUAL ADDITIONS START -->

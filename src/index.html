@@ -23,7 +23,11 @@
         class="search-input"
         type="text"
         placeholder="Search games, creators, platforms…"
+        role="combobox"
         aria-label="Search for games, creators, platforms and more"
+        aria-expanded="false"
+        aria-controls="search-suggestions"
+        aria-activedescendant=""
         autocomplete="off"
       >
       <ul id="search-suggestions" class="search-suggestions" role="listbox" hidden></ul>
@@ -62,7 +66,7 @@
 
   <aside id="detail-panel" class="detail-panel" role="complementary" aria-label="Node details" aria-expanded="false" hidden>
     <button id="detail-close" class="detail-close" aria-label="Close detail panel">&times;</button>
-    <div id="detail-content" class="detail-content"></div>
+    <div id="detail-content" class="detail-content" aria-live="polite"></div>
   </aside>
 
   <footer class="legend-bar" role="contentinfo" aria-label="Node type legend and attribution">

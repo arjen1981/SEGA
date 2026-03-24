@@ -28,6 +28,9 @@ let contentEl;
 /** @type {HTMLButtonElement} */
 let closeBtn;
 
+/** @type {string|null} Last node ID announced to screen readers (for duplicate suppression) */
+let lastAnnouncedNodeId = null;
+
 /**
  * Initialize the detail panel with a node data lookup map.
  * Also wires the close button event listener.
@@ -52,6 +55,8 @@ export function openDetailPanel(nodeId) {
 	const node = nodeMap.get(nodeId);
 	if (!node) {
 		contentEl.innerHTML = renderNoData("Unknown entity");
+		appendAnnouncement(contentEl, "Showing details for unknown entity");
+		lastAnnouncedNodeId = null;
 		panelEl.classList.add("open");
 		panelEl.removeAttribute("hidden");
 		panelEl.setAttribute("aria-expanded", "true"); // 005 FR-015
@@ -59,6 +64,16 @@ export function openDetailPanel(nodeId) {
 	}
 
 	contentEl.innerHTML = renderNode(node);
+
+	// 010 FR-011: Announce entity name, suppress duplicates
+	if (nodeId !== lastAnnouncedNodeId) {
+		appendAnnouncement(contentEl, `Showing details for ${node.label}`);
+		lastAnnouncedNodeId = nodeId;
+	} else {
+		// Suppress duplicate: add empty announcement to avoid re-read
+		appendAnnouncement(contentEl, "");
+	}
+
 	panelEl.classList.add("open");
 	panelEl.removeAttribute("hidden");
 	panelEl.setAttribute("aria-expanded", "true"); // 005 FR-015
@@ -72,6 +87,12 @@ export function closeDetailPanel() {
 	if (panelEl) {
 		panelEl.classList.remove("open");
 		panelEl.setAttribute("aria-expanded", "false"); // 005 FR-015
+		// 010 FR-012: Announce panel closure to screen readers
+		if (contentEl) {
+			contentEl.innerHTML = "";
+			appendAnnouncement(contentEl, "Detail panel closed");
+		}
+		lastAnnouncedNodeId = null;
 		document.dispatchEvent(new CustomEvent("detail-panel-closed")); // 005: notify ego-graph
 	}
 }
@@ -79,6 +100,20 @@ export function closeDetailPanel() {
 /* ============================================================
    Private rendering helpers
    ============================================================ */
+
+/**
+ * Append a visually-hidden announcement span for screen readers.
+ * @param {HTMLElement} container
+ * @param {string} text — announcement text (empty to suppress)
+ */
+function appendAnnouncement(container, text) {
+	const span = document.createElement("span");
+	span.className = "sr-announcement";
+	span.style.cssText =
+		"position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0";
+	span.textContent = text;
+	container.appendChild(span);
+}
 
 /**
  * Render the full detail panel content for a node.

@@ -148,7 +148,35 @@ async function init() {
 		const suggestionsList = document.getElementById("search-suggestions");
 
 		if (searchInput && suggestionsList) {
+			/** Index of the currently highlighted suggestion (-1 = none) */
+			let highlightIndex = -1;
+
+			/**
+			 * Update the visual highlight and ARIA state for the suggestion list.
+			 * @param {number} newIndex — new highlight index (-1 to clear)
+			 */
+			function updateHighlight(newIndex) {
+				const items = suggestionsList.querySelectorAll(".search-suggestion-item");
+				// Remove previous highlight
+				if (highlightIndex >= 0 && highlightIndex < items.length) {
+					items[highlightIndex].classList.remove("highlighted");
+					items[highlightIndex].setAttribute("aria-selected", "false");
+				}
+				highlightIndex = newIndex;
+				if (highlightIndex >= 0 && highlightIndex < items.length) {
+					items[highlightIndex].classList.add("highlighted");
+					items[highlightIndex].setAttribute("aria-selected", "true");
+					searchInput.setAttribute("aria-activedescendant", items[highlightIndex].id);
+					// Scroll into view if needed
+					items[highlightIndex].scrollIntoView({ block: "nearest" });
+				} else {
+					searchInput.setAttribute("aria-activedescendant", "");
+				}
+			}
+
 			searchInput.addEventListener("input", () => {
+				highlightIndex = -1;
+				searchInput.setAttribute("aria-activedescendant", "");
 				const query = searchInput.value.trim();
 				const results = searchNodes(query);
 				renderSuggestions(suggestionsList, results);
@@ -158,14 +186,56 @@ async function init() {
 			document.addEventListener("click", (event) => {
 				if (!searchInput.contains(event.target) && !suggestionsList.contains(event.target)) {
 					suggestionsList.hidden = true;
+					searchInput.setAttribute("aria-expanded", "false");
+					highlightIndex = -1;
+					searchInput.setAttribute("aria-activedescendant", "");
 				}
 			});
 
 			// Handle keyboard navigation in suggestions
 			searchInput.addEventListener("keydown", (event) => {
-				if (event.key === "Escape") {
-					suggestionsList.hidden = true;
-					searchInput.blur();
+				const items = suggestionsList.querySelectorAll(".search-suggestion-item");
+				const count = items.length;
+
+				switch (event.key) {
+					case "ArrowDown": {
+						if (count === 0) return;
+						event.preventDefault();
+						const next = highlightIndex < count - 1 ? highlightIndex + 1 : 0;
+						updateHighlight(next);
+						break;
+					}
+					case "ArrowUp": {
+						if (count === 0) return;
+						event.preventDefault();
+						const prev = highlightIndex > 0 ? highlightIndex - 1 : count - 1;
+						updateHighlight(prev);
+						break;
+					}
+					case "Enter": {
+						if (highlightIndex >= 0 && highlightIndex < count) {
+							event.preventDefault();
+							const selectedItem = items[highlightIndex];
+							const nodeId = selectedItem.dataset.nodeId;
+							selectSuggestion(nodeId);
+							openDetailPanel(nodeId);
+							const filterToolbar = document.getElementById("filter-toolbar");
+							if (filterToolbar) filterToolbar.classList.add("hidden");
+							suggestionsList.hidden = true;
+							searchInput.setAttribute("aria-expanded", "false");
+							searchInput.value = selectedItem.querySelector(".suggestion-label").textContent;
+							highlightIndex = -1;
+							searchInput.setAttribute("aria-activedescendant", "");
+						}
+						break;
+					}
+					case "Escape": {
+						suggestionsList.hidden = true;
+						searchInput.setAttribute("aria-expanded", "false");
+						highlightIndex = -1;
+						searchInput.setAttribute("aria-activedescendant", "");
+						break;
+					}
 				}
 			});
 		}
@@ -209,24 +279,29 @@ if (document.readyState === "loading") {
 function renderSuggestions(list, results) {
 	list.innerHTML = "";
 
+	const searchInput = document.getElementById("search-input");
+
 	if (results.length === 0) {
-		const searchInput = document.getElementById("search-input");
 		if (searchInput && searchInput.value.trim() !== "") {
 			const li = document.createElement("li");
 			li.className = "search-no-results";
 			li.textContent = "No results found";
 			list.appendChild(li);
 			list.hidden = false;
+			if (searchInput) searchInput.setAttribute("aria-expanded", "true");
 		} else {
 			list.hidden = true;
+			if (searchInput) searchInput.setAttribute("aria-expanded", "false");
 		}
 		return;
 	}
 
-	for (const node of results.slice(0, 10)) {
+	for (const [index, node] of results.slice(0, 10).entries()) {
 		const li = document.createElement("li");
 		li.className = "search-suggestion-item";
 		li.setAttribute("role", "option");
+		li.id = `search-suggestion-${index}`;
+		li.setAttribute("aria-selected", "false");
 		li.dataset.nodeId = node.id;
 		li.innerHTML = `
 			<span class="suggestion-swatch badge-${node.group}"></span>
@@ -240,12 +315,14 @@ function renderSuggestions(list, results) {
 			const filterToolbar = document.getElementById("filter-toolbar");
 			if (filterToolbar) filterToolbar.classList.add("hidden");
 			list.hidden = true;
+			if (searchInput) searchInput.setAttribute("aria-expanded", "false");
 			document.getElementById("search-input").value = node.label;
 		});
 		list.appendChild(li);
 	}
 
 	list.hidden = false;
+	if (searchInput) searchInput.setAttribute("aria-expanded", "true");
 }
 
 /**
