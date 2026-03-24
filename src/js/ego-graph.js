@@ -24,6 +24,15 @@ let viewMode = "ego";
 /** @type {string | null} */
 let spotlightId = null;
 
+/** @type {boolean} Tracks whether physics is currently active (R1, R3) */
+let physicsEnabled = false;
+
+/** @type {boolean} Tracks last viewport type for physics config (R3) */
+let lastPhysicsIsMobile = false;
+
+/** @type {Function | null} Pending stabilized handler for cancel-and-replace (R2) */
+let pendingStabilizationHandler = null;
+
 /**
  * 005: Media query for mobile detection — mirrors CSS breakpoint.
  * @type {MediaQueryList}
@@ -92,6 +101,9 @@ export function initEgoGraph(net) {
 	network = net;
 	viewMode = "ego";
 	spotlightId = null;
+	physicsEnabled = false;
+	lastPhysicsIsMobile = false;
+	pendingStabilizationHandler = null;
 }
 
 /**
@@ -132,15 +144,40 @@ export function applyEgoGraph(nodeId) {
 	// Cancel any pending re-center from a panel-close that precedes this selection
 	clearTimeout(reCenterTimer);
 
+	// FR-006: Same-node click — skip neighborhood updates, re-center camera only
+	if (nodeId === spotlightId) {
+		const offset = getPanelOffset({ anticipateOpen: true });
+		network.focus(nodeId, {
+			scale: isMobile() ? 0.9 : 1.5,
+			offset: offset,
+			animation: {
+				duration: 500,
+				easingFunction: "easeInOutQuad",
+			},
+		});
+		return;
+	}
+
+	// FR-002: Cancel any pending stabilization handler (cancel-and-replace)
+	if (pendingStabilizationHandler) {
+		network.off("stabilized", pendingStabilizationHandler);
+		pendingStabilizationHandler = null;
+	}
+
 	spotlightId = nodeId;
 	viewMode = "ego";
 
-	// Re-enable physics so the neighborhood can settle into position.
-	// On mobile, use shorter spring length so nodes cluster tighter.
-	const mobilePhysics = isMobile()
-		? { enabled: true, barnesHut: { springLength: 80 } }
-		: { enabled: true };
-	network.setOptions({ physics: mobilePhysics });
+	// FR-001/FR-003: Only call setOptions when physics config actually needs to change.
+	// Enable physics when transitioning from disabled state or when viewport type changed.
+	const mobile = isMobile();
+	if (!physicsEnabled || mobile !== lastPhysicsIsMobile) {
+		const mobilePhysics = mobile
+			? { enabled: true, barnesHut: { springLength: 80 } }
+			: { enabled: true };
+		network.setOptions({ physics: mobilePhysics });
+		physicsEnabled = true;
+		lastPhysicsIsMobile = mobile;
+	}
 
 	const nodes = network.body.data.nodes;
 	const edges = network.body.data.edges;
@@ -194,14 +231,18 @@ export function applyEgoGraph(nodeId) {
 		},
 	});
 
-	// Once the neighborhood has settled, unpin the spotlight node and
+	// FR-004: Once the neighborhood has settled, unpin the spotlight node and
 	// disable physics to lock everything in place.
-	network.once("stabilized", () => {
+	// FR-002: Store handler reference for cancel-and-replace.
+	pendingStabilizationHandler = () => {
 		if (viewMode === "ego" && spotlightId) {
 			nodes.update([{ id: spotlightId, fixed: false }]);
 			network.setOptions({ physics: { enabled: false } });
+			physicsEnabled = false;
 		}
-	});
+		pendingStabilizationHandler = null;
+	};
+	network.once("stabilized", pendingStabilizationHandler);
 }
 
 /**
@@ -217,6 +258,12 @@ export function expandAll() {
 	// Cancel any pending re-center from a panel-close
 	clearTimeout(reCenterTimer);
 
+	// FR-002: Cancel any pending stabilization handler
+	if (pendingStabilizationHandler) {
+		network.off("stabilized", pendingStabilizationHandler);
+		pendingStabilizationHandler = null;
+	}
+
 	spotlightId = null;
 	viewMode = "full";
 
@@ -225,6 +272,10 @@ export function expandAll() {
 	network.setOptions({
 		physics: { enabled: true, barnesHut: { springLength: 150 } },
 	});
+	// Mark physics as not-ego-configured — expandAll's physics is transient and
+	// the next applyEgoGraph() call must re-apply its own config.
+	physicsEnabled = false;
+	lastPhysicsIsMobile = false;
 
 	const nodes = network.body.data.nodes;
 	const edges = network.body.data.edges;
@@ -280,11 +331,14 @@ export function expandAll() {
 	}
 
 	// Disable physics after the full graph settles to prevent ongoing drift
-	network.once("stabilized", () => {
+	pendingStabilizationHandler = () => {
 		if (viewMode === "full") {
 			network.setOptions({ physics: { enabled: false } });
+			physicsEnabled = false;
 		}
-	});
+		pendingStabilizationHandler = null;
+	};
+	network.once("stabilized", pendingStabilizationHandler);
 }
 
 /**

@@ -243,3 +243,79 @@ QUnit.module("ego-graph integration — expand/collapse cycle (US3)", (hooks) =>
 		assert.true(allEdgesVisible, "all edges visible after expand all");
 	});
 });
+
+/* ============================================================
+   009: Rapid navigation integration (SC-001)
+   ============================================================ */
+
+QUnit.module("ego-graph integration — rapid navigation (009)", (hooks) => {
+	let network;
+
+	hooks.beforeEach(() => {
+		const container = document.getElementById("graph-container");
+		network = createGraph(container, TEST_NODES, TEST_EDGES);
+
+		const nodeMap = new Map();
+		for (const node of TEST_NODES) {
+			nodeMap.set(node.id, node);
+		}
+		initDetailPanel(nodeMap);
+		initEgoGraph(network);
+	});
+
+	hooks.afterEach(() => {
+		closeDetailPanel();
+		destroyGraph();
+	});
+
+	QUnit.test("T016: rapid sequential navigation applies only final spotlight", (assert) => {
+		// Simulate rapid clicks through 3 nodes
+		applyEgoGraph("sonic-team");
+		applyEgoGraph("sega");
+		applyEgoGraph("yu-suzuki");
+
+		// Only the final spotlight should be active
+		assert.strictEqual(getSpotlightId(), "yu-suzuki", "final spotlight is yu-suzuki");
+		assert.strictEqual(getViewMode(), "ego", "still in ego mode");
+
+		// Verify only yu-suzuki neighborhood is visible
+		const nodes = network.body.data.nodes;
+		const visibleIds = nodes
+			.get()
+			.filter((n) => !n.hidden)
+			.map((n) => n.id);
+		assert.deepEqual(
+			visibleIds.sort(),
+			["outrun", "sega", "yu-suzuki"].sort(),
+			"only yu-suzuki + neighbors visible after rapid navigation",
+		);
+	});
+
+	QUnit.test("same-node click preserves neighborhood and re-centers", (assert) => {
+		applyEgoGraph("sonic-team");
+		openDetailPanel("sonic-team");
+
+		const nodes = network.body.data.nodes;
+		const visibleBefore = nodes.get().filter((n) => !n.hidden).map((n) => n.id).sort();
+
+		// Click same node
+		applyEgoGraph("sonic-team");
+
+		const visibleAfter = nodes.get().filter((n) => !n.hidden).map((n) => n.id).sort();
+		assert.deepEqual(visibleAfter, visibleBefore, "neighborhood unchanged after same-node click");
+		assert.strictEqual(getSpotlightId(), "sonic-team", "spotlight unchanged");
+	});
+
+	QUnit.test("expand all during rapid ego navigation works correctly", (assert) => {
+		applyEgoGraph("sonic-team");
+		applyEgoGraph("sonic");
+		expandAll();
+
+		assert.strictEqual(getViewMode(), "full", "mode is full after expandAll");
+		assert.strictEqual(getSpotlightId(), null, "no spotlight in full mode");
+
+		const nodes = network.body.data.nodes;
+		const allVisible = nodes.get().every((n) => !n.hidden);
+		assert.true(allVisible, "all nodes visible after expand all");
+	});
+});
