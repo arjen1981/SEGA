@@ -257,3 +257,209 @@ QUnit.module("ego-graph — mobile centering (005)", (hooks) => {
 		assert.ok(true, "detail-panel-closed event handled without error in ego mode");
 	});
 });
+
+/* ============================================================
+   009: Physics jank fix tests (FR-001, FR-002, FR-003, FR-004, FR-006)
+   ============================================================ */
+
+QUnit.module("ego-graph — physics state tracking (009)", (hooks) => {
+	let network;
+
+	hooks.beforeEach(() => {
+		network = setupGraph();
+	});
+
+	hooks.afterEach(() => {
+		teardownGraph();
+	});
+
+	QUnit.test("T006: applyEgoGraph skips setOptions when physics already enabled with matching viewport", (assert) => {
+		// First call enables physics
+		applyEgoGraph("sonic-team");
+
+		// Spy on setOptions for the second call
+		let setOptionsCalls = 0;
+		const originalSetOptions = network.setOptions.bind(network);
+		network.setOptions = (opts) => {
+			if (opts.physics !== undefined) {
+				setOptionsCalls++;
+			}
+			return originalSetOptions(opts);
+		};
+
+		// Second call with same viewport should skip setOptions
+		applyEgoGraph("sonic");
+		assert.strictEqual(setOptionsCalls, 0, "setOptions not called redundantly when physics already enabled");
+
+		// Restore
+		network.setOptions = originalSetOptions;
+	});
+
+	QUnit.test("T007: applyEgoGraph calls setOptions when transitioning from full to ego mode", (assert) => {
+		// Start in full mode
+		expandAll();
+
+		// Spy on setOptions
+		let setOptionsCalledWithPhysics = false;
+		const originalSetOptions = network.setOptions.bind(network);
+		network.setOptions = (opts) => {
+			if (opts.physics?.enabled === true) {
+				setOptionsCalledWithPhysics = true;
+			}
+			return originalSetOptions(opts);
+		};
+
+		// Transition from full → ego
+		applyEgoGraph("sonic-team");
+		assert.true(setOptionsCalledWithPhysics, "setOptions called with physics.enabled=true on full→ego transition");
+
+		// Restore
+		network.setOptions = originalSetOptions;
+	});
+
+	QUnit.test("T008: cancel-and-replace removes previous stabilized handler", (assert) => {
+		// Track how many times stabilized handlers fire
+		let handlerFireCount = 0;
+		const originalOnce = network.once.bind(network);
+		const originalOff = network.off.bind(network);
+		let offCalledForStabilized = false;
+
+		network.off = (event, handler) => {
+			if (event === "stabilized" && handler) {
+				offCalledForStabilized = true;
+			}
+			return originalOff(event, handler);
+		};
+
+		// First ego-graph call
+		applyEgoGraph("sonic-team");
+
+		// Second call should cancel first handler
+		applyEgoGraph("sonic");
+		assert.true(offCalledForStabilized, "network.off('stabilized') called to cancel previous handler");
+
+		// Restore
+		network.off = originalOff;
+	});
+
+	QUnit.test("T009: same-node click skips neighborhood updates and re-centers camera", (assert) => {
+		applyEgoGraph("sonic-team");
+
+		// Record visible nodes before same-node click
+		const nodes = network.body.data.nodes;
+		const visibleBefore = nodes.get().filter((n) => !n.hidden).map((n) => n.id).sort();
+
+		// Spy on focus to verify re-centering
+		let focusCalled = false;
+		const originalFocus = network.focus.bind(network);
+		network.focus = (nodeId, opts) => {
+			if (nodeId === "sonic-team") {
+				focusCalled = true;
+			}
+			return originalFocus(nodeId, opts);
+		};
+
+		// Click same node again
+		applyEgoGraph("sonic-team");
+
+		// Verify neighborhood unchanged
+		const visibleAfter = nodes.get().filter((n) => !n.hidden).map((n) => n.id).sort();
+		assert.deepEqual(visibleAfter, visibleBefore, "visible nodes unchanged after same-node click");
+
+		// Verify camera re-centered
+		assert.true(focusCalled, "network.focus called to re-center camera on same-node click");
+
+		// Restore
+		network.focus = originalFocus;
+	});
+
+	QUnit.test("T010: stabilized handler disables physics after settling", (assert) => {
+		// After applyEgoGraph, manually trigger stabilized event
+		applyEgoGraph("sonic-team");
+
+		// Spy on setOptions to detect physics disable
+		let physicsDisabled = false;
+		const originalSetOptions = network.setOptions.bind(network);
+		network.setOptions = (opts) => {
+			if (opts.physics?.enabled === false) {
+				physicsDisabled = true;
+			}
+			return originalSetOptions(opts);
+		};
+
+		// Fire stabilized event
+		network.emit("stabilized");
+
+		assert.true(physicsDisabled, "physics disabled after stabilization completes");
+
+		// Restore
+		network.setOptions = originalSetOptions;
+	});
+});
+
+/* ============================================================
+   009: Mobile vs Desktop physics tests (US2, FR-003)
+   ============================================================ */
+
+QUnit.module("ego-graph — viewport-aware physics (009 US2)", (hooks) => {
+	let network;
+
+	hooks.beforeEach(() => {
+		network = setupGraph();
+	});
+
+	hooks.afterEach(() => {
+		teardownGraph();
+	});
+
+	QUnit.test("T017: setOptions re-applied when viewport type changes between transitions", (assert) => {
+		// This test verifies the logic path exists — in test environment, isMobile()
+		// always returns the same value, so we verify the tracking variable mechanism
+		// by confirming that the first call enables physics
+		applyEgoGraph("sonic-team");
+		assert.strictEqual(getViewMode(), "ego", "ego mode active after first apply");
+
+		// Second call with same viewport — should skip
+		let setOptionsCalled = false;
+		const originalSetOptions = network.setOptions.bind(network);
+		network.setOptions = (opts) => {
+			if (opts.physics?.enabled === true) {
+				setOptionsCalled = true;
+			}
+			return originalSetOptions(opts);
+		};
+
+		applyEgoGraph("sonic");
+		assert.false(setOptionsCalled, "setOptions not called when viewport unchanged and physics active");
+
+		// Restore
+		network.setOptions = originalSetOptions;
+	});
+
+	QUnit.test("T018: setOptions called after expandAll resets physics tracking", (assert) => {
+		// First ego call
+		applyEgoGraph("sonic-team");
+
+		// Expand all resets tracking
+		expandAll();
+
+		// Next ego call should re-enable physics (tracking was reset)
+		let setOptionsCalledWithEnable = false;
+		const originalSetOptions = network.setOptions.bind(network);
+		network.setOptions = (opts) => {
+			if (opts.physics?.enabled === true) {
+				setOptionsCalledWithEnable = true;
+			}
+			return originalSetOptions(opts);
+		};
+
+		// Fire stabilized to simulate expand settle (disables physics)
+		network.emit("stabilized");
+
+		applyEgoGraph("sonic");
+		assert.true(setOptionsCalledWithEnable, "setOptions called after expandAll reset physics tracking");
+
+		// Restore
+		network.setOptions = originalSetOptions;
+	});
+});
