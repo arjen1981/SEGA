@@ -11,6 +11,12 @@
  *   getViewMode()                  — return current mode ("ego" | "full")
  *   getSpotlightId()               — return current spotlight node ID or null
  *   pickRandomSpotlight(nodesArray) — select a random non-company node ID
+ *   prefersReducedMotion()         — check reduced-motion media query
+ *   easeInOutQuad(t)               — quadratic ease-in-out
+ *   computeZoomDip(t)              — parabolic zoom dip multiplier
+ *   computeNeighborhoodDiff(old,new) — set diff between ego neighborhoods
+ *   cancelTransition()             — cancel in-progress transition animation
+ *   finalizeTransition(id, set)    — apply canonical end state after transition
  *
  * @module ego-graph
  */
@@ -33,6 +39,15 @@ let lastPhysicsIsMobile = false;
 /** @type {Function | null} Pending stabilized handler for cancel-and-replace (R2) */
 let pendingStabilizationHandler = null;
 
+/** @type {number | null} Active rAF ID for transition animation (012) */
+let animFrameId = null;
+
+/** @type {object | null} In-progress transition state (012) */
+let transitionState = null;
+
+/** @type {number | null} Fallback timer that completes animation if rAF stalls (e.g. background tab) */
+let transitionFallbackTimer = null;
+
 /**
  * 005: Media query for mobile detection — mirrors CSS breakpoint.
  * @type {MediaQueryList}
@@ -45,6 +60,20 @@ const mobileQuery = window.matchMedia("(max-width: 767px)");
  */
 function isMobile() {
 	return mobileQuery.matches;
+}
+
+/**
+ * 012: Media query for reduced motion preference.
+ * @type {MediaQueryList}
+ */
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+/**
+ * 012: Check whether the user prefers reduced motion.
+ * @returns {boolean}
+ */
+export function prefersReducedMotion() {
+	return reducedMotionQuery.matches;
 }
 
 /**
@@ -91,6 +120,297 @@ function getPanelOffset({ anticipateOpen = false } = {}) {
 	return { x: -panelWidth / 2, y: 0 };
 }
 
+/* ============================================================
+   012: Transition animation helpers and infrastructure
+   ============================================================ */
+
+/**
+ * 012: Quadratic ease-in-out.
+ * @param {number} t — normalized progress 0–1
+ * @returns {number} eased value 0–1
+ */
+export function easeInOutQuad(t) {
+	return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+}
+
+/**
+ * 012: Compute zoom dip multiplier — parabolic curve that dips to ~0.7 at midpoint.
+ * @param {number} t — eased progress 0–1
+ * @returns {number} scale multiplier (1.0 at ends, ~0.7 at midpoint)
+ */
+export function computeZoomDip(t) {
+	const dipFactor = 0.3;
+	return 1 - dipFactor * 4 * t * (1 - t);
+}
+
+/**
+ * 012: Compute the set difference between old and new ego-graph neighborhoods.
+ * Returns departing, arriving, and shared node/edge sets.
+ *
+ * @param {string} oldNodeId — current spotlight node ID
+ * @param {string} newNodeId — target spotlight node ID
+ * @returns {{ departing: Set<string>, arriving: Set<string>, shared: Set<string>,
+ *             departingEdgeIds: Set<string>, arrivingEdgeIds: Set<string>, sharedEdgeIds: Set<string> }}
+ */
+export function computeNeighborhoodDiff(oldNodeId, newNodeId) {
+	const oldNeighbors = new Set(network.getConnectedNodes(oldNodeId));
+	oldNeighbors.add(oldNodeId);
+
+	const newNeighbors = new Set(network.getConnectedNodes(newNodeId));
+	newNeighbors.add(newNodeId);
+
+	const departing = new Set();
+	const arriving = new Set();
+	const shared = new Set();
+
+	for (const id of oldNeighbors) {
+		if (newNeighbors.has(id)) {
+			shared.add(id);
+		} else {
+			departing.add(id);
+		}
+	}
+	for (const id of newNeighbors) {
+		if (!oldNeighbors.has(id)) {
+			arriving.add(id);
+		}
+	}
+
+	const edges = network.body.data.edges;
+	const allEdges = edges.get();
+	const departingEdgeIds = new Set();
+	const arrivingEdgeIds = new Set();
+	const sharedEdgeIds = new Set();
+
+	for (const edge of allEdges) {
+		const bothInOld = oldNeighbors.has(edge.from) && oldNeighbors.has(edge.to);
+		const bothInNew = newNeighbors.has(edge.from) && newNeighbors.has(edge.to);
+
+		if (bothInOld && bothInNew) {
+			sharedEdgeIds.add(edge.id);
+		} else if (bothInOld) {
+			departingEdgeIds.add(edge.id);
+		} else if (bothInNew) {
+			arrivingEdgeIds.add(edge.id);
+		}
+	}
+
+	return { departing, arriving, shared, departingEdgeIds, arrivingEdgeIds, sharedEdgeIds };
+}
+
+/**
+ * 012: Cancel any in-progress transition animation and clean up intermediate state.
+ * Restores opacity on transitioning nodes/edges and re-hides arriving elements.
+ */
+export function cancelTransition() {
+	if (transitionFallbackTimer !== null) {
+		clearTimeout(transitionFallbackTimer);
+		transitionFallbackTimer = null;
+	}
+	if (animFrameId !== null) {
+		cancelAnimationFrame(animFrameId);
+		animFrameId = null;
+	}
+	if (transitionState) {
+		const nodes = network.body.data.nodes;
+		const edges = network.body.data.edges;
+
+		const nodeResets = [];
+		for (const id of transitionState.departingNodeIds) {
+			nodeResets.push({ id, opacity: 1 });
+		}
+		for (const id of transitionState.arrivingNodeIds) {
+			nodeResets.push({ id, hidden: true, opacity: 1 });
+		}
+		if (nodeResets.length > 0) nodes.update(nodeResets);
+
+		const edgeResets = [];
+		for (const id of transitionState.departingEdgeIds) {
+			edgeResets.push({ id, color: { opacity: 1 } });
+		}
+		for (const id of transitionState.arrivingEdgeIds) {
+			edgeResets.push({ id, hidden: true, color: { opacity: 1 } });
+		}
+		if (edgeResets.length > 0) edges.update(edgeResets);
+
+		transitionState = null;
+	}
+}
+
+/**
+ * 012: Apply the canonical end state after a transition completes.
+ * Sets correct hidden/visible/opacity/physics state identical to the
+ * instant applyEgoGraph path, then enables physics for stabilization.
+ *
+ * @param {string} nodeId — the new spotlight node ID
+ * @param {Set<string>} visibleNodeIds — IDs of nodes that should be visible
+ */
+export function finalizeTransition(nodeId, visibleNodeIds) {
+	const nodes = network.body.data.nodes;
+	const edges = network.body.data.edges;
+
+	const allNodes = nodes.get();
+	const nodeUpdates = [];
+	for (const node of allNodes) {
+		const isVisible = visibleNodeIds.has(node.id);
+		nodeUpdates.push({
+			id: node.id,
+			hidden: !isVisible,
+			opacity: 1,
+			physics: false,
+			fixed: false,
+		});
+	}
+	nodes.update(nodeUpdates);
+
+	const allEdges = edges.get();
+	const edgeUpdates = [];
+	for (const edge of allEdges) {
+		const bothVisible = visibleNodeIds.has(edge.from) && visibleNodeIds.has(edge.to);
+		edgeUpdates.push({
+			id: edge.id,
+			hidden: !bothVisible,
+			color: { opacity: 1 },
+		});
+	}
+	edges.update(edgeUpdates);
+
+	spotlightId = nodeId;
+	viewMode = "ego";
+
+	network.selectNodes([nodeId]);
+
+	const finalOffset = getPanelOffset({ anticipateOpen: true });
+	const targetScale = isMobile() ? 0.9 : 1.5;
+	network.moveTo({
+		position: network.getPositions([nodeId])[nodeId],
+		scale: targetScale,
+		offset: finalOffset,
+		animation: false,
+	});
+
+	// Brief deterministic settle: run exactly 30 physics iterations synchronously,
+	// then disable physics. Gives a subtle "snap into place" without oscillation.
+	const mobile = isMobile();
+	const mobilePhysics = mobile
+		? { enabled: true, barnesHut: { springLength: 80 } }
+		: { enabled: true };
+	network.setOptions({ physics: mobilePhysics });
+	network.stabilize(30);
+	network.setOptions({ physics: { enabled: false } });
+	physicsEnabled = false;
+}
+
+/**
+ * 012: Run an animated ego-to-ego transition using requestAnimationFrame.
+ * Interpolates camera position, zoom dip, and node/edge opacity over 600ms.
+ *
+ * @param {string} newNodeId — the target spotlight node ID
+ */
+function runAnimatedTransition(newNodeId) {
+	const oldNodeId = spotlightId;
+	const diff = computeNeighborhoodDiff(oldNodeId, newNodeId);
+
+	const newNeighbors = network.getConnectedNodes(newNodeId);
+	const visibleNodeIds = new Set([newNodeId, ...newNeighbors]);
+
+	const nodes = network.body.data.nodes;
+	const edges = network.body.data.edges;
+
+	const nodeSetup = [];
+	for (const id of diff.arriving) {
+		nodeSetup.push({ id, hidden: false, opacity: 0, physics: false });
+	}
+	if (nodeSetup.length > 0) nodes.update(nodeSetup);
+
+	const edgeSetup = [];
+	for (const id of diff.arrivingEdgeIds) {
+		edgeSetup.push({ id, hidden: false, color: { opacity: 0 } });
+	}
+	if (edgeSetup.length > 0) edges.update(edgeSetup);
+
+	network.selectNodes([newNodeId]);
+
+	const positions = network.getPositions([oldNodeId, newNodeId]);
+	const fromPos = positions[oldNodeId];
+	const toPos = positions[newNodeId];
+
+	const targetScale = isMobile() ? 0.9 : 1.5;
+	const offset = getPanelOffset({ anticipateOpen: true });
+	const duration = 600;
+	const startTime = performance.now();
+
+	transitionState = {
+		fromNodeId: oldNodeId,
+		toNodeId: newNodeId,
+		startTime,
+		duration,
+		departingNodeIds: diff.departing,
+		arrivingNodeIds: diff.arriving,
+		sharedNodeIds: diff.shared,
+		departingEdgeIds: diff.departingEdgeIds,
+		arrivingEdgeIds: diff.arrivingEdgeIds,
+	};
+
+	function step(currentTime) {
+		const elapsed = currentTime - startTime;
+		const rawT = Math.min(elapsed / duration, 1);
+		const t = easeInOutQuad(rawT);
+
+		const x = fromPos.x + (toPos.x - fromPos.x) * t;
+		const y = fromPos.y + (toPos.y - fromPos.y) * t;
+		const scale = targetScale * computeZoomDip(t);
+
+		network.moveTo({
+			position: { x, y },
+			scale,
+			offset,
+			animation: false,
+		});
+
+		const nodeUpdates = [];
+		for (const id of diff.departing) {
+			nodeUpdates.push({ id, opacity: 1 - t });
+		}
+		for (const id of diff.arriving) {
+			nodeUpdates.push({ id, opacity: t });
+		}
+		if (nodeUpdates.length > 0) nodes.update(nodeUpdates);
+
+		const edgeUpdates = [];
+		for (const id of diff.departingEdgeIds) {
+			edgeUpdates.push({ id, color: { opacity: 1 - t } });
+		}
+		for (const id of diff.arrivingEdgeIds) {
+			edgeUpdates.push({ id, color: { opacity: t } });
+		}
+		if (edgeUpdates.length > 0) edges.update(edgeUpdates);
+
+		if (rawT < 1) {
+			animFrameId = requestAnimationFrame(step);
+		} else {
+			clearTimeout(transitionFallbackTimer);
+			transitionFallbackTimer = null;
+			animFrameId = null;
+			transitionState = null;
+			finalizeTransition(newNodeId, visibleNodeIds);
+		}
+	}
+
+	animFrameId = requestAnimationFrame(step);
+
+	// Fallback: complete transition via setTimeout if rAF stalls (e.g. background tab)
+	transitionFallbackTimer = setTimeout(() => {
+		if (animFrameId !== null) {
+			cancelAnimationFrame(animFrameId);
+			animFrameId = null;
+			transitionState = null;
+			transitionFallbackTimer = null;
+			finalizeTransition(newNodeId, visibleNodeIds);
+		}
+	}, duration + 100);
+}
+
 /**
  * Initialize the ego-graph module with the vis.Network instance.
  * Must be called after createGraph().
@@ -104,6 +424,9 @@ export function initEgoGraph(net) {
 	physicsEnabled = false;
 	lastPhysicsIsMobile = false;
 	pendingStabilizationHandler = null;
+	animFrameId = null;
+	transitionState = null;
+	transitionFallbackTimer = null;
 }
 
 /**
@@ -144,6 +467,9 @@ export function applyEgoGraph(nodeId) {
 	// Cancel any pending re-center from a panel-close that precedes this selection
 	clearTimeout(reCenterTimer);
 
+	// 012: Cancel any in-progress transition animation (FR-005)
+	cancelTransition();
+
 	// FR-006: Same-node click — skip neighborhood updates, re-center camera only
 	if (nodeId === spotlightId) {
 		const offset = getPanelOffset({ anticipateOpen: true });
@@ -164,6 +490,13 @@ export function applyEgoGraph(nodeId) {
 		pendingStabilizationHandler = null;
 	}
 
+	// 012: Ego-to-ego navigation — animate when transitioning between spotlights
+	if (spotlightId !== null && viewMode === "ego" && !prefersReducedMotion()) {
+		runAnimatedTransition(nodeId);
+		return;
+	}
+
+	// Instant path: initial load, from full mode, or reduced motion
 	spotlightId = nodeId;
 	viewMode = "ego";
 
@@ -257,6 +590,9 @@ export function expandAll() {
 
 	// Cancel any pending re-center from a panel-close
 	clearTimeout(reCenterTimer);
+
+	// 012: Cancel any in-progress transition animation (FR-005)
+	cancelTransition();
 
 	// FR-002: Cancel any pending stabilization handler
 	if (pendingStabilizationHandler) {

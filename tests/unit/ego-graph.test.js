@@ -13,11 +13,17 @@
 
 import {
 	applyEgoGraph,
+	cancelTransition,
+	computeNeighborhoodDiff,
+	computeZoomDip,
+	easeInOutQuad,
 	expandAll,
+	finalizeTransition,
 	getSpotlightId,
 	getViewMode,
 	initEgoGraph,
 	pickRandomSpotlight,
+	prefersReducedMotion,
 } from "../../src/js/ego-graph.js";
 import { createGraph, destroyGraph, getNetwork } from "../../src/js/graph.js";
 
@@ -461,5 +467,247 @@ QUnit.module("ego-graph — viewport-aware physics (009 US2)", (hooks) => {
 
 		// Restore
 		network.setOptions = originalSetOptions;
+	});
+});
+
+/* ============================================================
+   012: Transition animation unit tests
+   ============================================================ */
+
+QUnit.module("ego-graph — easeInOutQuad (012 T010)", () => {
+	QUnit.test("returns 0 at t=0", (assert) => {
+		assert.strictEqual(easeInOutQuad(0), 0, "easeInOutQuad(0) === 0");
+	});
+
+	QUnit.test("returns 0.5 at t=0.5", (assert) => {
+		assert.strictEqual(easeInOutQuad(0.5), 0.5, "easeInOutQuad(0.5) === 0.5");
+	});
+
+	QUnit.test("returns 1 at t=1", (assert) => {
+		assert.strictEqual(easeInOutQuad(1), 1, "easeInOutQuad(1) === 1");
+	});
+
+	QUnit.test("values increase monotonically", (assert) => {
+		let prev = -1;
+		for (let i = 0; i <= 10; i++) {
+			const t = i / 10;
+			const v = easeInOutQuad(t);
+			assert.ok(v >= prev, `easeInOutQuad(${t}) = ${v} >= ${prev}`);
+			prev = v;
+		}
+	});
+});
+
+QUnit.module("ego-graph — computeZoomDip (012 T011)", () => {
+	QUnit.test("returns 1.0 at t=0", (assert) => {
+		const result = computeZoomDip(0);
+		assert.ok(Math.abs(result - 1.0) < 0.001, `computeZoomDip(0) = ${result} ≈ 1.0`);
+	});
+
+	QUnit.test("returns ~0.7 at t=0.5", (assert) => {
+		const result = computeZoomDip(0.5);
+		assert.ok(Math.abs(result - 0.7) < 0.001, `computeZoomDip(0.5) = ${result} ≈ 0.7`);
+	});
+
+	QUnit.test("returns 1.0 at t=1", (assert) => {
+		const result = computeZoomDip(1);
+		assert.ok(Math.abs(result - 1.0) < 0.001, `computeZoomDip(1) = ${result} ≈ 1.0`);
+	});
+
+	QUnit.test("dip is symmetric around midpoint", (assert) => {
+		const v25 = computeZoomDip(0.25);
+		const v75 = computeZoomDip(0.75);
+		assert.ok(
+			Math.abs(v25 - v75) < 0.001,
+			`dip at t=0.25 (${v25}) ≈ dip at t=0.75 (${v75})`,
+		);
+	});
+});
+
+QUnit.module("ego-graph — computeNeighborhoodDiff (012 T008, T009)", (hooks) => {
+	hooks.beforeEach(() => {
+		setupGraph();
+	});
+
+	hooks.afterEach(() => {
+		teardownGraph();
+	});
+
+	QUnit.test("T008: correct departing/arriving/shared sets for sonic-team → yu-suzuki", (assert) => {
+		applyEgoGraph("sonic-team");
+		// Trigger stabilization to finalize state
+		const network = getNetwork();
+		network.emit("stabilized");
+
+		const diff = computeNeighborhoodDiff("sonic-team", "yu-suzuki");
+
+		// sonic-team neighbors: sega, sonic
+		// yu-suzuki neighbors: sega, outrun
+		// old set: {sonic-team, sega, sonic}
+		// new set: {yu-suzuki, sega, outrun}
+		// shared: {sega}
+		// departing: {sonic-team, sonic}
+		// arriving: {yu-suzuki, outrun}
+		assert.true(diff.shared.has("sega"), "sega is shared");
+		assert.true(diff.departing.has("sonic-team"), "sonic-team is departing");
+		assert.true(diff.departing.has("sonic"), "sonic is departing");
+		assert.true(diff.arriving.has("yu-suzuki"), "yu-suzuki is arriving");
+		assert.true(diff.arriving.has("outrun"), "outrun is arriving");
+		assert.strictEqual(diff.departing.size, 2, "2 departing nodes");
+		assert.strictEqual(diff.arriving.size, 2, "2 arriving nodes");
+		assert.strictEqual(diff.shared.size, 1, "1 shared node");
+	});
+
+	QUnit.test("T008: edge sets computed correctly", (assert) => {
+		applyEgoGraph("sonic-team");
+		const network = getNetwork();
+		network.emit("stabilized");
+
+		const diff = computeNeighborhoodDiff("sonic-team", "yu-suzuki");
+
+		// e1 (sega→sonic-team): visible in old (both in old set), NOT in new (sonic-team not in new) → departing
+		// e3 (sonic-team→sonic): visible in old, NOT in new → departing
+		// e4 (sega→yu-suzuki): NOT visible in old (yu-suzuki not in old), visible in new → arriving
+		// e5 (yu-suzuki→outrun): NOT visible in old, visible in new → arriving
+		// e2 (sega→genesis): neither → ignored
+		assert.true(diff.departingEdgeIds.has("e1"), "e1 is departing");
+		assert.true(diff.departingEdgeIds.has("e3"), "e3 is departing");
+		assert.true(diff.arrivingEdgeIds.has("e4"), "e4 is arriving");
+		assert.true(diff.arrivingEdgeIds.has("e5"), "e5 is arriving");
+		assert.strictEqual(diff.departingEdgeIds.size, 2, "2 departing edges");
+		assert.strictEqual(diff.arrivingEdgeIds.size, 2, "2 arriving edges");
+	});
+
+	QUnit.test("T009: leaf node (sonic) has minimal neighborhood", (assert) => {
+		applyEgoGraph("sonic-team");
+		const network = getNetwork();
+		network.emit("stabilized");
+
+		// sonic-team → sonic: sonic only connects to sonic-team
+		// old: {sonic-team, sega, sonic}, new: {sonic, sonic-team}
+		// shared: {sonic-team, sonic} (old spotlight becomes shared since undirected)
+		// departing: {sega}
+		// arriving: (empty — sonic and sonic-team are both in old set)
+		const diff = computeNeighborhoodDiff("sonic-team", "sonic");
+		assert.true(diff.shared.has("sonic-team"), "sonic-team is shared");
+		assert.true(diff.shared.has("sonic"), "sonic is shared");
+		assert.true(diff.departing.has("sega"), "sega is departing");
+		assert.strictEqual(diff.arriving.size, 0, "no arriving nodes for leaf");
+	});
+
+	QUnit.test("T009: hub node (sega) has many neighbors", (assert) => {
+		applyEgoGraph("sonic-team");
+		const network = getNetwork();
+		network.emit("stabilized");
+
+		// sonic-team → sega: sega connects to sonic-team, genesis, yu-suzuki
+		// old: {sonic-team, sega, sonic}, new: {sega, sonic-team, genesis, yu-suzuki}
+		// shared: {sonic-team, sega}
+		// departing: {sonic}
+		// arriving: {genesis, yu-suzuki}
+		const diff = computeNeighborhoodDiff("sonic-team", "sega");
+		assert.true(diff.shared.has("sega"), "sega is shared");
+		assert.true(diff.shared.has("sonic-team"), "sonic-team is shared");
+		assert.true(diff.departing.has("sonic"), "sonic is departing");
+		assert.true(diff.arriving.has("genesis"), "genesis is arriving");
+		assert.true(diff.arriving.has("yu-suzuki"), "yu-suzuki is arriving");
+	});
+});
+
+QUnit.module("ego-graph — finalizeTransition (012 T014b)", (hooks) => {
+	let network;
+
+	hooks.beforeEach(() => {
+		network = setupGraph();
+	});
+
+	hooks.afterEach(() => {
+		teardownGraph();
+	});
+
+	QUnit.test("resets opacity to 1 on all visible nodes after transition", (assert) => {
+		// Set up initial ego-graph on sonic-team (instant path, since spotlightId is null)
+		applyEgoGraph("sonic-team");
+		network.emit("stabilized");
+
+		const nodes = network.body.data.nodes;
+		const edges = network.body.data.edges;
+
+		// Simulate mid-transition state: set some nodes to fractional opacity
+		nodes.update([{ id: "sonic-team", opacity: 0.5 }, { id: "sega", opacity: 0.3 }]);
+
+		// Call finalizeTransition for yu-suzuki spotlight
+		const visibleNodeIds = new Set(["yu-suzuki", "sega", "outrun"]);
+		finalizeTransition("yu-suzuki", visibleNodeIds);
+
+		// All visible nodes should have opacity 1
+		for (const id of visibleNodeIds) {
+			const node = nodes.get(id);
+			assert.strictEqual(node.opacity, 1, `visible node ${id} has opacity 1`);
+		}
+
+		// Hidden nodes should also have opacity 1 (reset)
+		const hiddenNodes = nodes.get().filter((n) => n.hidden);
+		for (const node of hiddenNodes) {
+			assert.strictEqual(node.opacity, 1, `hidden node ${node.id} has opacity 1`);
+		}
+	});
+
+	QUnit.test("resets color.opacity to 1 on all visible edges", (assert) => {
+		applyEgoGraph("sonic-team");
+		network.emit("stabilized");
+
+		const edges = network.body.data.edges;
+
+		// Simulate mid-transition edge opacity
+		edges.update([{ id: "e4", color: { opacity: 0.3 } }]);
+
+		const visibleNodeIds = new Set(["yu-suzuki", "sega", "outrun"]);
+		finalizeTransition("yu-suzuki", visibleNodeIds);
+
+		// All edges should have color.opacity 1
+		const allEdges = edges.get();
+		for (const edge of allEdges) {
+			assert.strictEqual(edge.color?.opacity, 1, `edge ${edge.id} has color.opacity 1`);
+		}
+	});
+
+	QUnit.test("sets correct spotlight and viewMode", (assert) => {
+		applyEgoGraph("sonic-team");
+		network.emit("stabilized");
+
+		const visibleNodeIds = new Set(["yu-suzuki", "sega", "outrun"]);
+		finalizeTransition("yu-suzuki", visibleNodeIds);
+
+		assert.strictEqual(getSpotlightId(), "yu-suzuki", "spotlightId updated");
+		assert.strictEqual(getViewMode(), "ego", "viewMode is ego");
+	});
+});
+
+QUnit.module("ego-graph — cancelTransition (012 T025)", (hooks) => {
+	let network;
+
+	hooks.beforeEach(() => {
+		network = setupGraph();
+	});
+
+	hooks.afterEach(() => {
+		teardownGraph();
+	});
+
+	QUnit.test("cancelTransition is a no-op when no transition is running", (assert) => {
+		applyEgoGraph("sonic-team");
+		network.emit("stabilized");
+
+		// Should not throw
+		cancelTransition();
+		assert.ok(true, "cancelTransition completes without error when no transition active");
+	});
+});
+
+QUnit.module("ego-graph — prefersReducedMotion (012 T031)", () => {
+	QUnit.test("prefersReducedMotion returns a boolean", (assert) => {
+		const result = prefersReducedMotion();
+		assert.strictEqual(typeof result, "boolean", "returns a boolean value");
 	});
 });
