@@ -43,9 +43,9 @@ npm test; npm run lint
 HTML5, CSS3, JavaScript (ES6+) — no build step required: Follow standard conventions
 
 ## Recent Changes
+- 012-node-transition-animation: Added Vanilla JavaScript (ES2015+), ES modules via browser `type="module"` + vis-network v10 (CDN), Biome (dev linter)
 - 011-url-deep-linking: Added Vanilla JavaScript (ES2015+), ES modules via browser `type="module"` + vis-network v10 (CDN), Biome (dev linter)
 - 010-a11y-improvements: Added JavaScript ES2020+ (vanilla, no framework, no build step) + vis-network 10 (CDN), QUnit 2.25.0 (CDN)
-- 009-fix-bugs-techdebt: Added JavaScript ES2020+ (vanilla, no build step) + vis-network 10 (CDN)
 
 
 <!-- MANUAL ADDITIONS START -->

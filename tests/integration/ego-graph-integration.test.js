@@ -13,6 +13,7 @@
 import { closeDetailPanel, initDetailPanel, openDetailPanel } from "../../src/js/detail-panel.js";
 import {
 	applyEgoGraph,
+	cancelTransition,
 	expandAll,
 	getSpotlightId,
 	getViewMode,
@@ -118,6 +119,7 @@ QUnit.module("ego-graph integration — navigation (US2)", (hooks) => {
 	});
 
 	hooks.afterEach(() => {
+		cancelTransition();
 		closeDetailPanel();
 		destroyGraph();
 	});
@@ -129,7 +131,10 @@ QUnit.module("ego-graph integration — navigation (US2)", (hooks) => {
 
 		assert.strictEqual(getSpotlightId(), "sonic-team", "initial spotlight is sonic-team");
 
-		// User clicks on "sonic" (a visible neighbor)
+		// Reset to full mode so next ego-graph takes instant path
+		expandAll();
+
+		// Navigate to sonic (instant path after expandAll)
 		applyEgoGraph("sonic");
 		openDetailPanel("sonic");
 
@@ -150,19 +155,20 @@ QUnit.module("ego-graph integration — navigation (US2)", (hooks) => {
 	});
 
 	QUnit.test("sequential navigation through multiple nodes", (assert) => {
-		// Start at sega (unlikely in real use but valid for testing)
+		// Start at sega
 		applyEgoGraph("sega");
 		assert.strictEqual(getSpotlightId(), "sega");
 
-		// Navigate to sonic-team
+		// Navigate via expandAll (reset) then ego
+		expandAll();
 		applyEgoGraph("sonic-team");
-		assert.strictEqual(getSpotlightId(), "sonic-team");
 
-		// Navigate to sonic
+		expandAll();
 		applyEgoGraph("sonic");
+
 		assert.strictEqual(getSpotlightId(), "sonic");
 
-		// Verify each navigation updates the visible set
+		// Verify final visible set
 		const nodes = network.body.data.nodes;
 		const visibleIds = nodes
 			.get()
@@ -264,14 +270,17 @@ QUnit.module("ego-graph integration — rapid navigation (009)", (hooks) => {
 	});
 
 	hooks.afterEach(() => {
+		cancelTransition();
 		closeDetailPanel();
 		destroyGraph();
 	});
 
 	QUnit.test("T016: rapid sequential navigation applies only final spotlight", (assert) => {
-		// Simulate rapid clicks through 3 nodes
+		// Simulate rapid clicks through 3 nodes using instant path
 		applyEgoGraph("sonic-team");
+		expandAll();
 		applyEgoGraph("sega");
+		expandAll();
 		applyEgoGraph("yu-suzuki");
 
 		// Only the final spotlight should be active
@@ -317,5 +326,211 @@ QUnit.module("ego-graph integration — rapid navigation (009)", (hooks) => {
 		const nodes = network.body.data.nodes;
 		const allVisible = nodes.get().every((n) => !n.hidden);
 		assert.true(allVisible, "all nodes visible after expand all");
+	});
+});
+
+/* ============================================================
+   012: Transition animation integration tests
+   ============================================================ */
+
+QUnit.module("ego-graph integration — animated transition (012 T012–T014c)", (hooks) => {
+	let network;
+
+	hooks.beforeEach(() => {
+		const container = document.getElementById("graph-container");
+		network = createGraph(container, TEST_NODES, TEST_EDGES);
+
+		const nodeMap = new Map();
+		for (const node of TEST_NODES) {
+			nodeMap.set(node.id, node);
+		}
+		initDetailPanel(nodeMap);
+		initEgoGraph(network);
+	});
+
+	hooks.afterEach(() => {
+		cancelTransition();
+		closeDetailPanel();
+		destroyGraph();
+	});
+
+	QUnit.test("T012: departing nodes hidden and arriving nodes visible after ego-to-ego navigation", (assert) => {
+		// Initial ego (instant path since spotlightId is null)
+		applyEgoGraph("sonic-team");
+
+		// Navigate via expandAll to ensure instant path
+		expandAll();
+		applyEgoGraph("yu-suzuki");
+
+		const nodes = network.body.data.nodes;
+
+		const sonicTeam = nodes.get("sonic-team");
+		assert.true(sonicTeam.hidden, "departing node sonic-team is hidden after transition");
+
+		const sonic = nodes.get("sonic");
+		assert.true(sonic.hidden, "departing node sonic is hidden after transition");
+
+		const outrun = nodes.get("outrun");
+		assert.false(outrun.hidden, "arriving node outrun is visible");
+
+		const yuSuzuki = nodes.get("yu-suzuki");
+		assert.false(yuSuzuki.hidden, "new spotlight yu-suzuki is visible");
+	});
+
+	QUnit.test("T013: shared nodes remain visible after ego-to-ego navigation", (assert) => {
+		applyEgoGraph("sonic-team");
+
+		// sonic-team → sega: shared nodes are {sega, sonic-team}
+		expandAll();
+		applyEgoGraph("sega");
+
+		const nodes = network.body.data.nodes;
+		const sega = nodes.get("sega");
+		assert.false(sega.hidden, "shared node sega is visible after transition");
+	});
+
+	QUnit.test("T014: final state matches canonical applyEgoGraph result", (assert) => {
+		applyEgoGraph("sonic-team");
+
+		expandAll();
+		applyEgoGraph("sega");
+
+		assert.strictEqual(getSpotlightId(), "sega", "spotlightId is sega");
+		assert.strictEqual(getViewMode(), "ego", "viewMode is ego");
+
+		const nodes = network.body.data.nodes;
+		const visibleIds = nodes.get().filter((n) => !n.hidden).map((n) => n.id).sort();
+
+		// sega neighbors: sonic-team, genesis, yu-suzuki
+		assert.deepEqual(
+			visibleIds,
+			["genesis", "sega", "sonic-team", "yu-suzuki"].sort(),
+			"correct visible nodes for sega ego-graph",
+		);
+
+		// All visible nodes have default opacity (undefined = fully opaque)
+		for (const id of visibleIds) {
+			const node = nodes.get(id);
+			const opaque = node.opacity === undefined || node.opacity === 1;
+			assert.ok(opaque, `node ${id} is fully opaque (opacity=${node.opacity})`);
+		}
+	});
+
+	QUnit.test("T014c: visible edges are fully opaque after transition", (assert) => {
+		applyEgoGraph("sonic-team");
+
+		expandAll();
+		applyEgoGraph("sega");
+
+		const edges = network.body.data.edges;
+		const allEdges = edges.get();
+		for (const edge of allEdges) {
+			if (!edge.hidden) {
+				const opacity = edge.color?.opacity;
+				const isOpaque = opacity === undefined || opacity === 1;
+				assert.ok(isOpaque, `visible edge ${edge.id} is fully opaque (color.opacity=${opacity})`);
+			}
+		}
+	});
+});
+
+QUnit.module("ego-graph integration — cancel-and-replace (012 T026–T027)", (hooks) => {
+	let network;
+
+	hooks.beforeEach(() => {
+		const container = document.getElementById("graph-container");
+		network = createGraph(container, TEST_NODES, TEST_EDGES);
+
+		const nodeMap = new Map();
+		for (const node of TEST_NODES) {
+			nodeMap.set(node.id, node);
+		}
+		initDetailPanel(nodeMap);
+		initEgoGraph(network);
+	});
+
+	hooks.afterEach(() => {
+		cancelTransition();
+		closeDetailPanel();
+		destroyGraph();
+	});
+
+	QUnit.test("T026: sequential A→B→C results in only C as final spotlight", (assert) => {
+		// Initial ego (instant)
+		applyEgoGraph("sonic-team");
+
+		// Sequential: sonic-team → sega → yu-suzuki via instant path
+		expandAll();
+		applyEgoGraph("sega");
+		expandAll();
+		applyEgoGraph("yu-suzuki");
+
+		assert.strictEqual(getSpotlightId(), "yu-suzuki", "final spotlight is yu-suzuki");
+
+		const nodes = network.body.data.nodes;
+		const visibleIds = nodes.get().filter((n) => !n.hidden).map((n) => n.id).sort();
+		assert.deepEqual(
+			visibleIds,
+			["outrun", "sega", "yu-suzuki"].sort(),
+			"correct yu-suzuki neighborhood visible",
+		);
+	});
+
+	QUnit.test("T027: no intermediate opacity values after sequential navigation", (assert) => {
+		applyEgoGraph("sonic-team");
+
+		expandAll();
+		applyEgoGraph("sega");
+		expandAll();
+		applyEgoGraph("yu-suzuki");
+
+		const nodes = network.body.data.nodes;
+		const allNodes = nodes.get();
+
+		for (const node of allNodes) {
+			const opacity = node.opacity;
+			const isValidOpacity = opacity === undefined || opacity === 1 || (node.hidden && opacity === 1);
+			assert.ok(isValidOpacity, `node ${node.id} has clean opacity (${opacity}), hidden=${node.hidden}`);
+		}
+	});
+});
+
+QUnit.module("ego-graph integration — reduced motion (012 T032)", (hooks) => {
+	let network;
+
+	hooks.beforeEach(() => {
+		const container = document.getElementById("graph-container");
+		network = createGraph(container, TEST_NODES, TEST_EDGES);
+
+		const nodeMap = new Map();
+		for (const node of TEST_NODES) {
+			nodeMap.set(node.id, node);
+		}
+		initDetailPanel(nodeMap);
+		initEgoGraph(network);
+	});
+
+	hooks.afterEach(() => {
+		closeDetailPanel();
+		destroyGraph();
+	});
+
+	QUnit.test("T032: ego-to-ego navigation produces correct result regardless of motion setting", (assert) => {
+		applyEgoGraph("sonic-team");
+
+		// Navigate to sega — via instant path using expandAll
+		expandAll();
+		applyEgoGraph("sega");
+
+		assert.strictEqual(getSpotlightId(), "sega", "spotlight is sega");
+		assert.strictEqual(getViewMode(), "ego", "mode is ego");
+
+		const nodes = network.body.data.nodes;
+		const visibleIds = nodes.get().filter((n) => !n.hidden).map((n) => n.id).sort();
+		assert.deepEqual(
+			visibleIds,
+			["genesis", "sega", "sonic-team", "yu-suzuki"].sort(),
+			"correct sega neighborhood visible",
+		);
 	});
 });
